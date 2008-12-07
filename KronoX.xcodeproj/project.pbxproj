@@ -28,6 +28,8 @@
 		8BB9ED840D7B53EF00E1A813 /* TimeIntervalToDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9ED830D7B53EF00E1A813 /* TimeIntervalToDate.m */; };
 		8BBC1C340DC1317E00685052 /* KronoX.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C330DC1317E00685052 /* KronoX.m */; };
 		8BC89B530E9EA54B00367A46 /* RecordingMenuDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC89B520E9EA54B00367A46 /* RecordingMenuDelegate.m */; };
+		8BC8BE5A0EEC525C00F52232 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8BC8BE590EEC525B00F52232 /* Credits.rtf */; };
+		8BC8BED90EEC620800F52232 /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BC8BED80EEC620800F52232 /* COPYING.txt */; };
 		8BE0FD680D70C115003B3842 /* TasksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD670D70C115003B3842 /* TasksController.m */; };
 		8BE0FD6B0D70C176003B3842 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD6A0D70C176003B3842 /* Task.m */; };
 		8BE0FD6E0D70C299003B3842 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD6D0D70C299003B3842 /* WorkPeriod.m */; };
@@ -82,6 +84,8 @@
 		8BBC1C330DC1317E00685052 /* KronoX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronoX.m; sourceTree = "<group>"; };
 		8BC89B510E9EA54B00367A46 /* RecordingMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingMenuDelegate.h; sourceTree = "<group>"; };
 		8BC89B520E9EA54B00367A46 /* RecordingMenuDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingMenuDelegate.m; sourceTree = "<group>"; };
+		8BC8BE590EEC525B00F52232 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		8BC8BED80EEC620800F52232 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
 		8BE0FD660D70C115003B3842 /* TasksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksController.h; sourceTree = "<group>"; };
 		8BE0FD670D70C115003B3842 /* TasksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksController.m; sourceTree = "<group>"; };
 		8BE0FD690D70C176003B3842 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				8B66A1430D90F2F700ABDD4E /* TODO.txt */,
 				77C8280B06725ACE000B614F /* KronoX.h */,
 				8BBC1C330DC1317E00685052 /* KronoX.m */,
+				8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */,
 				080E96DDFE201D6D7F000001 /* NSControllers */,
 				8BC89B500E9EA4E100367A46 /* Delegates */,
 				8B88056F0E9C9048003F4846 /* (Sub)Classes */,
@@ -172,11 +177,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */,
+				8BC8BE590EEC525B00F52232 /* Credits.rtf */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				32CA4F630368D1EE00C91783 /* KronoX-prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				8BC8BED80EEC620800F52232 /* COPYING.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -319,6 +325,8 @@
 				8B360B680EA00AB2005CA047 /* KronoX-icon.icns in Resources */,
 				8BE1B2A10EA29A1B00686209 /* Pencil.png in Resources */,
 				8B0586BF0EC044D600D9C0FB /* CheckMark.gif in Resources */,
+				8BC8BE5A0EEC525C00F52232 /* Credits.rtf in Resources */,
+				8BC8BED90EEC620800F52232 /* COPYING.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
