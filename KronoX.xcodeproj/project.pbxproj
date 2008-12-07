@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		770B37ED0679A11B001EADE2 /* KronoX-model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 770B37EC0679A11B001EADE2 /* KronoX-model.xcdatamodel */; };
+		8B02443F0D9E2D95000F7C9F /* PanelExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02443E0D9E2D95000F7C9F /* PanelExtensions.m */; };
+		8B0586BF0EC044D600D9C0FB /* CheckMark.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8B0586BE0EC044D600D9C0FB /* CheckMark.gif */; };
+		8B0702030EBE705E006BF98A /* ExportImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0701FE0EBE705E006BF98A /* ExportImportController.m */; };
+		8B0702040EBE705E006BF98A /* ModalSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0702000EBE705E006BF98A /* ModalSheet.m */; };
+		8B0702050EBE705E006BF98A /* SplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0702020EBE705E006BF98A /* SplitViewDelegate.m */; };
+		8B1F181B0D97D86800427EFA /* DateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F181A0D97D86800427EFA /* DateExtensions.m */; };
+		8B360B640EA00AA1005CA047 /* DisclosureDown.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B610EA00AA1005CA047 /* DisclosureDown.tiff */; };
+		8B360B650EA00AA1005CA047 /* DisclosureRight.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B620EA00AA1005CA047 /* DisclosureRight.tiff */; };
+		8B360B660EA00AA1005CA047 /* DisclosureTransparent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B630EA00AA1005CA047 /* DisclosureTransparent.tiff */; };
+		8B360B680EA00AB2005CA047 /* KronoX-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B670EA00AB2005CA047 /* KronoX-icon.icns */; };
+		8B66A2F80D91CFD300ABDD4E /* KronoX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */; };
+		8B67DB150D96362F00A87B47 /* DateToButtonTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B67DB140D96362F00A87B47 /* DateToButtonTitle.m */; };
+		8B689E4F0DC8A2E9000C966F /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B689E4E0DC8A2E9000C966F /* CalendarStore.framework */; };
+		8B7B86130DCA7B8E00A87979 /* FontSizeToRowHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B86120DCA7B8E00A87979 /* FontSizeToRowHeight.m */; };
+		8B8805720E9C90AA003F4846 /* WorkPeriodDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */; };
+		8B8D2F360DA2B2D4009A4AB8 /* FontSizeToIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */; };
+		8BAE6AC20DA1468400423BA9 /* WorkPeriodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */; };
+		8BB9ED840D7B53EF00E1A813 /* TimeIntervalToDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9ED830D7B53EF00E1A813 /* TimeIntervalToDate.m */; };
+		8BBC1C340DC1317E00685052 /* KronoX.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C330DC1317E00685052 /* KronoX.m */; };
+		8BC89B530E9EA54B00367A46 /* RecordingMenuDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC89B520E9EA54B00367A46 /* RecordingMenuDelegate.m */; };
+		8BE0FD680D70C115003B3842 /* TasksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD670D70C115003B3842 /* TasksController.m */; };
+		8BE0FD6B0D70C176003B3842 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD6A0D70C176003B3842 /* Task.m */; };
+		8BE0FD6E0D70C299003B3842 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD6D0D70C299003B3842 /* WorkPeriod.m */; };
+		8BE1B2A10EA29A1B00686209 /* Pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE1B2A00EA29A1B00686209 /* Pencil.png */; };
+		8BF2DB1E0DA1634800A3CBBF /* UndoExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */; };
+		8BFD8C9C0DA4E8D500F389F4 /* TimeIntervalToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToString.m */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* KronoX-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KronoX-prefix.pch"; sourceTree = "<group>"; };
+		770B37EC0679A11B001EADE2 /* KronoX-model.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model.xcdatamodel"; sourceTree = "<group>"; };
+		77C82804067257F0000B614F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		77C8280B06725ACE000B614F /* KronoX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KronoX.h; sourceTree = "<group>"; };
+		8B02443D0D9E2D95000F7C9F /* PanelExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelExtensions.h; sourceTree = "<group>"; };
+		8B02443E0D9E2D95000F7C9F /* PanelExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelExtensions.m; sourceTree = "<group>"; };
+		8B0586BE0EC044D600D9C0FB /* CheckMark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CheckMark.gif; sourceTree = "<group>"; };
+		8B0701FD0EBE705E006BF98A /* ExportImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportImportController.h; sourceTree = "<group>"; };
+		8B0701FE0EBE705E006BF98A /* ExportImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportImportController.m; sourceTree = "<group>"; };
+		8B0701FF0EBE705E006BF98A /* ModalSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalSheet.h; sourceTree = "<group>"; };
+		8B0702000EBE705E006BF98A /* ModalSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalSheet.m; sourceTree = "<group>"; };
+		8B0702010EBE705E006BF98A /* SplitViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewDelegate.h; sourceTree = "<group>"; };
+		8B0702020EBE705E006BF98A /* SplitViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewDelegate.m; sourceTree = "<group>"; };
+		8B1F18190D97D86800427EFA /* DateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateExtensions.h; sourceTree = "<group>"; };
+		8B1F181A0D97D86800427EFA /* DateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateExtensions.m; sourceTree = "<group>"; };
+		8B360B610EA00AA1005CA047 /* DisclosureDown.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DisclosureDown.tiff; sourceTree = "<group>"; };
+		8B360B620EA00AA1005CA047 /* DisclosureRight.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DisclosureRight.tiff; sourceTree = "<group>"; };
+		8B360B630EA00AA1005CA047 /* DisclosureTransparent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DisclosureTransparent.tiff; sourceTree = "<group>"; };
+		8B360B670EA00AB2005CA047 /* KronoX-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "KronoX-icon.icns"; sourceTree = "<group>"; };
+		8B66A1430D90F2F700ABDD4E /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
+		8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KronoX.xib; sourceTree = "<group>"; };
+		8B67DB130D96362F00A87B47 /* DateToButtonTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateToButtonTitle.h; sourceTree = "<group>"; };
+		8B67DB140D96362F00A87B47 /* DateToButtonTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateToButtonTitle.m; sourceTree = "<group>"; };
+		8B689E4E0DC8A2E9000C966F /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = /System/Library/Frameworks/CalendarStore.framework; sourceTree = "<absolute>"; };
+		8B7B86110DCA7B8E00A87979 /* FontSizeToRowHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSizeToRowHeight.h; sourceTree = "<group>"; };
+		8B7B86120DCA7B8E00A87979 /* FontSizeToRowHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSizeToRowHeight.m; sourceTree = "<group>"; };
+		8B8805700E9C90AA003F4846 /* WorkPeriodDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriodDatePicker.h; sourceTree = "<group>"; };
+		8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriodDatePicker.m; sourceTree = "<group>"; };
+		8B8D2F340DA2B2D4009A4AB8 /* FontSizeToIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSizeToIndex.h; sourceTree = "<group>"; };
+		8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSizeToIndex.m; sourceTree = "<group>"; };
+		8BAE6AC00DA1468400423BA9 /* WorkPeriodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriodController.h; sourceTree = "<group>"; };
+		8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriodController.m; sourceTree = "<group>"; };
+		8BB9ED820D7B53EF00E1A813 /* TimeIntervalToDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToDate.h; sourceTree = "<group>"; };
+		8BB9ED830D7B53EF00E1A813 /* TimeIntervalToDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToDate.m; sourceTree = "<group>"; };
+		8BBC1C330DC1317E00685052 /* KronoX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronoX.m; sourceTree = "<group>"; };
+		8BC89B510E9EA54B00367A46 /* RecordingMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingMenuDelegate.h; sourceTree = "<group>"; };
+		8BC89B520E9EA54B00367A46 /* RecordingMenuDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingMenuDelegate.m; sourceTree = "<group>"; };
+		8BE0FD660D70C115003B3842 /* TasksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksController.h; sourceTree = "<group>"; };
+		8BE0FD670D70C115003B3842 /* TasksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksController.m; sourceTree = "<group>"; };
+		8BE0FD690D70C176003B3842 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		8BE0FD6A0D70C176003B3842 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		8BE0FD6C0D70C299003B3842 /* WorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriod.h; sourceTree = "<group>"; };
+		8BE0FD6D0D70C299003B3842 /* WorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriod.m; sourceTree = "<group>"; };
+		8BE1B2A00EA29A1B00686209 /* Pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pencil.png; sourceTree = "<group>"; };
+		8BF2DB1C0DA1634800A3CBBF /* UndoExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoExtensions.h; sourceTree = "<group>"; };
+		8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoExtensions.m; sourceTree = "<group>"; };
+		8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToString.h; sourceTree = "<group>"; };
+		8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToString.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* KronoX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KronoX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				8B689E4F0DC8A2E9000C966F /* CalendarStore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* NSControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8BE0FD660D70C115003B3842 /* TasksController.h */,
+				8BE0FD670D70C115003B3842 /* TasksController.m */,
+				8BAE6AC00DA1468400423BA9 /* WorkPeriodController.h */,
+				8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */,
+				8B0701FD0EBE705E006BF98A /* ExportImportController.h */,
+				8B0701FE0EBE705E006BF98A /* ExportImportController.m */,
+			);
+			name = NSControllers;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77C82804067257F0000B614F /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* KronoX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* KronoX */ = {
+			isa = PBXGroup;
+			children = (
+				8B66A1430D90F2F700ABDD4E /* TODO.txt */,
+				77C8280B06725ACE000B614F /* KronoX.h */,
+				8BBC1C330DC1317E00685052 /* KronoX.m */,
+				080E96DDFE201D6D7F000001 /* NSControllers */,
+				8BC89B500E9EA4E100367A46 /* Delegates */,
+				8B88056F0E9C9048003F4846 /* (Sub)Classes */,
+				7756732906782D8800D1FEB8 /* Core Data Models */,
+				8BF2DB530DA175A100A3CBBF /* Cocoa Extensions */,
+				8B67DB120D9635FB00A87B47 /* NSTransformers */,
+				8B5629E30EA00E240079AA8D /* Images */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = KronoX;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				32CA4F630368D1EE00C91783 /* KronoX-prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B689E4E0DC8A2E9000C966F /* CalendarStore.framework */,
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7756732906782D8800D1FEB8 /* Core Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				770B37EC0679A11B001EADE2 /* KronoX-model.xcdatamodel */,
+				8BE0FD6C0D70C299003B3842 /* WorkPeriod.h */,
+				8BE0FD6D0D70C299003B3842 /* WorkPeriod.m */,
+				8BE0FD690D70C176003B3842 /* Task.h */,
+				8BE0FD6A0D70C176003B3842 /* Task.m */,
+			);
+			name = "Core Data Models";
+			sourceTree = "<group>";
+		};
+		8B5629E30EA00E240079AA8D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8B360B670EA00AB2005CA047 /* KronoX-icon.icns */,
+				8B360B610EA00AA1005CA047 /* DisclosureDown.tiff */,
+				8B360B620EA00AA1005CA047 /* DisclosureRight.tiff */,
+				8B360B630EA00AA1005CA047 /* DisclosureTransparent.tiff */,
+				8BE1B2A00EA29A1B00686209 /* Pencil.png */,
+				8B0586BE0EC044D600D9C0FB /* CheckMark.gif */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		8B67DB120D9635FB00A87B47 /* NSTransformers */ = {
+			isa = PBXGroup;
+			children = (
+				8BB9ED820D7B53EF00E1A813 /* TimeIntervalToDate.h */,
+				8BB9ED830D7B53EF00E1A813 /* TimeIntervalToDate.m */,
+				8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToString.h */,
+				8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToString.m */,
+				8B67DB130D96362F00A87B47 /* DateToButtonTitle.h */,
+				8B67DB140D96362F00A87B47 /* DateToButtonTitle.m */,
+				8B8D2F340DA2B2D4009A4AB8 /* FontSizeToIndex.h */,
+				8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */,
+				8B7B86110DCA7B8E00A87979 /* FontSizeToRowHeight.h */,
+				8B7B86120DCA7B8E00A87979 /* FontSizeToRowHeight.m */,
+			);
+			name = NSTransformers;
+			sourceTree = "<group>";
+		};
+		8B88056F0E9C9048003F4846 /* (Sub)Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8B0701FF0EBE705E006BF98A /* ModalSheet.h */,
+				8B0702000EBE705E006BF98A /* ModalSheet.m */,
+				8B8805700E9C90AA003F4846 /* WorkPeriodDatePicker.h */,
+				8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */,
+			);
+			name = "(Sub)Classes";
+			sourceTree = "<group>";
+		};
+		8BC89B500E9EA4E100367A46 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8BC89B510E9EA54B00367A46 /* RecordingMenuDelegate.h */,
+				8BC89B520E9EA54B00367A46 /* RecordingMenuDelegate.m */,
+				8B0702010EBE705E006BF98A /* SplitViewDelegate.h */,
+				8B0702020EBE705E006BF98A /* SplitViewDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		8BF2DB530DA175A100A3CBBF /* Cocoa Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8BF2DB1C0DA1634800A3CBBF /* UndoExtensions.h */,
+				8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */,
+				8B1F18190D97D86800427EFA /* DateExtensions.h */,
+				8B1F181A0D97D86800427EFA /* DateExtensions.m */,
+				8B02443D0D9E2D95000F7C9F /* PanelExtensions.h */,
+				8B02443E0D9E2D95000F7C9F /* PanelExtensions.m */,
+			);
+			name = "Cocoa Extensions";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* KronoX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "KronoX" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KronoX;
+			productInstallPath = "$(HOME)/Applications";
+			productName = KronoX;
+			productReference = 8D1107320486CEB800E47090 /* KronoX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "KronoX" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* KronoX */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* KronoX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				8B66A2F80D91CFD300ABDD4E /* KronoX.xib in Resources */,
+				8B360B640EA00AA1005CA047 /* DisclosureDown.tiff in Resources */,
+				8B360B650EA00AA1005CA047 /* DisclosureRight.tiff in Resources */,
+				8B360B660EA00AA1005CA047 /* DisclosureTransparent.tiff in Resources */,
+				8B360B680EA00AB2005CA047 /* KronoX-icon.icns in Resources */,
+				8BE1B2A10EA29A1B00686209 /* Pencil.png in Resources */,
+				8B0586BF0EC044D600D9C0FB /* CheckMark.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				770B37ED0679A11B001EADE2 /* KronoX-model.xcdatamodel in Sources */,
+				8BE0FD680D70C115003B3842 /* TasksController.m in Sources */,
+				8BE0FD6B0D70C176003B3842 /* Task.m in Sources */,
+				8BE0FD6E0D70C299003B3842 /* WorkPeriod.m in Sources */,
+				8BB9ED840D7B53EF00E1A813 /* TimeIntervalToDate.m in Sources */,
+				8B67DB150D96362F00A87B47 /* DateToButtonTitle.m in Sources */,
+				8B1F181B0D97D86800427EFA /* DateExtensions.m in Sources */,
+				8B02443F0D9E2D95000F7C9F /* PanelExtensions.m in Sources */,
+				8BAE6AC20DA1468400423BA9 /* WorkPeriodController.m in Sources */,
+				8BF2DB1E0DA1634800A3CBBF /* UndoExtensions.m in Sources */,
+				8B8D2F360DA2B2D4009A4AB8 /* FontSizeToIndex.m in Sources */,
+				8BFD8C9C0DA4E8D500F389F4 /* TimeIntervalToString.m in Sources */,
+				8BBC1C340DC1317E00685052 /* KronoX.m in Sources */,
+				8B7B86130DCA7B8E00A87979 /* FontSizeToRowHeight.m in Sources */,
+				8B8805720E9C90AA003F4846 /* WorkPeriodDatePicker.m in Sources */,
+				8BC89B530E9EA54B00367A46 /* RecordingMenuDelegate.m in Sources */,
+				8B0702030EBE705E006BF98A /* ExportImportController.m in Sources */,
+				8B0702040EBE705E006BF98A /* ModalSheet.m in Sources */,
+				8B0702050EBE705E006BF98A /* SplitViewDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26FC0A850875C7B200E6366F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KronoX-prefix.pch";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = KronoX;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		26FC0A860875C7B200E6366F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KronoX-prefix.pch";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = KronoX;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		26FC0A890875C7B200E6366F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DDEBUG=1";
+				PREBINDING = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Debug;
+		};
+		26FC0A8A0875C7B200E6366F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "KronoX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FC0A850875C7B200E6366F /* Debug */,
+				26FC0A860875C7B200E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "KronoX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FC0A890875C7B200E6366F /* Debug */,
+				26FC0A8A0875C7B200E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

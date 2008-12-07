@@ -1,0 +1,19 @@
+//
+// Prefix header for all source files of the 'KronoX' target in the 'KronoX' project
+//
+
+#ifdef __OBJC__
+#import <Cocoa/Cocoa.h>
+
+#define PREFS [NSUserDefaults standardUserDefaults]
+
+#define CONCAT(str1,str2) [(str1) stringByAppendingString:(str2)]
+#define PADSTR(str,pad)   [(str) stringByPaddingToLength:(pad) withString:@" " startingAtIndex:0]
+
+#ifdef DEBUG
+#define LOG(...) NSLog([CONCAT(PADSTR([self className], 20), @": ") stringByAppendingFormat: __VA_ARGS__])
+#else
+#define LOG(...)
+#endif
+
+#endif
