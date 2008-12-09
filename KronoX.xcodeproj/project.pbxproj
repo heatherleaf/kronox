@@ -66,7 +66,6 @@
 		8B360B620EA00AA1005CA047 /* DisclosureRight.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DisclosureRight.tiff; sourceTree = "<group>"; };
 		8B360B630EA00AA1005CA047 /* DisclosureTransparent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DisclosureTransparent.tiff; sourceTree = "<group>"; };
 		8B360B670EA00AB2005CA047 /* KronoX-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "KronoX-icon.icns"; sourceTree = "<group>"; };
-		8B66A1430D90F2F700ABDD4E /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KronoX.xib; sourceTree = "<group>"; };
 		8B67DB130D96362F00A87B47 /* DateToButtonTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateToButtonTitle.h; sourceTree = "<group>"; };
 		8B67DB140D96362F00A87B47 /* DateToButtonTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateToButtonTitle.m; sourceTree = "<group>"; };
@@ -156,7 +155,6 @@
 		29B97314FDCFA39411CA2CEA /* KronoX */ = {
 			isa = PBXGroup;
 			children = (
-				8B66A1430D90F2F700ABDD4E /* TODO.txt */,
 				77C8280B06725ACE000B614F /* KronoX.h */,
 				8BBC1C330DC1317E00685052 /* KronoX.m */,
 				8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */,
