@@ -106,9 +106,22 @@
 
 #pragma mark ---- Updating ----
 
+// Bug in Leopard 10.5.6 (Issue #19 in Google Code):
+// After upgrading to 10.5.6, all items on level>=2 get collapsed on [super fetch...]
+// So we have to expand them again after fetching
+
+// Issue #19:
+// we don't allow the user to collapse items
+- (BOOL) outlineView: (NSOutlineView*) outlineView shouldCollapseItem: (id) item {
+	return NO;
+}
+
 - (void) fetch: (id) sender {
 	LOG(@"fetch: %@", [sender className]);
-	[super fetch: sender];
+	// Issue #19:
+	// We have to fetchImmediately instead of fetch, which expands all relevant OutlineViews
+	[self fetchImmediately: sender];
+	// [super fetch: sender];
 	[tasksArrayController fetch: sender];
 	[workPeriodController fetch: sender];
 }
@@ -119,6 +132,11 @@
 	NSError *error;
 	if (![super fetchWithRequest: nil merge: NO error: &error]) 
 		[NSApp presentError: error];
+	// Issue #19:
+	// After fetching we expand all relevant OutlineViews
+	[statisticsView  expandItem: nil expandChildren: YES];
+	[recordingView   expandItem: nil expandChildren: YES];
+	[tasksFilterView expandItem: nil expandChildren: YES];
 }
 
 - (void) reorderTasks {
@@ -161,11 +179,15 @@ NSTreeNode* draggedNode;
 		  writeItems: (NSArray*) items
 		toPasteboard: (NSPasteboard*) pboard 
 {
-	if ([items count] != 1) return NO;
-    [pboard declareTypes: [NSArray arrayWithObject: TaskDragType] owner: self];
-    [pboard setData: [NSData data] forType: TaskDragType];
-	draggedNode = [items objectAtIndex:0];
-    return YES;
+	if ([items count] == 1 &&
+		[[view registeredDraggedTypes] containsObject: TaskDragType]) 
+	{
+		[pboard declareTypes: [NSArray arrayWithObject: TaskDragType] owner: self];
+		[pboard setData: [NSData data] forType: TaskDragType];
+		draggedNode = [items objectAtIndex:0];
+		return YES;
+	}
+	return NO;
 }
 
 // Validating a drop in the outline view.

@@ -32,6 +32,10 @@
 	IBOutlet WorkPeriodController* workPeriodController;
 	IBOutlet NSPanel* workPeriodPanel;
 	IBOutlet NSPanel* taskPanel;
+	
+	IBOutlet NSOutlineView* statisticsView;
+	IBOutlet NSOutlineView* recordingView;
+	IBOutlet NSOutlineView* tasksFilterView;
 }
 
 // Manage work periods
@@ -49,6 +53,7 @@
 - (IBAction) enableAllTasks: (id) sender;
 
 // Updating
+- (BOOL) outlineView: (NSOutlineView*) outlineView shouldCollapseItem: (id) item;
 // - (void) fetch: (id) sender;
 - (void) fetchImmediately: (id) sender;
 - (void) reorderTasks;

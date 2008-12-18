@@ -62,7 +62,7 @@
 	}
 }
 
-- (void) startRecordingTask: (Task*) newTask {	
+- (void) startRecordingTask: (Task*) newTask {
 	if (self.isRecording) {
 		// If already recording this task, don't to anything (i.e., return)
 		if (self.currentWorkPeriod.task == newTask) return;
