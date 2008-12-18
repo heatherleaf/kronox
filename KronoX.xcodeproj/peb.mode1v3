@@ -273,7 +273,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -329,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8BD38C600EFAFD9900D6A5A2</string>
+										<string>8B6B2C840EFB14040063AD7D</string>
 										<key>history</key>
 										<array>
 											<string>8B88063E0E9C9451003F4846</string>
@@ -387,7 +386,7 @@
 											<string>8BD38C4E0EFAEEBB00D6A5A2</string>
 											<string>8BD38C570EFAFD9900D6A5A2</string>
 											<string>8BD38C580EFAFD9900D6A5A2</string>
-											<string>8BD38C590EFAFD9900D6A5A2</string>
+											<string>8BD38C660EFAFF0A00D6A5A2</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -443,30 +442,8 @@
 											<string>8BC8BEB70EEC5EA200F52232</string>
 											<string>8BC8BECA0EEC5EA200F52232</string>
 											<string>8BC8C9A10EEC6D6B00F52232</string>
-											<string>8BD38BBC0EFA959700D6A5A2</string>
-											<string>8BD38BBD0EFA959700D6A5A2</string>
-											<string>8BD38BBE0EFA959700D6A5A2</string>
-											<string>8BD38BBF0EFA959700D6A5A2</string>
-											<string>8BD38BCC0EFADCA900D6A5A2</string>
-											<string>8BD38BD40EFADD2500D6A5A2</string>
-											<string>8BD38BED0EFAE04E00D6A5A2</string>
-											<string>8BD38BEE0EFAE04E00D6A5A2</string>
-											<string>8BD38BEF0EFAE04E00D6A5A2</string>
-											<string>8BD38BF00EFAE04E00D6A5A2</string>
-											<string>8BD38BF90EFAE34500D6A5A2</string>
-											<string>8BD38C0B0EFAE4DB00D6A5A2</string>
-											<string>8BD38C0F0EFAE53300D6A5A2</string>
-											<string>8BD38C170EFAE66300D6A5A2</string>
 											<string>8BD38C410EFAECBE00D6A5A2</string>
-											<string>8BD38C490EFAEE0F00D6A5A2</string>
 											<string>8BD38C4F0EFAEEBB00D6A5A2</string>
-											<string>8BD38C530EFAEED400D6A5A2</string>
-											<string>8BD38C5A0EFAFD9900D6A5A2</string>
-											<string>8BD38C5B0EFAFD9900D6A5A2</string>
-											<string>8BD38C5C0EFAFD9900D6A5A2</string>
-											<string>8BD38C5D0EFAFD9900D6A5A2</string>
-											<string>8BD38C5E0EFAFD9900D6A5A2</string>
-											<string>8BD38C5F0EFAFD9900D6A5A2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -524,9 +501,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>8BD38BA20EFA934600D6A5A2</string>
+				<string>8B6B2C760EFAFFBE0063AD7D</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>8BD38BA30EFA934600D6A5A2</string>
+				<string>8B6B2C770EFAFFBE0063AD7D</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -660,10 +637,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>8BE0FD580D70B8C7003B3842</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/peb/Projekt/KronoX/KronoX.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -683,14 +658,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>WorkPeriodController.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -746,7 +719,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>8BE0FD580D70B8C7003B3842</string>
-				<string>8BD38BA40EFA934600D6A5A2</string>
+				<string>8B6B2C780EFAFFBE0063AD7D</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -866,13 +839,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>8BD38BA50EFA934600D6A5A2</string>
+				<string>8B6B2C790EFAFFBE0063AD7D</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>8BD38BA60EFA934600D6A5A2</string>
-				<string>8BD38BA70EFA934600D6A5A2</string>
-				<string>8BD38BA80EFA934600D6A5A2</string>
-				<string>8BD38BA90EFA934600D6A5A2</string>
-				<string>8BD38BAA0EFA934600D6A5A2</string>
+				<string>8B6B2C7A0EFAFFBE0063AD7D</string>
+				<string>8B6B2C7B0EFAFFBE0063AD7D</string>
+				<string>8B6B2C7C0EFAFFBE0063AD7D</string>
+				<string>8B6B2C7D0EFAFFBE0063AD7D</string>
+				<string>8B6B2C7E0EFAFFBE0063AD7D</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
