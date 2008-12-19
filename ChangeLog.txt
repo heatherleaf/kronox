@@ -1,5 +1,5 @@
 
-Verison 0.91, 2008-12-19
+Version 0.91, 2008-12-19
 
 * A workaround for issue #19: 
   - subtasks are collapsed whenever you start a new recording
