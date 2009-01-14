@@ -9,6 +9,8 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="29"/>
+			<integer value="3512"/>
+			<integer value="447"/>
 			<integer value="2447"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -3225,7 +3227,7 @@
 				<string key="NSWindowContentMaxSize">{326, 9999}</string>
 				<string key="NSWindowContentMinSize">{326, 400}</string>
 				<object class="NSView" key="NSWindowView" id="987830395">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3493,6 +3495,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 									</object>
 									<string key="NSFrame">{{1, 1}, {284, 247}}</string>
 									<reference key="NSSuperview" ref="768754749"/>
+									<reference key="NSNextKeyView" ref="593161866"/>
 									<reference key="NSDocView" ref="593161866"/>
 									<reference key="NSBGColor" ref="625670585"/>
 									<int key="NScvFlags">4</int>
@@ -3519,6 +3522,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 							</object>
 							<string key="NSFrame">{{20, 94}, {286, 249}}</string>
 							<reference key="NSSuperview" ref="987830395"/>
+							<reference key="NSNextKeyView" ref="863125833"/>
 							<int key="NSsFlags">562</int>
 							<reference key="NSVScroller" ref="201283088"/>
 							<reference key="NSHScroller" ref="972877024"/>
@@ -3569,6 +3573,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						</object>
 					</object>
 					<string key="NSFrameSize">{326, 571}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{326, 416}</string>
@@ -3578,22 +3583,22 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 			<object class="NSWindowTemplate" id="96692102">
 				<int key="NSWindowStyleMask">31</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{822, 437}, {292, 249}}</string>
+				<string key="NSWindowRect">{{822, 437}, {313, 249}}</string>
 				<int key="NSWTFlags">-469762048</int>
 				<string key="NSWindowTitle">Edit Work Period</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{292, 400}</string>
-				<string key="NSWindowContentMinSize">{292, 249}</string>
+				<string key="NSWindowContentMaxSize">{313, 400}</string>
+				<string key="NSWindowContentMinSize">{313, 249}</string>
 				<object class="NSView" key="NSWindowView" id="628391673">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSDatePicker" id="120061391">
 							<reference key="NSNextResponder" ref="628391673"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{59, 175}, {69, 27}}</string>
+							<string key="NSFrame">{{59, 175}, {90, 27}}</string>
 							<reference key="NSSuperview" ref="628391673"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSDatePickerCell" key="NSCell" id="81728377">
@@ -3605,6 +3610,29 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 									<string key="NS.format">%Y-%m-%d %H:%M:%S %z</string>
 								</object>
 								<reference key="NSSupport" ref="26"/>
+								<object class="NSDateFormatter" key="NSFormatter" id="239039632">
+									<object class="NSMutableDictionary" key="NS.attributes">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<object class="NSMutableArray" key="dict.sortedKeys">
+											<bool key="EncodedWithXMLCoder">YES</bool>
+											<string>dateFormat</string>
+											<string>dateFormat_10_0</string>
+											<string>dateStyle</string>
+											<string>formatterBehavior</string>
+											<string>timeStyle</string>
+										</object>
+										<object class="NSMutableArray" key="dict.values">
+											<bool key="EncodedWithXMLCoder">YES</bool>
+											<string>HH:mm:ss</string>
+											<string>%m/%d/%y</string>
+											<reference ref="8"/>
+											<reference ref="1303"/>
+											<reference ref="11"/>
+										</object>
+									</object>
+									<string key="NS.format">HH:mm:ss</string>
+									<bool key="NS.natural">NO</bool>
+								</object>
 								<reference key="NSControlView" ref="120061391"/>
 								<double key="NSTimeInterval">0.000000e+00</double>
 								<int key="NSDatePickerElements">14</int>
@@ -3615,7 +3643,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<object class="NSPopUpButton" id="79809173">
 							<reference key="NSNextResponder" ref="628391673"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{56, 208}, {219, 22}}</string>
+							<string key="NSFrame">{{56, 208}, {240, 22}}</string>
 							<reference key="NSSuperview" ref="628391673"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSPopUpButtonCell" key="NSCell" id="909147181">
@@ -3675,7 +3703,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<object class="NSDatePicker" id="464142923">
 							<reference key="NSNextResponder" ref="628391673"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{59, 115}, {69, 27}}</string>
+							<string key="NSFrame">{{59, 115}, {90, 27}}</string>
 							<reference key="NSSuperview" ref="628391673"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSDatePickerCell" key="NSCell" id="811130847">
@@ -3727,7 +3755,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<object class="NSTextField" id="1044197970">
 							<reference key="NSNextResponder" ref="628391673"/>
 							<int key="NSvFlags">276</int>
-							<string key="NSFrame">{{20, 20}, {252, 21}}</string>
+							<string key="NSFrame">{{20, 20}, {273, 21}}</string>
 							<reference key="NSSuperview" ref="628391673"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="781452099">
@@ -3776,7 +3804,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<object class="NSDatePicker" id="354788836">
 							<reference key="NSNextResponder" ref="628391673"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{59, 145}, {69, 27}}</string>
+							<string key="NSFrame">{{59, 145}, {90, 27}}</string>
 							<reference key="NSSuperview" ref="628391673"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSDatePickerCell" key="NSCell" id="873395620">
@@ -3796,7 +3824,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<object class="NSDatePicker" id="148144364">
 							<reference key="NSNextResponder" ref="628391673"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{133, 49}, {139, 148}}</string>
+							<string key="NSFrame">{{154, 49}, {139, 148}}</string>
 							<reference key="NSSuperview" ref="628391673"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSDatePickerCell" key="NSCell" id="949659801">
@@ -3817,11 +3845,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 							</object>
 						</object>
 					</object>
-					<string key="NSFrameSize">{292, 249}</string>
+					<string key="NSFrameSize">{313, 249}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
-				<string key="NSMinSize">{292, 265}</string>
-				<string key="NSMaxSize">{292, 416}</string>
+				<string key="NSMinSize">{313, 265}</string>
+				<string key="NSMaxSize">{313, 416}</string>
 				<string key="NSFrameAutosaveName">EditWorkPeriodPanelSizeAndPosition</string>
 			</object>
 			<object class="NSWindowTemplate" id="291483770">
@@ -4912,6 +4941,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						</object>
 						<string key="NSFrame">{{1, 17}, {487, 135}}</string>
 						<reference key="NSSuperview" ref="871298322"/>
+						<reference key="NSNextKeyView" ref="533847528"/>
 						<reference key="NSDocView" ref="533847528"/>
 						<reference key="NSBGColor" ref="625670585"/>
 						<int key="NScvFlags">4</int>
@@ -4944,6 +4974,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						</object>
 						<string key="NSFrame">{{1, 0}, {487, 17}}</string>
 						<reference key="NSSuperview" ref="871298322"/>
+						<reference key="NSNextKeyView" ref="885882030"/>
 						<reference key="NSDocView" ref="885882030"/>
 						<reference key="NSBGColor" ref="625670585"/>
 						<int key="NScvFlags">4</int>
@@ -4951,6 +4982,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					<reference ref="489086890"/>
 				</object>
 				<string key="NSFrameSize">{489, 153}</string>
+				<reference key="NSNextKeyView" ref="578565692"/>
 				<int key="NSsFlags">562</int>
 				<reference key="NSVScroller" ref="692809874"/>
 				<reference key="NSHScroller" ref="168496655"/>
@@ -8992,16 +9024,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<reference key="object" ref="628391673"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="120061391"/>
 							<reference ref="79809173"/>
 							<reference ref="734987952"/>
-							<reference ref="464142923"/>
 							<reference ref="545431185"/>
 							<reference ref="887051186"/>
 							<reference ref="1044197970"/>
 							<reference ref="495688471"/>
 							<reference ref="233446388"/>
+							<reference ref="464142923"/>
 							<reference ref="354788836"/>
+							<reference ref="120061391"/>
 							<reference ref="148144364"/>
 						</object>
 						<reference key="parent" ref="96692102"/>
@@ -9018,6 +9050,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					<object class="IBObjectRecord">
 						<int key="objectID">452</int>
 						<reference key="object" ref="81728377"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="239039632"/>
+						</object>
 						<reference key="parent" ref="120061391"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -11810,6 +11846,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<reference key="object" ref="242056785"/>
 						<reference key="parent" ref="870143958"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">3624</int>
+						<reference key="object" ref="239039632"/>
+						<reference key="parent" ref="81728377"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -12299,6 +12340,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					<string>3555.IBPluginDependency</string>
 					<string>3594.IBPluginDependency</string>
 					<string>3616.IBPluginDependency</string>
+					<string>3624.IBPluginDependency</string>
 					<string>365.CustomClassName</string>
 					<string>365.notes</string>
 					<string>372.IBEditorWindowLastContentRect</string>
@@ -12874,6 +12916,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>WorkPeriodController</string>
 					<object class="NSAttributedString">
 						<string key="NSString"/>
@@ -12883,15 +12926,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					<object class="NSAttributedString">
 						<string key="NSString"/>
 					</object>
-					<string>{{363, 80}, {292, 249}}</string>
+					<string>{{363, 80}, {313, 249}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{363, 80}, {292, 249}}</string>
+					<string>{{363, 80}, {313, 249}}</string>
 					<reference ref="8"/>
 					<string>{{566, 94}, {275, 249}}</string>
 					<reference ref="9"/>
 					<reference ref="9"/>
-					<string>{292, 400}</string>
-					<string>{292, 249}</string>
+					<string>{313, 400}</string>
+					<string>{313, 249}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -12974,7 +13017,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">3623</int>
+			<int key="maxID">3630</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -29,6 +29,7 @@
 
 - (IBAction) addWorkPeriod: (id) sender { 
 	Task* task = [[self selectedObjects] count] > 0  ?  [[self selectedObjects] objectAtIndex: 0]  :  nil;
+	LOG(@"addWorkPeriod: %@", task.name);
 	[workPeriodController addForTask: task];
 	[workPeriodPanel makeKeyAndOrderFront: sender];
 }
@@ -50,13 +51,15 @@
 
 - (IBAction) addTask: (id) sender {
 	[[self managedObjectContext] beginUndoGroup: @"Add Task"];
+	NSIndexPath* path = [self selectionIndexPath];
+	if (path) path = [path indexPathByAddingIndex:0];
+	else path = [NSIndexPath indexPathWithIndex:0];
 	Task* task = [NSEntityDescription insertNewObjectForEntityForName: @"Task" 
 											   inManagedObjectContext: [self managedObjectContext]];
-	[self insertObject: task
-		  atArrangedObjectIndexPath: [NSIndexPath indexPathWithIndex: 0]];
+	[self insertObject:task atArrangedObjectIndexPath:path];
 	[self reorderTasks];
 	[self.managedObjectContext endUndoGroup];
-	[taskPanel makeKeyAndOrderFront: sender];
+	[taskPanel makeKeyAndOrderFront:sender];
 }
 
 - (IBAction) removeTask: (id) sender {
@@ -108,35 +111,67 @@
 
 // Bug in Leopard 10.5.6 (Issue #19 in Google Code):
 // After upgrading to 10.5.6, all items on level>=2 get collapsed on [super fetch...]
-// So we have to expand them again after fetching
+// The reason is that new NSTreeNodes are created instead of reusing the old ones.
 
-// Issue #19:
-// we don't allow the user to collapse items
-- (BOOL) outlineView: (NSOutlineView*) outlineView shouldCollapseItem: (id) item {
-	return NO;
-}
+// So we have to expand them again after fetching
+// Things are still strange when undoing...
 
 - (void) fetch: (id) sender {
 	LOG(@"fetch: %@", [sender className]);
-	// Issue #19:
-	// We have to fetchImmediately instead of fetch, which expands all relevant OutlineViews
+	// Issue #19: We have to fetchImmediately instead of fetch
 	[self fetchImmediately: sender];
 	// [super fetch: sender];
 	[tasksArrayController fetch: sender];
 	[workPeriodController fetch: sender];
 }
 
+#define RECORDING  (1 << 1)
+#define STATISTICS (1 << 2)
+#define TASKFILTER (1 << 3)
+
+// Issue #19: We remember which items are expanded or not
+- (NSMutableArray*) recordExpandedNodes:(NSArray*)nodes intoArray:(NSMutableArray*)expanded {
+	if (!nodes) nodes = [[self arrangedObjects] childNodes];
+	if (!expanded) expanded = [NSMutableArray array];
+	for (NSTreeNode* node in nodes) {
+		int exp = ([recordingView   isItemExpanded:node] ? RECORDING  : 0)
+		|         ([statisticsView  isItemExpanded:node] ? STATISTICS : 0)
+		|         ([tasksFilterView isItemExpanded:node] ? TASKFILTER : 0);
+		[expanded addObject: [NSNumber numberWithInt:exp]];
+		LOG(@"ADD: %d = %@", exp, [[node representedObject] name]);
+		expanded = [self recordExpandedNodes:[node childNodes] intoArray:expanded];
+	}
+	return expanded;
+}
+
+// Issue #19: And then we reexpand them, if necessary
+- (int) reexpandNodes:(NSArray*)nodes fromArray:(NSArray*)expanded index:(int)ix {
+	if (!nodes) nodes = [[self arrangedObjects] childNodes];
+	for (NSTreeNode* node in nodes) {
+		int exp = ix < [expanded count] ? [[expanded objectAtIndex:ix] intValue] : 0;
+		if (exp & RECORDING)  [recordingView   expandItem:node];
+		if (exp & STATISTICS) [statisticsView  expandItem:node];
+		if (exp & TASKFILTER) [tasksFilterView expandItem:node];
+		LOG(@"EXP: %d = %@", exp, [[node representedObject] name]);
+		ix = [self reexpandNodes:[node childNodes] fromArray:expanded index:ix+1];
+	}
+	return ix;
+}
+
 - (void) fetchImmediately: (id) sender {
 	LOG(@"fetchImmediately: %@", [sender className]);
 	if (![self managedObjectContext]) return;
+	// Issue #19: We remember which items are expanded or not
+	NSArray* expanded = [self recordExpandedNodes:nil intoArray:nil];
+	// Issue #19: And we remember the current selection
+	NSArray* currentSelection = [self selectionIndexPaths];
 	NSError *error;
 	if (![super fetchWithRequest: nil merge: NO error: &error]) 
 		[NSApp presentError: error];
-	// Issue #19:
-	// After fetching we expand all relevant OutlineViews
-	[statisticsView  expandItem: nil expandChildren: YES];
-	[recordingView   expandItem: nil expandChildren: YES];
-	[tasksFilterView expandItem: nil expandChildren: YES];
+	// Issue #19: And then we reexpand them, if necessary
+	[self reexpandNodes:nil fromArray:expanded index:0];
+	// Issue #19: Finally we reselect the items
+	[self setSelectionIndexPaths: currentSelection];
 }
 
 - (void) reorderTasks {
@@ -152,14 +187,6 @@
 	}
 	return ix;
 }
-
-//- (IBAction) updateTotalDuration: (id) sender {
-//	NSTimeInterval duration = 0;
-//	for (NSTreeNode* node in [[self arrangedObjects] childNodes]) 
-//		duration += [[node representedObject] totalDurationIncludingSubtasks];
-//	LOG(@"updateTotalDuration => %0.1f min", duration/60);
-//	self.totalDuration = duration;
-//}
 
 
 #pragma mark ---- Drag and drop ----
@@ -184,7 +211,7 @@ NSTreeNode* draggedNode;
 	{
 		[pboard declareTypes: [NSArray arrayWithObject: TaskDragType] owner: self];
 		[pboard setData: [NSData data] forType: TaskDragType];
-		draggedNode = [items objectAtIndex:0];
+		draggedNode = [items objectAtIndex: 0];
 		return YES;
 	}
 	return NO;
@@ -218,9 +245,13 @@ NSTreeNode* draggedNode;
 	} else {
 		newIndexPath = [[item indexPath] indexPathByAddingIndex: index];
 	}
-    // Use the tree controller to move the node... 
+	// Issue #19: Remember the expanded items in the current drag
+	NSArray* expanded = [self recordExpandedNodes:[NSArray arrayWithObject:draggedNode] intoArray:nil];
+    // Use the tree controller to move the node
     [self moveNode: draggedNode toIndexPath: newIndexPath];
-	// ... but we have to reorder the nodes ourselves
+	// Issue #19: Then we reexpand the dragged node with sub-items
+	[self reexpandNodes:[NSArray arrayWithObject:draggedNode] fromArray:expanded index:0];
+	// Finally reorder the nodes before fetching
 	[self reorderTasks];
 	[self.managedObjectContext endUndoGroup];
 	[self fetch: nil];

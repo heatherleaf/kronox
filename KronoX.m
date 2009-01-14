@@ -290,13 +290,10 @@
 	[self applyPreferences: nil];
 	[workPeriodController stopRecording: nil];
 
-	// Issue #19:
-	// We don't need to call this here, as long as this is done on each 
-	// call to [tasksController fetch]
-	//	[tasksController fetchImmediately: nil];
-	//	[statisticsView  expandItem: nil expandChildren: YES];
-	//	[recordingView   expandItem: nil expandChildren: YES];
-	//	[tasksFilterView expandItem: nil expandChildren: YES];
+	[tasksController fetchImmediately: nil];
+	[statisticsView  expandItem: nil expandChildren: YES];
+	[recordingView   expandItem: nil expandChildren: YES];
+	[tasksFilterView expandItem: nil expandChildren: YES];
 	
 	[self changeContentView: nil];
 	[self changeViewPeriodSpan: nil];

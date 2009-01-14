@@ -53,7 +53,6 @@
 - (IBAction) enableAllTasks: (id) sender;
 
 // Updating
-- (BOOL) outlineView: (NSOutlineView*) outlineView shouldCollapseItem: (id) item;
 // - (void) fetch: (id) sender;
 - (void) fetchImmediately: (id) sender;
 - (void) reorderTasks;
