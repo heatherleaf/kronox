@@ -1,4 +1,9 @@
 
+Version 0.92, 2009-01-14
+
+* A better fix for issue #19 (also solving issue #21, issue #23)
+* When adding new tasks, they become sub-tasks to the current selection
+
 Version 0.91, 2008-12-19
 
 * A workaround for issue #19: 

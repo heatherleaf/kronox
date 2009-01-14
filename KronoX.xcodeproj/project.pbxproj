@@ -25,6 +25,7 @@
 		8B8805720E9C90AA003F4846 /* WorkPeriodDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */; };
 		8B8D2F360DA2B2D4009A4AB8 /* FontSizeToIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */; };
 		8BAE6AC20DA1468400423BA9 /* WorkPeriodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */; };
+		8BAF02F20F1E08E100720336 /* ChangeLog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF02F10F1E08E100720336 /* ChangeLog.txt */; };
 		8BB9ED840D7B53EF00E1A813 /* TimeIntervalToDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9ED830D7B53EF00E1A813 /* TimeIntervalToDate.m */; };
 		8BBC1C340DC1317E00685052 /* KronoX.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C330DC1317E00685052 /* KronoX.m */; };
 		8BC89B530E9EA54B00367A46 /* RecordingMenuDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC89B520E9EA54B00367A46 /* RecordingMenuDelegate.m */; };
@@ -78,6 +79,7 @@
 		8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSizeToIndex.m; sourceTree = "<group>"; };
 		8BAE6AC00DA1468400423BA9 /* WorkPeriodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriodController.h; sourceTree = "<group>"; };
 		8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriodController.m; sourceTree = "<group>"; };
+		8BAF02F10F1E08E100720336 /* ChangeLog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog.txt; sourceTree = "<group>"; };
 		8BB9ED820D7B53EF00E1A813 /* TimeIntervalToDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToDate.h; sourceTree = "<group>"; };
 		8BB9ED830D7B53EF00E1A813 /* TimeIntervalToDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToDate.m; sourceTree = "<group>"; };
 		8BBC1C330DC1317E00685052 /* KronoX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronoX.m; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		29B97314FDCFA39411CA2CEA /* KronoX */ = {
 			isa = PBXGroup;
 			children = (
+				8BAF02F10F1E08E100720336 /* ChangeLog.txt */,
 				77C8280B06725ACE000B614F /* KronoX.h */,
 				8BBC1C330DC1317E00685052 /* KronoX.m */,
 				8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */,
@@ -325,6 +328,7 @@
 				8B0586BF0EC044D600D9C0FB /* CheckMark.gif in Resources */,
 				8BC8BE5A0EEC525C00F52232 /* Credits.rtf in Resources */,
 				8BC8BED90EEC620800F52232 /* COPYING.txt in Resources */,
+				8BAF02F20F1E08E100720336 /* ChangeLog.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
