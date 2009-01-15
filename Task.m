@@ -30,6 +30,7 @@
 @dynamic order;
 @dynamic name;
 @dynamic enabled;
+@dynamic expanded;
 @dynamic appearance;
 @dynamic children;
 @dynamic parent;

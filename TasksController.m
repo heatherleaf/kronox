@@ -107,71 +107,75 @@
 	[self fetch: sender];
 }
 
+
+#pragma mark ---- Expanded tasks ----
+
+- (void) reexpandTree:(NSTreeNode*)node {
+	if (node == nil) {
+		node = [self arrangedObjects];
+	} else if (![node isLeaf]) {
+		Task* task = [node representedObject];
+		BOOL expanded = [task.expanded boolValue];
+		[self expandOrCollapseItem:node expanded:expanded];
+	}
+	for (NSTreeNode* child in [node childNodes]) {
+		[self reexpandTree:child];
+	}
+}
+
+- (void) expandOrCollapseItem:(id)item expanded:(BOOL)expanded {
+	[self expandOrCollapseItem:item expanded:expanded outlineView:recordingView];
+	[self expandOrCollapseItem:item expanded:expanded outlineView:statisticsView];
+	[self expandOrCollapseItem:item expanded:expanded outlineView:tasksFilterView];
+}
+
+- (void) expandOrCollapseItem:(id)item expanded:(BOOL)expanded outlineView:(NSOutlineView*)view {
+	if (expanded != [view isItemExpanded:item]) {
+		if (expanded) [view expandItem:item];
+		else [view collapseItem:item];
+	}
+}
+
+- (void) outlineViewItemDidExpandOrCollapse:(NSNotification*)notification expanded:(BOOL)expanded {
+	NSTreeNode* node = [[notification userInfo] valueForKey: @"NSObject"];
+	Task* task = [node representedObject];
+	task.expanded = [NSNumber numberWithBool:expanded];
+	[self expandOrCollapseItem:node expanded:expanded];
+}
+
+- (void) outlineViewItemDidExpand:(NSNotification*)notification {
+	[self outlineViewItemDidExpandOrCollapse:notification expanded:YES];
+}
+
+- (void) outlineViewItemDidCollapse:(NSNotification*)notification {
+	[self outlineViewItemDidExpandOrCollapse:notification expanded:NO];
+}
+
+
 #pragma mark ---- Updating ----
 
 // Bug in Leopard 10.5.6 (Issue #19 in Google Code):
 // After upgrading to 10.5.6, all items on level>=2 get collapsed on [super fetch...]
 // The reason is that new NSTreeNodes are created instead of reusing the old ones.
 
-// So we have to expand them again after fetching
-// Things are still strange when undoing...
+// This is solved by adding a Task attribute "expanded", which has the additional 
+// advantage that expanded/collapsed tasks are remembered between sessions
 
 - (void) fetch: (id) sender {
 	LOG(@"fetch: %@", [sender className]);
 	// Issue #19: We have to fetchImmediately instead of fetch
 	[self fetchImmediately: sender];
-	// [super fetch: sender];
 	[tasksArrayController fetch: sender];
 	[workPeriodController fetch: sender];
-}
-
-#define RECORDING  (1 << 1)
-#define STATISTICS (1 << 2)
-#define TASKFILTER (1 << 3)
-
-// Issue #19: We remember which items are expanded or not
-- (NSMutableArray*) recordExpandedNodes:(NSArray*)nodes intoArray:(NSMutableArray*)expanded {
-	if (!nodes) nodes = [[self arrangedObjects] childNodes];
-	if (!expanded) expanded = [NSMutableArray array];
-	for (NSTreeNode* node in nodes) {
-		int exp = ([recordingView   isItemExpanded:node] ? RECORDING  : 0)
-		|         ([statisticsView  isItemExpanded:node] ? STATISTICS : 0)
-		|         ([tasksFilterView isItemExpanded:node] ? TASKFILTER : 0);
-		[expanded addObject: [NSNumber numberWithInt:exp]];
-		LOG(@"ADD: %d = %@", exp, [[node representedObject] name]);
-		expanded = [self recordExpandedNodes:[node childNodes] intoArray:expanded];
-	}
-	return expanded;
-}
-
-// Issue #19: And then we reexpand them, if necessary
-- (int) reexpandNodes:(NSArray*)nodes fromArray:(NSArray*)expanded index:(int)ix {
-	if (!nodes) nodes = [[self arrangedObjects] childNodes];
-	for (NSTreeNode* node in nodes) {
-		int exp = ix < [expanded count] ? [[expanded objectAtIndex:ix] intValue] : 0;
-		if (exp & RECORDING)  [recordingView   expandItem:node];
-		if (exp & STATISTICS) [statisticsView  expandItem:node];
-		if (exp & TASKFILTER) [tasksFilterView expandItem:node];
-		LOG(@"EXP: %d = %@", exp, [[node representedObject] name]);
-		ix = [self reexpandNodes:[node childNodes] fromArray:expanded index:ix+1];
-	}
-	return ix;
 }
 
 - (void) fetchImmediately: (id) sender {
 	LOG(@"fetchImmediately: %@", [sender className]);
 	if (![self managedObjectContext]) return;
-	// Issue #19: We remember which items are expanded or not
-	NSArray* expanded = [self recordExpandedNodes:nil intoArray:nil];
-	// Issue #19: And we remember the current selection
-	NSArray* currentSelection = [self selectionIndexPaths];
 	NSError *error;
 	if (![super fetchWithRequest: nil merge: NO error: &error]) 
 		[NSApp presentError: error];
-	// Issue #19: And then we reexpand them, if necessary
-	[self reexpandNodes:nil fromArray:expanded index:0];
-	// Issue #19: Finally we reselect the items
-	[self setSelectionIndexPaths: currentSelection];
+	[self reexpandTree:nil];
 }
 
 - (void) reorderTasks {
@@ -245,12 +249,8 @@ NSTreeNode* draggedNode;
 	} else {
 		newIndexPath = [[item indexPath] indexPathByAddingIndex: index];
 	}
-	// Issue #19: Remember the expanded items in the current drag
-	NSArray* expanded = [self recordExpandedNodes:[NSArray arrayWithObject:draggedNode] intoArray:nil];
     // Use the tree controller to move the node
     [self moveNode: draggedNode toIndexPath: newIndexPath];
-	// Issue #19: Then we reexpand the dragged node with sub-items
-	[self reexpandNodes:[NSArray arrayWithObject:draggedNode] fromArray:expanded index:0];
 	// Finally reorder the nodes before fetching
 	[self reorderTasks];
 	[self.managedObjectContext endUndoGroup];

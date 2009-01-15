@@ -31,6 +31,7 @@
 @property (retain) NSNumber* order;
 @property (retain) NSString* name;
 @property (retain) NSNumber* enabled;
+@property (retain) NSNumber* expanded;
 @property (retain) NSString* appearance;
 @property (retain) NSSet* children;
 @property (retain) Task* parent;

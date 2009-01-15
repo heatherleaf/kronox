@@ -27,6 +27,8 @@
 
 #define APPLICATION_NAME @"KronoX"
 
+#define MODELFILE @"KronoX-model.momd"
+
 #ifdef DEBUG
 #define DATABASEFILE @"KronoX-debug-data.sql"
 #else
@@ -290,11 +292,6 @@
 	[self applyPreferences: nil];
 	[workPeriodController stopRecording: nil];
 
-	[tasksController fetchImmediately: nil];
-	[statisticsView  expandItem: nil expandChildren: YES];
-	[recordingView   expandItem: nil expandChildren: YES];
-	[tasksFilterView expandItem: nil expandChildren: YES];
-	
 	[self changeContentView: nil];
 	[self changeViewPeriodSpan: nil];
 	[self changeViewPeriodDate: nil];
@@ -386,8 +383,9 @@
 - (NSManagedObjectModel*) managedObjectModel {
 	LOG(@"managedObjectModel");
     if (managedObjectModel == nil) {
-		// When using Data Model Versioning, we can't simply mergeModelFromBundles:
-		managedObjectModel = [NSManagedObjectModel mergedModelFromBundles: nil];
+		NSString* path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: MODELFILE];
+		LOG(@"Path to managedObjectModel: %@", path);
+		managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]];
 	}
     return managedObjectModel;
 }
@@ -401,11 +399,13 @@
 			[fileManager createDirectoryAtPath: applicationSupportFolder attributes: nil];
 		NSURL* url = [NSURL fileURLWithPath: [applicationSupportFolder stringByAppendingPathComponent: DATABASEFILE]];
 		persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
+		NSDictionary *optionsDictionary = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] 
+																	  forKey:NSMigratePersistentStoresAutomaticallyOption]; 		
 		NSError* error;
 		NSPersistentStore* store = [persistentStoreCoordinator addPersistentStoreWithType: NSSQLiteStoreType
 																			configuration: nil
 																					  URL: url
-																				  options: nil
+																				  options: optionsDictionary
 																					error: &error];
 		if (store == nil) [NSApp presentError: error];
 	}

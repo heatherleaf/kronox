@@ -52,6 +52,14 @@
 - (IBAction) enableSelectedTasks: (id) sender;
 - (IBAction) enableAllTasks: (id) sender;
 
+// Expanded tasks
+- (void) reexpandTree:(NSTreeNode*)node;
+- (void) expandOrCollapseItem:(id)item expanded:(BOOL)expanded;
+- (void) expandOrCollapseItem:(id)item expanded:(BOOL)expanded outlineView:(NSOutlineView*)view;
+- (void) outlineViewItemDidExpandOrCollapse:(NSNotification*)notification expanded:(BOOL)expanded;
+- (void) outlineViewItemDidExpand:(NSNotification*)notification;
+- (void) outlineViewItemDidCollapse:(NSNotification*)notification;
+
 // Updating
 // - (void) fetch: (id) sender;
 - (void) fetchImmediately: (id) sender;
