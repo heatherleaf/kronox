@@ -4,6 +4,7 @@ Version 0.93, 2009-01-16
 * (Fix, issues 19, 21, 23) An even better fix for issues 19, 21, 23
   - KronoX now also remembers expanded/collapsed tasks between startups
 * (Fix, issue 24) Edit workperiod panel now works for 12h time format
+* (Fix, issue 20) Added a new Total-% column to the statistics view
 * Minor visal changes to the workperiod view and the statistics view
 
 Version 0.92, 2009-01-14
