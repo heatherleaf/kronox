@@ -1,5 +1,5 @@
 //
-//  TimeIntervalToString.m
+//  TimeIntervalToStatistics.h
 //  KronoX
 //
 //  Created by Peter Ljunglöf on 2008-04-03.
@@ -21,32 +21,8 @@
  along with KronoX.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "TimeIntervalToString.h"
+#import <Cocoa/Cocoa.h>
 
-@implementation TimeIntervalToString
-
-+ (Class) transformedValueClass { 
-	return [NSString class]; 
-}
-
-+ (BOOL) allowsReverseTransformation { 
-	return NO; 
-}
-
-- (NSString*) transformedValue: (NSNumber*) time {
-	if (time == nil) return nil;
-	if (![time intValue]) return nil;
-	NSString* interval;
-	int minutes = ([time intValue] + 30) / 60;
-	switch ([PREFS integerForKey: @"durationAppearance"]) {
-		case 0:
-			interval = [NSString stringWithFormat: @"%02d:%02d", minutes/60, minutes%60];
-			break;
-		case 1:
-			interval = [NSString stringWithFormat: @"%.1fh", (float)minutes/60];
-			break;
-	}
-	return interval;
-}
+@interface TimeIntervalToStatistics : NSValueTransformer
 
 @end

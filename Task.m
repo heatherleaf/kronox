@@ -65,8 +65,8 @@
 	return color;
 }
 
-@dynamic totalDuration; 
-- (NSTimeInterval) totalDuration {
+@dynamic duration; 
+- (NSTimeInterval) duration {
 	// if (! [self.enabled boolValue]) return 0;
 	NSPredicate* pred = [[NSApp delegate] performSelector:@selector(viewPeriodPredicate)];
 	if (!pred) return 0;
@@ -76,12 +76,20 @@
 	return dur;
 }
 
-@dynamic totalDurationIncludingSubtasks;
-- (NSTimeInterval) totalDurationIncludingSubtasks {
+@dynamic totalDuration;
+- (NSTimeInterval) totalDuration {
 	NSTimeInterval dur = 0;
 	for (Task* child in self.children) 
-		dur += child.totalDurationIncludingSubtasks;
-	return dur + self.totalDuration;
+		dur += child.totalDuration;
+	return dur + self.duration;
+}
+
+@dynamic durationPercent;
+- (NSNumber*) durationPercent {
+	NSTimeInterval totalTotal = [[[NSApp delegate] performSelector:@selector(totalDurationOfWorkPeriods)] doubleValue];
+	if (totalTotal && self.duration) 
+		return [NSNumber numberWithDouble: self.duration / totalTotal];
+	return nil;
 }
 
 @dynamic totalDurationPercent;

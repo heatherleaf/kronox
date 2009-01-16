@@ -1,15 +1,22 @@
 
+Version 0.93, 2009-01-16
+
+* (Fix, issues 19, 21, 23) An even better fix for issues 19, 21, 23
+  - KronoX now also remembers expanded/collapsed tasks between startups
+* (Fix, issue 24) Edit workperiod panel now works for 12h time format
+* Minor visal changes to the workperiod view and the statistics view
+
 Version 0.92, 2009-01-14
 
-* A better fix for issue #19 (also solving issue #21, issue #23)
-* When adding new tasks, they become sub-tasks to the current selection
+* (Fix, issues 19, 21, 23) A better fix for issue 19 (also solving issues 21, 23)
+* When adding a new task, it becomes a sub-task to the current selection
 
 Version 0.91, 2008-12-19
 
-* A workaround for issue #19: 
+* (Fix, issue 19) A workaround for issue 19: 
   - subtasks are collapsed whenever you start a new recording
   - this bug was introduced in Leopard 10.5.6, I don't know how it works
-* The fix introduced a new bug, issue #21:
+* (New bug, issue 21) The fix introduced a new bug, issue 21:
   - the task list is always fully expanded - cannot be collapsed at all
 
 Version 0.9, 2008-12-07

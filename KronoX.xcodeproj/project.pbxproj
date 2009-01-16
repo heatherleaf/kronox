@@ -12,6 +12,7 @@
 		8B0702030EBE705E006BF98A /* ExportImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0701FE0EBE705E006BF98A /* ExportImportController.m */; };
 		8B0702040EBE705E006BF98A /* ModalSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0702000EBE705E006BF98A /* ModalSheet.m */; };
 		8B0702050EBE705E006BF98A /* SplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0702020EBE705E006BF98A /* SplitViewDelegate.m */; };
+		8B083B810F2091A400689F95 /* TimeIntervalToNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B083B800F2091A400689F95 /* TimeIntervalToNumber.m */; };
 		8B1F181B0D97D86800427EFA /* DateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F181A0D97D86800427EFA /* DateExtensions.m */; };
 		8B360B640EA00AA1005CA047 /* DisclosureDown.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B610EA00AA1005CA047 /* DisclosureDown.tiff */; };
 		8B360B650EA00AA1005CA047 /* DisclosureRight.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B620EA00AA1005CA047 /* DisclosureRight.tiff */; };
@@ -37,7 +38,7 @@
 		8BE0FD6E0D70C299003B3842 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD6D0D70C299003B3842 /* WorkPeriod.m */; };
 		8BE1B2A10EA29A1B00686209 /* Pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE1B2A00EA29A1B00686209 /* Pencil.png */; };
 		8BF2DB1E0DA1634800A3CBBF /* UndoExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */; };
-		8BFD8C9C0DA4E8D500F389F4 /* TimeIntervalToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToString.m */; };
+		8BFD8C9C0DA4E8D500F389F4 /* TimeIntervalToStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -62,6 +63,8 @@
 		8B0702000EBE705E006BF98A /* ModalSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalSheet.m; sourceTree = "<group>"; };
 		8B0702010EBE705E006BF98A /* SplitViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewDelegate.h; sourceTree = "<group>"; };
 		8B0702020EBE705E006BF98A /* SplitViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewDelegate.m; sourceTree = "<group>"; };
+		8B083B7F0F2091A400689F95 /* TimeIntervalToNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToNumber.h; sourceTree = "<group>"; };
+		8B083B800F2091A400689F95 /* TimeIntervalToNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToNumber.m; sourceTree = "<group>"; };
 		8B1F18190D97D86800427EFA /* DateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateExtensions.h; sourceTree = "<group>"; };
 		8B1F181A0D97D86800427EFA /* DateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateExtensions.m; sourceTree = "<group>"; };
 		8B360B610EA00AA1005CA047 /* DisclosureDown.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DisclosureDown.tiff; sourceTree = "<group>"; };
@@ -99,8 +102,8 @@
 		8BE1B2A00EA29A1B00686209 /* Pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pencil.png; sourceTree = "<group>"; };
 		8BF2DB1C0DA1634800A3CBBF /* UndoExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoExtensions.h; sourceTree = "<group>"; };
 		8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoExtensions.m; sourceTree = "<group>"; };
-		8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToString.h; sourceTree = "<group>"; };
-		8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToString.m; sourceTree = "<group>"; };
+		8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToStatistics.h; sourceTree = "<group>"; };
+		8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToStatistics.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* KronoX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KronoX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -231,8 +234,10 @@
 			children = (
 				8BB9ED820D7B53EF00E1A813 /* TimeIntervalToDate.h */,
 				8BB9ED830D7B53EF00E1A813 /* TimeIntervalToDate.m */,
-				8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToString.h */,
-				8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToString.m */,
+				8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToStatistics.h */,
+				8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */,
+				8B083B7F0F2091A400689F95 /* TimeIntervalToNumber.h */,
+				8B083B800F2091A400689F95 /* TimeIntervalToNumber.m */,
 				8B67DB130D96362F00A87B47 /* DateToButtonTitle.h */,
 				8B67DB140D96362F00A87B47 /* DateToButtonTitle.m */,
 				8B8D2F340DA2B2D4009A4AB8 /* FontSizeToIndex.h */,
@@ -354,7 +359,7 @@
 				8BAE6AC20DA1468400423BA9 /* WorkPeriodController.m in Sources */,
 				8BF2DB1E0DA1634800A3CBBF /* UndoExtensions.m in Sources */,
 				8B8D2F360DA2B2D4009A4AB8 /* FontSizeToIndex.m in Sources */,
-				8BFD8C9C0DA4E8D500F389F4 /* TimeIntervalToString.m in Sources */,
+				8BFD8C9C0DA4E8D500F389F4 /* TimeIntervalToStatistics.m in Sources */,
 				8BBC1C340DC1317E00685052 /* KronoX.m in Sources */,
 				8B7B86130DCA7B8E00A87979 /* FontSizeToRowHeight.m in Sources */,
 				8B8805720E9C90AA003F4846 /* WorkPeriodDatePicker.m in Sources */,
@@ -363,6 +368,7 @@
 				8B0702040EBE705E006BF98A /* ModalSheet.m in Sources */,
 				8B0702050EBE705E006BF98A /* SplitViewDelegate.m in Sources */,
 				8BB5616E0F1F8E2900953794 /* KronoX-model-v2.xcmappingmodel in Sources */,
+				8B083B810F2091A400689F95 /* TimeIntervalToNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

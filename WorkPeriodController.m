@@ -22,7 +22,6 @@
  */
 
 #import "WorkPeriodController.h"
-#import "TimeIntervalToString.h"
 
 @implementation WorkPeriodController
 

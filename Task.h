@@ -41,8 +41,9 @@
 @property (readonly) NSString* longName;
 @property (readonly) NSString* startRecordingName;
 @property (readonly) NSColor* color;
+@property (readonly) NSTimeInterval duration;
 @property (readonly) NSTimeInterval totalDuration;
-@property (readonly) NSTimeInterval totalDurationIncludingSubtasks;
+@property (readonly) NSNumber* durationPercent;
 @property (readonly) NSNumber* totalDurationPercent;
 @property (readonly) BOOL allParentsAreEnabled;
 

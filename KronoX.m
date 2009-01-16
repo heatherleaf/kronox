@@ -251,7 +251,9 @@
 - (IBAction) applyPreferences: (id) sender {
 	LOG(@"applyPreferences: %@", [sender className]);
 	self.taskColorListKeys = [[Task taskColorList] allKeys];
-	[commentColumn setHidden: [PREFS boolForKey: @"hideCommentColumn"]];
+	[commentColumn setHidden: [PREFS boolForKey:@"hideCommentColumn"]];
+	[statisticsView setUsesAlternatingRowBackgroundColors: [PREFS boolForKey:@"viewAlternatingRows"]];
+	[workPeriodView setUsesAlternatingRowBackgroundColors: [PREFS boolForKey:@"viewAlternatingRows"]];
 	[tasksController fetch: sender];
 }
 
@@ -265,6 +267,7 @@
 									 [NSNumber numberWithInt:   3], @"dateChangeHour",
 									 [NSNumber numberWithInt:   0], @"durationAppearance",
 									 [NSNumber numberWithBool: NO], @"hideCommentColumn",
+									 [NSNumber numberWithBool: NO], @"viewAlternatingRows",
 									 [NSNumber numberWithInt:   0], @"statusItemSymbolIndex",
 									 [NSNumber numberWithBool: NO], @"statusItemAnimated",
 									 [NSNumber numberWithBool: NO], @"statusItemForegroundColorEnabled",
