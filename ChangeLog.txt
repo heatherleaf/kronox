@@ -1,4 +1,8 @@
 
+Version 0.94, 2009-01-18
+
+* (Fix, issue 7) Added automatic updating through the Sparkle Framework
+
 Version 0.93, 2009-01-16
 
 * (Fix, issues 19, 21, 23) An even better fix for issues 19, 21, 23

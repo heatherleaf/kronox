@@ -54,7 +54,8 @@ system("python googlecode_upload.py " .
   ==0 or die "Uploading failed";
 
 print "\n--> Creating SVN tag kronox-$new\n";
-system("svn cp . https://kronox.googlecode.com/svn/tags/kronox-$new " .
+system("svn cp https://kronox.googlecode.com/svn/trunk " .
+       "https://kronox.googlecode.com/svn/tags/kronox-$new " .
        "--username $user")
   ==0 or die "Failed to create SVN tag";
 

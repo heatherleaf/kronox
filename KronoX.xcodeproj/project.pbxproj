@@ -6,6 +6,21 @@
 	objectVersion = 44;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		8B9CA4270F22A0A70005A79F /* Distribution */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8B9CA42D0F22A0A90005A79F /* Build configuration list for PBXAggregateTarget "Distribution" */;
+			buildPhases = (
+				8B9CA4260F22A0A70005A79F /* ShellScript */,
+			);
+			dependencies = (
+				8B9CA42F0F22A0F60005A79F /* PBXTargetDependency */,
+			);
+			name = Distribution;
+			productName = Distribution;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		8B02443F0D9E2D95000F7C9F /* PanelExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02443E0D9E2D95000F7C9F /* PanelExtensions.m */; };
 		8B0586BF0EC044D600D9C0FB /* CheckMark.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8B0586BE0EC044D600D9C0FB /* CheckMark.gif */; };
@@ -13,6 +28,8 @@
 		8B0702040EBE705E006BF98A /* ModalSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0702000EBE705E006BF98A /* ModalSheet.m */; };
 		8B0702050EBE705E006BF98A /* SplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0702020EBE705E006BF98A /* SplitViewDelegate.m */; };
 		8B083B810F2091A400689F95 /* TimeIntervalToNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B083B800F2091A400689F95 /* TimeIntervalToNumber.m */; };
+		8B0F325D0F21BA83002FD8A6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0F325C0F21BA83002FD8A6 /* Sparkle.framework */; };
+		8B0F327D0F21BB25002FD8A6 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8B0F325C0F21BA83002FD8A6 /* Sparkle.framework */; };
 		8B1F181B0D97D86800427EFA /* DateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F181A0D97D86800427EFA /* DateExtensions.m */; };
 		8B360B640EA00AA1005CA047 /* DisclosureDown.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B610EA00AA1005CA047 /* DisclosureDown.tiff */; };
 		8B360B650EA00AA1005CA047 /* DisclosureRight.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B620EA00AA1005CA047 /* DisclosureRight.tiff */; };
@@ -24,6 +41,8 @@
 		8B7B86130DCA7B8E00A87979 /* FontSizeToRowHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B86120DCA7B8E00A87979 /* FontSizeToRowHeight.m */; };
 		8B8805720E9C90AA003F4846 /* WorkPeriodDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */; };
 		8B8D2F360DA2B2D4009A4AB8 /* FontSizeToIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */; };
+		8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CA4190F229D350005A79F /* dsa_pub.pem */; };
+		8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */; };
 		8BAE6AC20DA1468400423BA9 /* WorkPeriodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */; };
 		8BAF02F20F1E08E100720336 /* ChangeLog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF02F10F1E08E100720336 /* ChangeLog.txt */; };
 		8BB5616A0F1F8D6400953794 /* KronoX-model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BB561690F1F8D6400953794 /* KronoX-model.xcdatamodeld */; };
@@ -43,6 +62,29 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B9CA42E0F22A0F60005A79F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D1107260486CEB800E47090 /* KronoX */;
+			remoteInfo = KronoX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B0F327B0F21BAEB002FD8A6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B0F327D0F21BB25002FD8A6 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -65,6 +107,7 @@
 		8B0702020EBE705E006BF98A /* SplitViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewDelegate.m; sourceTree = "<group>"; };
 		8B083B7F0F2091A400689F95 /* TimeIntervalToNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToNumber.h; sourceTree = "<group>"; };
 		8B083B800F2091A400689F95 /* TimeIntervalToNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToNumber.m; sourceTree = "<group>"; };
+		8B0F325C0F21BA83002FD8A6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		8B1F18190D97D86800427EFA /* DateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateExtensions.h; sourceTree = "<group>"; };
 		8B1F181A0D97D86800427EFA /* DateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateExtensions.m; sourceTree = "<group>"; };
 		8B360B610EA00AA1005CA047 /* DisclosureDown.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DisclosureDown.tiff; sourceTree = "<group>"; };
@@ -81,6 +124,8 @@
 		8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriodDatePicker.m; sourceTree = "<group>"; };
 		8B8D2F340DA2B2D4009A4AB8 /* FontSizeToIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSizeToIndex.h; sourceTree = "<group>"; };
 		8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSizeToIndex.m; sourceTree = "<group>"; };
+		8B9CA4190F229D350005A79F /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Sparkle_appcast.xml; sourceTree = "<group>"; };
 		8BAE6AC00DA1468400423BA9 /* WorkPeriodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriodController.h; sourceTree = "<group>"; };
 		8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriodController.m; sourceTree = "<group>"; };
 		8BAF02F10F1E08E100720336 /* ChangeLog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog.txt; sourceTree = "<group>"; };
@@ -115,6 +160,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				8B689E4F0DC8A2E9000C966F /* CalendarStore.framework in Frameworks */,
+				8B0F325D0F21BA83002FD8A6 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				8B0F325C0F21BA83002FD8A6 /* Sparkle.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -190,6 +237,8 @@
 				32CA4F630368D1EE00C91783 /* KronoX-prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				8BC8BED80EEC620800F52232 /* COPYING.txt */,
+				8B9CA4190F229D350005A79F /* dsa_pub.pem */,
+				8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -293,6 +342,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				8B0F327B0F21BAEB002FD8A6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -317,6 +367,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* KronoX */,
+				8B9CA4270F22A0A70005A79F /* Distribution */,
 			);
 		};
 /* End PBXProject section */
@@ -337,10 +388,29 @@
 				8BC8BE5A0EEC525C00F52232 /* Credits.rtf in Resources */,
 				8BC8BED90EEC620800F52232 /* COPYING.txt in Resources */,
 				8BAF02F20F1E08E100720336 /* ChangeLog.txt in Resources */,
+				8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */,
+				8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B9CA4260F22A0A70005A79F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			comments = "Script (and idea) stolen from \nhttp://www.entropy.ch/blog/Developer/2008/09/22/Sparkle-Appcast-Automation-in-Xcode.html";
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "set -o errexit\n\n[ $BUILD_STYLE = Release ] || { echo Distribution target requires \"'Release'\" build style; false; }\n\nUSERNAME=\"peter.ljunglof@heatherleaf.se\"\n\nVERSION=$(defaults read \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.app/Contents/Info\" CFBundleVersion)\nCODE_URL=\"https://kronox.googlecode.com\"\nRELEASENOTES_URL=\"http://code.google.com/p/kronox/source/browse/trunk/ChangeLog.txt\"\n\nVOLNAME=\"$PROJECT_NAME-$VERSION\"\nARCHIVE_FILENAME=\"build/$VOLNAME.dmg\"\nDOWNLOAD_URL=\"$CODE_URL/files/$VOLNAME.dmg\"\nKEYCHAIN_PRIVKEY_NAME=\"KronoX Sparkle Private Key\"\n\nrm -rf $BUILT_PRODUCTS_DIR/KronoX.app.dSYM\nhdiutil create \"$ARCHIVE_FILENAME\" -srcfolder \"$BUILT_PRODUCTS_DIR\" -volname \"$VOLNAME\"\n\nSIZE=$(stat -f %z \"$ARCHIVE_FILENAME\")\nPUBDATE=$(date +\"%a, %d %b %G %T %z\")\nSIGNATURE=$(\n\topenssl dgst -sha1 -binary < \"$ARCHIVE_FILENAME\" \\\n\t| openssl dgst -dss1 -sign <(security find-generic-password -g -s \"$KEYCHAIN_PRIVKEY_NAME\" 2>&1 1>/dev/null | perl -pe '($_) = /\"(.+)\"/; s/\\\\012/\\n/g') \\\n\t| openssl enc -base64\n)\n\n[ $SIGNATURE ] || { echo Unable to load signing private key with name \"'$KEYCHAIN_PRIVKEY_NAME'\" from keychain; false; }\n\necho\necho -- Insert into Sparkle_appcast.xml:\ncat <<EOF\n\t<item>\n\t\t<title>Version $VERSION</title>\n\t\t<sparkle:releaseNotesLink>\n\t\t\t$RELEASENOTES_URL\n\t\t</sparkle:releaseNotesLink>\n\t\t<pubDate>$PUBDATE</pubDate>\n\t\t<enclosure \n\t\t\turl=\"$DOWNLOAD_URL\"\n\t\t\tsparkle:version=\"$VERSION\"\n\t\t\ttype=\"application/octet-stream\"\n\t\t\tlength=\"$SIZE\"\n\t\t\tsparkle:dsaSignature=\"$SIGNATURE\"\n\t\t/>\n\t</item>\nEOF\n\necho\necho -- Then do the following:\necho -- Update ChangeLog.txt for version $VERSION\necho svn commit -m \"Released new version $VERSION\"\necho ./googlecode_upload.py --summary \"KronoX, version $VERSION\" --project kronox --user \"$USERNAME\" --labels Featured \"$ARCHIVE_FILENAME\"\necho svn cp \"$CODE_URL/svn/trunk\" \"$CODE_URL/svn/tags/$VOLNAME\" --username \"$USERNAME\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
@@ -374,6 +444,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8B9CA42F0F22A0F60005A79F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D1107260486CEB800E47090 /* KronoX */;
+			targetProxy = 8B9CA42E0F22A0F60005A79F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -390,6 +468,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -409,6 +491,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -423,6 +509,8 @@
 		26FC0A890875C7B200E6366F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -435,15 +523,34 @@
 		26FC0A8A0875C7B200E6366F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = YES;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Release;
+		};
+		8B9CA4280F22A0A70005A79F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Distribution;
+			};
+			name = Debug;
+		};
+		8B9CA4290F22A0A70005A79F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Distribution;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -464,6 +571,15 @@
 			buildConfigurations = (
 				26FC0A890875C7B200E6366F /* Debug */,
 				26FC0A8A0875C7B200E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B9CA42D0F22A0A90005A79F /* Build configuration list for PBXAggregateTarget "Distribution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B9CA4280F22A0A70005A79F /* Debug */,
+				8B9CA4290F22A0A70005A79F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

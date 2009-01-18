@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+	<title>KronoX Appcast</title>
+	<link>http://code.google.com/p/kronox/source/browse/trunk/Sparkle_appcast.xml</link>
+	<description>Links to updates and the changes.</description>
+	<language>en</language>
+
+	<item>
+		<title>Version 0.94</title>
+		<sparkle:releaseNotesLink>
+			http://code.google.com/p/kronox/source/browse/trunk/ChangeLog.txt
+		</sparkle:releaseNotesLink>
+		<pubDate>Sun, 18 Jan 2009 01:41:03 +0100</pubDate>
+		<enclosure 
+			url="https://kronox.googlecode.com/files/KronoX-0.94.dmg"
+			sparkle:version="0.94"
+			type="application/octet-stream"
+			length="904897"
+			sparkle:dsaSignature="MCwCFHHD2RYWNcK0ZMjrORhkyk2MMxoWAhQ/IwDQKMky1WXwQLR9dwbIqR/l4w=="
+		/>
+	</item>
+
+	<item>
+		<title>Version 0.93</title>
+		<sparkle:releaseNotesLink>
+			http://code.google.com/p/kronox/source/browse/trunk/ChangeLog.txt
+		</sparkle:releaseNotesLink>
+		<pubDate>Fri, 16 Jan 2006</pubDate>
+		<enclosure 
+			url="https://kronox.googlecode.com/files/KronoX-0.93.dmg" 
+			sparkle:version="0.93" 
+			length="0" 
+			type="application/octet-stream" 
+			sparkle:dsaSignature="0" 
+		 />
+    </item>
+
+   </channel>
+</rss>
