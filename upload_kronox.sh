@@ -8,7 +8,8 @@
 
 USERNAME="peter.ljunglof@heatherleaf.se"
 CODE_URL="https://kronox.googlecode.com"
-VERSION=$(defaults read "build/Release/KronoX.app/Contents/Info" CFBundleVersion)
+
+VERSION=$(defaults read "$PWD/build/Release/KronoX.app/Contents/Info" CFBundleVersion)
 if [ "$VERSION" == "" ]; then exit 1; fi
 VOLNAME="KronoX-$VERSION"
 DMGFILE="build/$VOLNAME.dmg"

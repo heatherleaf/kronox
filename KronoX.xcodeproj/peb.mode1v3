@@ -275,8 +275,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>35</integer>
+									<integer>33</integer>
+									<integer>31</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -319,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ChangeLog.txt</string>
+								<string>upload_kronox.sh</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ChangeLog.txt</string>
+										<string>upload_kronox.sh</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8BF7E2BA0F232526009AC0C7</string>
+										<string>8BF7E2C20F232686009AC0C7</string>
 										<key>history</key>
 										<array>
 											<string>8B88063E0E9C9451003F4846</string>
@@ -395,13 +396,13 @@
 											<string>8B9CA41E0F229D3E0005A79F</string>
 											<string>8B9CA4500F22AB290005A79F</string>
 											<string>8B9CA45A0F22AF1A0005A79F</string>
-											<string>8B9CA4900F22BA040005A79F</string>
 											<string>8BF7E28E0F231B9B009AC0C7</string>
 											<string>8BF7E2AE0F23241C009AC0C7</string>
 											<string>8BF7E2AF0F23241C009AC0C7</string>
-											<string>8BF7E2B50F232526009AC0C7</string>
 											<string>8BF7E2B60F232526009AC0C7</string>
-											<string>8BF7E2B70F232526009AC0C7</string>
+											<string>8BF7E2BD0F232686009AC0C7</string>
+											<string>8BF7E2BE0F232686009AC0C7</string>
+											<string>8BF7E2BF0F232686009AC0C7</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -480,6 +481,8 @@
 											<string>8BF7E2B30F23241C009AC0C7</string>
 											<string>8BF7E2B80F232526009AC0C7</string>
 											<string>8BF7E2B90F232526009AC0C7</string>
+											<string>8BF7E2C00F232686009AC0C7</string>
+											<string>8BF7E2C10F232686009AC0C7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -717,6 +720,8 @@
 							<string>101pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXBuildLogShowsTranscriptDefaultKey</key>

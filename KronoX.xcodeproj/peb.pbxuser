@@ -11,7 +11,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = 8BE0FBF20D70A9B7003B3842 /* KronoX */;
-		activeTarget = 8D1107260486CEB800E47090 /* KronoX */;
+		activeTarget = 8B9CA4270F22A0A70005A79F /* Distribution */;
 		addToTargets = (
 			8D1107260486CEB800E47090 /* KronoX */,
 		);
@@ -297,6 +297,13 @@
 			8BF7E2B80F232526009AC0C7 /* PBXTextBookmark */ = 8BF7E2B80F232526009AC0C7 /* PBXTextBookmark */;
 			8BF7E2B90F232526009AC0C7 /* PlistBookmark */ = 8BF7E2B90F232526009AC0C7 /* PlistBookmark */;
 			8BF7E2BA0F232526009AC0C7 /* PBXTextBookmark */ = 8BF7E2BA0F232526009AC0C7 /* PBXTextBookmark */;
+			8BF7E2BC0F23257C009AC0C7 /* PBXTextBookmark */ = 8BF7E2BC0F23257C009AC0C7 /* PBXTextBookmark */;
+			8BF7E2BD0F232686009AC0C7 /* PBXTextBookmark */ = 8BF7E2BD0F232686009AC0C7 /* PBXTextBookmark */;
+			8BF7E2BE0F232686009AC0C7 /* PBXTextBookmark */ = 8BF7E2BE0F232686009AC0C7 /* PBXTextBookmark */;
+			8BF7E2BF0F232686009AC0C7 /* PBXTextBookmark */ = 8BF7E2BF0F232686009AC0C7 /* PBXTextBookmark */;
+			8BF7E2C00F232686009AC0C7 /* PBXTextBookmark */ = 8BF7E2C00F232686009AC0C7 /* PBXTextBookmark */;
+			8BF7E2C10F232686009AC0C7 /* PBXTextBookmark */ = 8BF7E2C10F232686009AC0C7 /* PBXTextBookmark */;
+			8BF7E2C20F232686009AC0C7 /* PBXTextBookmark */ = 8BF7E2C20F232686009AC0C7 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 8BE0FBFE0D70A9C4003B3842 /* Source Control */;
 		userBuildSettings = {
@@ -1482,9 +1489,9 @@
 	};
 	8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {929, 533}}";
-			sepNavSelRange = "{553, 0}";
-			sepNavVisRange = "{0, 1268}";
+			sepNavIntBoundsRect = "{{0, 0}, {929, 761}}";
+			sepNavSelRange = "{853, 0}";
+			sepNavVisRange = "{0, 1736}";
 		};
 	};
 	8B9CA45A0F22AF1A0005A79F /* PBXTextBookmark */ = {
@@ -1534,9 +1541,9 @@
 		fRef = 8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */;
 		name = "Sparkle_appcast.xml: 9";
 		rLen = 0;
-		rLoc = 386;
+		rLoc = 854;
 		rType = 0;
-		vrLen = 1293;
+		vrLen = 1268;
 		vrLoc = 0;
 	};
 	8B9CA4780F22B6C90005A79F /* PBXTextBookmark */ = {
@@ -1566,7 +1573,7 @@
 		fRef = 8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */;
 		name = "Sparkle_appcast.xml: 27";
 		rLen = 0;
-		rLoc = 976;
+		rLoc = 1444;
 		rType = 0;
 		vrLen = 1267;
 		vrLoc = 0;
@@ -1620,7 +1627,7 @@
 		fRef = 8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */;
 		name = "Sparkle_appcast.xml: 14";
 		rLen = 0;
-		rLoc = 553;
+		rLoc = 1021;
 		rType = 0;
 		vrLen = 1268;
 		vrLoc = 0;
@@ -1630,7 +1637,7 @@
 		fRef = 8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */;
 		name = "Sparkle_appcast.xml: 14";
 		rLen = 0;
-		rLoc = 553;
+		rLoc = 1021;
 		rType = 0;
 		vrLen = 1268;
 		vrLoc = 0;
@@ -2729,8 +2736,8 @@
 	8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {789, 761}}";
-			sepNavSelRange = "{956, 0}";
-			sepNavVisRange = "{0, 1402}";
+			sepNavSelRange = "{249, 0}";
+			sepNavVisRange = "{0, 1408}";
 		};
 	};
 	8BF7E2AE0F23241C009AC0C7 /* PBXTextBookmark */ = {
@@ -2798,7 +2805,7 @@
 		fRef = 8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */;
 		name = "upload_kronox.sh: 34";
 		rLen = 0;
-		rLoc = 956;
+		rLoc = 962;
 		rType = 0;
 		vrLen = 1402;
 		vrLoc = 0;
@@ -2808,7 +2815,7 @@
 		fRef = 8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */;
 		name = "upload_kronox.sh: 34";
 		rLen = 0;
-		rLoc = 956;
+		rLoc = 962;
 		rType = 0;
 		vrLen = 1402;
 		vrLoc = 0;
@@ -2840,7 +2847,7 @@
 		fRef = 8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */;
 		name = "upload_kronox.sh: 34";
 		rLen = 0;
-		rLoc = 956;
+		rLoc = 962;
 		rType = 0;
 		vrLen = 1402;
 		vrLoc = 0;
@@ -2865,6 +2872,76 @@
 		rLoc = 189;
 		rType = 0;
 		vrLen = 1258;
+		vrLoc = 0;
+	};
+	8BF7E2BC0F23257C009AC0C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8BAF02F10F1E08E100720336 /* ChangeLog.txt */;
+		name = "ChangeLog.txt: 8";
+		rLen = 0;
+		rLoc = 189;
+		rType = 0;
+		vrLen = 1258;
+		vrLoc = 0;
+	};
+	8BF7E2BD0F232686009AC0C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8BAF02F10F1E08E100720336 /* ChangeLog.txt */;
+		name = "ChangeLog.txt: 8";
+		rLen = 0;
+		rLoc = 189;
+		rType = 0;
+		vrLen = 1258;
+		vrLoc = 0;
+	};
+	8BF7E2BE0F232686009AC0C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */;
+		name = "Sparkle_appcast.xml: 23";
+		rLen = 0;
+		rLoc = 853;
+		rType = 0;
+		vrLen = 1736;
+		vrLoc = 0;
+	};
+	8BF7E2BF0F232686009AC0C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */;
+		name = "upload_kronox.sh: 34";
+		rLen = 0;
+		rLoc = 962;
+		rType = 0;
+		vrLen = 1402;
+		vrLoc = 0;
+	};
+	8BF7E2C00F232686009AC0C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8BAF02F10F1E08E100720336 /* ChangeLog.txt */;
+		name = "ChangeLog.txt: 8";
+		rLen = 0;
+		rLoc = 189;
+		rType = 0;
+		vrLen = 1258;
+		vrLoc = 0;
+	};
+	8BF7E2C10F232686009AC0C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */;
+		name = "Sparkle_appcast.xml: 23";
+		rLen = 0;
+		rLoc = 853;
+		rType = 0;
+		vrLen = 1736;
+		vrLoc = 0;
+	};
+	8BF7E2C20F232686009AC0C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */;
+		name = "upload_kronox.sh: 12";
+		rLen = 0;
+		rLoc = 249;
+		rType = 0;
+		vrLen = 1408;
 		vrLoc = 0;
 	};
 	8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToStatistics.h */ = {
