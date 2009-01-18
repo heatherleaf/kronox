@@ -9,22 +9,22 @@
 	<item>
 		<title>Version 0.94</title>
 		<sparkle:releaseNotesLink>
-			http://code.google.com/p/kronox/source/browse/trunk/ChangeLog.txt
+			http://kronox.googlecode.com/svn/trunk/ChangeLog.txt
 		</sparkle:releaseNotesLink>
-		<pubDate>Sun, 18 Jan 2009 01:41:03 +0100</pubDate>
+		<pubDate>Sun, 18 Jan 2009 02:08:02 +0100</pubDate>
 		<enclosure 
 			url="https://kronox.googlecode.com/files/KronoX-0.94.dmg"
 			sparkle:version="0.94"
 			type="application/octet-stream"
-			length="904897"
-			sparkle:dsaSignature="MCwCFHHD2RYWNcK0ZMjrORhkyk2MMxoWAhQ/IwDQKMky1WXwQLR9dwbIqR/l4w=="
+			length="1166275"
+			sparkle:dsaSignature="MC4CFQCfkP+cJdIvD4xjBZYpM10MsKLjOAIVAI7pYs8XwIHL1q6oPo9Bd8Mka+is"
 		/>
 	</item>
 
 	<item>
 		<title>Version 0.93</title>
 		<sparkle:releaseNotesLink>
-			http://code.google.com/p/kronox/source/browse/trunk/ChangeLog.txt
+			http://kronox.googlecode.com/svn/trunk/ChangeLog.txt
 		</sparkle:releaseNotesLink>
 		<pubDate>Fri, 16 Jan 2006</pubDate>
 		<enclosure 
