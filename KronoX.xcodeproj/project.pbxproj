@@ -57,6 +57,8 @@
 		8BE0FD6E0D70C299003B3842 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD6D0D70C299003B3842 /* WorkPeriod.m */; };
 		8BE1B2A10EA29A1B00686209 /* Pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE1B2A00EA29A1B00686209 /* Pencil.png */; };
 		8BF2DB1E0DA1634800A3CBBF /* UndoExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */; };
+		8BF7E27E0F231B8C009AC0C7 /* googlecode_upload.py in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7E27D0F231B8C009AC0C7 /* googlecode_upload.py */; };
+		8BF7E2AD0F231D61009AC0C7 /* upload_kronox.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */; };
 		8BFD8C9C0DA4E8D500F389F4 /* TimeIntervalToStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -68,7 +70,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D1107260486CEB800E47090 /* KronoX */;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
 			remoteInfo = KronoX;
 		};
 /* End PBXContainerItemProxy section */
@@ -147,6 +149,8 @@
 		8BE1B2A00EA29A1B00686209 /* Pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pencil.png; sourceTree = "<group>"; };
 		8BF2DB1C0DA1634800A3CBBF /* UndoExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoExtensions.h; sourceTree = "<group>"; };
 		8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoExtensions.m; sourceTree = "<group>"; };
+		8BF7E27D0F231B8C009AC0C7 /* googlecode_upload.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = googlecode_upload.py; sourceTree = "<group>"; };
+		8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = upload_kronox.sh; sourceTree = "<group>"; };
 		8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToStatistics.h; sourceTree = "<group>"; };
 		8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToStatistics.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 				8BC8BED80EEC620800F52232 /* COPYING.txt */,
 				8B9CA4190F229D350005A79F /* dsa_pub.pem */,
 				8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */,
+				8BF7E27D0F231B8C009AC0C7 /* googlecode_upload.py */,
+				8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -390,6 +396,8 @@
 				8BAF02F20F1E08E100720336 /* ChangeLog.txt in Resources */,
 				8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */,
 				8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */,
+				8BF7E27E0F231B8C009AC0C7 /* googlecode_upload.py in Resources */,
+				8BF7E2AD0F231D61009AC0C7 /* upload_kronox.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +416,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "set -o errexit\n\n[ $BUILD_STYLE = Release ] || { echo Distribution target requires \"'Release'\" build style; false; }\n\nUSERNAME=\"peter.ljunglof@heatherleaf.se\"\n\nVERSION=$(defaults read \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.app/Contents/Info\" CFBundleVersion)\nCODE_URL=\"https://kronox.googlecode.com\"\nRELEASENOTES_URL=\"http://kronox.googlecode.com/svn/trunk/ChangeLog.txt\"\n\nVOLNAME=\"$PROJECT_NAME-$VERSION\"\nARCHIVE_FILENAME=\"build/$VOLNAME.dmg\"\nDOWNLOAD_URL=\"$CODE_URL/files/$VOLNAME.dmg\"\nKEYCHAIN_PRIVKEY_NAME=\"KronoX Sparkle Private Key\"\n\nrm -rf $BUILT_PRODUCTS_DIR/KronoX.app.dSYM\nhdiutil create \"$ARCHIVE_FILENAME\" -srcfolder \"$BUILT_PRODUCTS_DIR\" -volname \"$VOLNAME\"\n\nSIZE=$(stat -f %z \"$ARCHIVE_FILENAME\")\nPUBDATE=$(date +\"%a, %d %b %G %T %z\")\nSIGNATURE=$(\n\topenssl dgst -sha1 -binary < \"$ARCHIVE_FILENAME\" \\\n\t| openssl dgst -dss1 -sign <(security find-generic-password -g -s \"$KEYCHAIN_PRIVKEY_NAME\" 2>&1 1>/dev/null | perl -pe '($_) = /\"(.+)\"/; s/\\\\012/\\n/g') \\\n\t| openssl enc -base64\n)\n\n[ $SIGNATURE ] || { echo Unable to load signing private key with name \"'$KEYCHAIN_PRIVKEY_NAME'\" from keychain; false; }\n\ncat <<EOF\n\n-- Insert into Sparkle_appcast.xml:\n\t<item>\n\t\t<title>Version $VERSION</title>\n\t\t<sparkle:releaseNotesLink>\n\t\t\t$RELEASENOTES_URL\n\t\t</sparkle:releaseNotesLink>\n\t\t<pubDate>$PUBDATE</pubDate>\n\t\t<enclosure \n\t\t\turl=\"$DOWNLOAD_URL\"\n\t\t\tsparkle:version=\"$VERSION\"\n\t\t\ttype=\"application/octet-stream\"\n\t\t\tlength=\"$SIZE\"\n\t\t\tsparkle:dsaSignature=\"$SIGNATURE\"\n\t\t/>\n\t</item>\n\n-- Then do the following:\n-- Update ChangeLog.txt for version $VERSION\nsvn commit -m \"Released new version $VERSION\"\npython googlecode_upload.py --summary \"KronoX, version $VERSION\" --project kronox --user \"$USERNAME\" --labels Featured \"$ARCHIVE_FILENAME\"\nsvn copy -m \"Tagged release $VERSION\" \"$CODE_URL/svn/trunk\" \"$CODE_URL/svn/tags/$VOLNAME\" --username \"$USERNAME\"\n\nEOF\n";
+			shellScript = "set -o errexit\n\n[ $BUILD_STYLE = Release ] || { echo Distribution target requires \"'Release'\" build style; false; }\n\nUSERNAME=\"peter.ljunglof@heatherleaf.se\"\n\nVERSION=$(defaults read \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.app/Contents/Info\" CFBundleVersion)\nCODE_URL=\"https://kronox.googlecode.com\"\nRELEASENOTES_URL=\"http://kronox.googlecode.com/svn/trunk/ChangeLog.txt\"\n\nVOLNAME=\"$PROJECT_NAME-$VERSION\"\nARCHIVE_FILENAME=\"build/$VOLNAME.dmg\"\nDOWNLOAD_URL=\"$CODE_URL/files/$VOLNAME.dmg\"\nKEYCHAIN_PRIVKEY_NAME=\"KronoX Sparkle Private Key\"\n\nrm -rf $BUILT_PRODUCTS_DIR/KronoX.app.dSYM\nhdiutil create \"$ARCHIVE_FILENAME\" -srcfolder \"$BUILT_PRODUCTS_DIR\" -volname \"$VOLNAME\"\n\nSIZE=$(stat -f %z \"$ARCHIVE_FILENAME\")\nPUBDATE=$(date +\"%a, %d %b %G %T %z\")\nSIGNATURE=$(\n\topenssl dgst -sha1 -binary < \"$ARCHIVE_FILENAME\" \\\n\t| openssl dgst -dss1 -sign <(security find-generic-password -g -s \"$KEYCHAIN_PRIVKEY_NAME\" 2>&1 1>/dev/null | perl -pe '($_) = /\"(.+)\"/; s/\\\\012/\\n/g') \\\n\t| openssl enc -base64\n)\n\n[ $SIGNATURE ] || { echo Unable to load signing private key with name \"'$KEYCHAIN_PRIVKEY_NAME'\" from keychain; false; }\n\ncat <<EOF\n--------------------------------------------------------------\n1. Insert into Sparkle_appcast.xml:\n\n\t<item>\n\t\t<title>Version $VERSION</title>\n\t\t<sparkle:releaseNotesLink>\n\t\t\t$RELEASENOTES_URL\n\t\t</sparkle:releaseNotesLink>\n\t\t<pubDate>$PUBDATE</pubDate>\n\t\t<enclosure \n\t\t\turl=\"$DOWNLOAD_URL\"\n\t\t\tsparkle:version=\"$VERSION\"\n\t\t\ttype=\"application/octet-stream\"\n\t\t\tlength=\"$SIZE\"\n\t\t\tsparkle:dsaSignature=\"$SIGNATURE\"\n\t\t/>\n\t</item>\n\n2. Update ChangeLog.txt for version $VERSION\n\n3. Run the script \"upload_kronox.sh\" from the command line\n--------------------------------------------------------------\n\nEOF\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
