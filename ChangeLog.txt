@@ -1,4 +1,8 @@
 
+ChangeLog for the KronoX time tracker
+  http://code.google.com/p/kronox/
+-------------------------------------
+
 Version 0.94, 2009-01-18
 
 * (Fix, issue 7) Added automatic updating through the Sparkle Framework
