@@ -3,6 +3,10 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
+Version 0.96, 2009-01-23
+
+* (Fix, issue 23) Fixed issue 23, which apparently wasn't fixed in v0.93 after all
+
 Version 0.95, 2009-01-18
 
 * Automatic update choices in the user preferences

@@ -31,11 +31,12 @@ if [ $ANSWER != yes ]; then exit 1; fi
 echo
 read -p "Have you updated Sparkle_appcast.xml? " ANSWER
 if [ $ANSWER != yes ]; then exit 1; fi
-echo
 
+echo
 echo "1. Commiting final changes"
 svn commit -m "Released new version $VERSION"
 
+echo
 echo "2. Uploading $DMGFILE"
 python googlecode_upload.py --summary "KronoX, version $VERSION" \
 							--project kronox \
@@ -43,8 +44,11 @@ python googlecode_upload.py --summary "KronoX, version $VERSION" \
 							--labels Featured \
 							"$DMGFILE"
 
+echo
 echo "3. Tagging the new release, $VOLNAME"
 svn copy -m "Tagged release $VERSION" "$CODE_URL/svn/trunk" \
 			"$CODE_URL/svn/tags/$VOLNAME" \
 			--username "$USERNAME"
 
+echo
+echo "Don't forget to remove the 'Featured' label from the old download"

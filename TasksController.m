@@ -172,10 +172,12 @@
 - (void) fetchImmediately: (id) sender {
 	LOG(@"fetchImmediately: %@", [sender className]);
 	if (![self managedObjectContext]) return;
+	NSArray* selection = [self selectionIndexPaths];
 	NSError *error;
 	if (![super fetchWithRequest: nil merge: NO error: &error]) 
 		[NSApp presentError: error];
 	[self reexpandTree:nil];
+	[self setSelectionIndexPaths:selection];
 }
 
 - (void) reorderTasks {

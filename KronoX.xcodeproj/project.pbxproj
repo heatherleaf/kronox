@@ -153,7 +153,7 @@
 		8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = upload_kronox.sh; sourceTree = "<group>"; };
 		8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToStatistics.h; sourceTree = "<group>"; };
 		8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToStatistics.m; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* KronoX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KronoX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -243,8 +243,8 @@
 				8BC8BED80EEC620800F52232 /* COPYING.txt */,
 				8B9CA4190F229D350005A79F /* dsa_pub.pem */,
 				8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */,
-				8BF7E27D0F231B8C009AC0C7 /* googlecode_upload.py */,
 				8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */,
+				8BF7E27D0F231B8C009AC0C7 /* googlecode_upload.py */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -416,7 +416,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "set -o errexit\n\n[ $BUILD_STYLE = Release ] || { echo Distribution target requires \"'Release'\" build style; false; }\n\nUSERNAME=\"peter.ljunglof@heatherleaf.se\"\n\nVERSION=$(defaults read \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.app/Contents/Info\" CFBundleVersion)\nCODE_URL=\"https://kronox.googlecode.com\"\nRELEASENOTES_URL=\"http://kronox.googlecode.com/svn/trunk/ChangeLog.txt\"\n\nVOLNAME=\"$PROJECT_NAME-$VERSION\"\nARCHIVE_FILENAME=\"build/$VOLNAME.dmg\"\nDOWNLOAD_URL=\"$CODE_URL/files/$VOLNAME.dmg\"\nKEYCHAIN_PRIVKEY_NAME=\"KronoX Sparkle Private Key\"\n\nrm -rf $BUILT_PRODUCTS_DIR/KronoX.app.dSYM\nhdiutil create \"$ARCHIVE_FILENAME\" -srcfolder \"$BUILT_PRODUCTS_DIR\" -volname \"$VOLNAME\"\n\nSIZE=$(stat -f %z \"$ARCHIVE_FILENAME\")\nPUBDATE=$(date +\"%a, %d %b %G %T %z\")\nSIGNATURE=$(\n\topenssl dgst -sha1 -binary < \"$ARCHIVE_FILENAME\" \\\n\t| openssl dgst -dss1 -sign <(security find-generic-password -g -s \"$KEYCHAIN_PRIVKEY_NAME\" 2>&1 1>/dev/null | perl -pe '($_) = /\"(.+)\"/; s/\\\\012/\\n/g') \\\n\t| openssl enc -base64\n)\n\n[ $SIGNATURE ] || { echo Unable to load signing private key with name \"'$KEYCHAIN_PRIVKEY_NAME'\" from keychain; false; }\n\ncat <<EOF\n--------------------------------------------------------------\n1. Insert into Sparkle_appcast.xml:\n\n\t<item>\n\t\t<title>Version $VERSION</title>\n\t\t<sparkle:releaseNotesLink>\n\t\t\t$RELEASENOTES_URL\n\t\t</sparkle:releaseNotesLink>\n\t\t<pubDate>$PUBDATE</pubDate>\n\t\t<enclosure \n\t\t\turl=\"$DOWNLOAD_URL\"\n\t\t\tsparkle:version=\"$VERSION\"\n\t\t\ttype=\"application/octet-stream\"\n\t\t\tlength=\"$SIZE\"\n\t\t\tsparkle:dsaSignature=\"$SIGNATURE\"\n\t\t/>\n\t</item>\n\n2. Update ChangeLog.txt for version $VERSION\n\n3. Run the script \"upload_kronox.sh\" from the command line\n--------------------------------------------------------------\n\nEOF\n";
+			shellScript = "set -o errexit\n\n[ $BUILD_STYLE = Release ] || { echo Distribution target requires \"'Release'\" build style; false; }\n\nUSERNAME=\"peter.ljunglof@heatherleaf.se\"\n\nVERSION=$(defaults read \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.app/Contents/Info\" CFBundleVersion)\nCODE_URL=\"https://kronox.googlecode.com\"\nRELEASENOTES_URL=\"http://kronox.googlecode.com/svn/trunk/ChangeLog.txt\"\n\nVOLNAME=\"$PROJECT_NAME-$VERSION\"\nARCHIVE_FILENAME=\"build/$VOLNAME.dmg\"\nDOWNLOAD_URL=\"$CODE_URL/files/$VOLNAME.dmg\"\nKEYCHAIN_PRIVKEY_NAME=\"KronoX Sparkle Private Key\"\n\ncp COPYING.txt \"$BUILT_PRODUCTS_DIR\"\nrm -rf \"$BUILT_PRODUCTS_DIR/KronoX.app.dSYM\"\nhdiutil create \"$ARCHIVE_FILENAME\" -srcfolder \"$BUILT_PRODUCTS_DIR\" -volname \"$VOLNAME\"\n\nSIZE=$(stat -f %z \"$ARCHIVE_FILENAME\")\nPUBDATE=$(date +\"%a, %d %b %G %T %z\")\nSIGNATURE=$(\n\topenssl dgst -sha1 -binary < \"$ARCHIVE_FILENAME\" \\\n\t| openssl dgst -dss1 -sign <(security find-generic-password -g -s \"$KEYCHAIN_PRIVKEY_NAME\" 2>&1 1>/dev/null | perl -pe '($_) = /\"(.+)\"/; s/\\\\012/\\n/g') \\\n\t| openssl enc -base64\n)\n\n[ $SIGNATURE ] || { echo Unable to load signing private key with name \"'$KEYCHAIN_PRIVKEY_NAME'\" from keychain; false; }\n\ncat <<EOF\n--------------------------------------------------------------\n1. Insert into Sparkle_appcast.xml:\n\n\t<item>\n\t\t<title>Version $VERSION</title>\n\t\t<sparkle:releaseNotesLink>\n\t\t\t$RELEASENOTES_URL\n\t\t</sparkle:releaseNotesLink>\n\t\t<pubDate>$PUBDATE</pubDate>\n\t\t<enclosure \n\t\t\turl=\"$DOWNLOAD_URL\"\n\t\t\tsparkle:version=\"$VERSION\"\n\t\t\ttype=\"application/octet-stream\"\n\t\t\tlength=\"$SIZE\"\n\t\t\tsparkle:dsaSignature=\"$SIGNATURE\"\n\t\t/>\n\t</item>\n\n2. Update ChangeLog.txt for version $VERSION\n\n3. Run the script \"upload_kronox.sh\" from the command line\n--------------------------------------------------------------\n\nEOF\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
