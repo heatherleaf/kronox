@@ -33,20 +33,20 @@
 
 @dynamic end;
 - (NSDate*) end {
-	if (self.duration == nil) return nil;
-	return [self.start addTimeInterval: [self.duration doubleValue]];
+	if ([self duration] == nil) return nil;
+	return [[self start] addTimeInterval: [[self duration] doubleValue]];
 }
 
 #define SECONDS_PER_DAY (24*60*60)
 
 - (void) setEnd: (NSDate*) date {
-	if (self.start == nil) return;
-	NSTimeInterval dur = [date timeIntervalSinceDate: self.start];
+	if ([self start] == nil) return;
+	NSTimeInterval dur = [date timeIntervalSinceDate: [self start]];
 	while (dur < 0) 
 		dur += SECONDS_PER_DAY;
 	while (dur > SECONDS_PER_DAY)
 		dur -= SECONDS_PER_DAY;
-	self.duration = [NSNumber numberWithDouble: dur];
+	[self setDuration: [NSNumber numberWithDouble: dur]];
 }
 
 @end

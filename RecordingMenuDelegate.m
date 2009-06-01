@@ -63,10 +63,10 @@ NSImage* disclosureTransparent;
 
 	NSUInteger indent = [[node indexPath] length] - 1;
 	[item setIndentationLevel: indent];
-	NSString* title = task.name;
+	NSString* title = [task name];
 	NSFont* font = [NSFont systemFontOfSize: [PREFS floatForKey: @"fontSize"]];
 	NSDictionary* attrs = [NSDictionary dictionaryWithObjectsAndKeys:
-						   task.color, NSForegroundColorAttributeName,
+						   [task color], NSForegroundColorAttributeName,
 						   font, NSFontAttributeName,
 						   nil];
 	[item setAttributedTitle: [[NSAttributedString alloc] initWithString: title

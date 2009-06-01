@@ -52,10 +52,8 @@
 - (IBAction) enableSelectedTasks: (id) sender;
 - (IBAction) enableAllTasks: (id) sender;
 
-// Expanded tasks
-- (void) reexpandTree:(NSTreeNode*)node;
-- (void) expandOrCollapseItem:(id)item expanded:(BOOL)expanded;
-- (void) expandOrCollapseItem:(id)item expanded:(BOOL)expanded outlineView:(NSOutlineView*)view;
+// Expanding/collapsing tasks in an outline view (delegate methods)
+- (void) expandOutlineView:(NSOutlineView*)view;
 - (void) outlineViewItemDidExpandOrCollapse:(NSNotification*)notification expanded:(BOOL)expanded;
 - (void) outlineViewItemDidExpand:(NSNotification*)notification;
 - (void) outlineViewItemDidCollapse:(NSNotification*)notification;
@@ -64,9 +62,8 @@
 // - (void) fetch: (id) sender;
 - (void) fetchImmediately: (id) sender;
 - (void) reorderTasks;
-- (int)  reorder: (NSTreeNode*) root fromIndex: (int) ix;
 
-// Drag and drop
+// Drag and drop (delegate methods)
 - (void) registerForDragging: (NSOutlineView*) view;
 
 - (BOOL) outlineView: (NSOutlineView*) ov

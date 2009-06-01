@@ -32,10 +32,13 @@
 @property (retain) NSString* name;
 @property (retain) NSNumber* enabled;
 @property (retain) NSNumber* expanded;
-@property (retain) NSString* appearance;
+//@property (retain) NSString* appearance;
 @property (retain) NSSet* children;
 @property (retain) Task* parent;
 @property (retain) NSSet* workperiods;
+
+@property (retain) NSColor* colorValue;
+@property (retain) NSNumber* colorEnabled;
 
 // Calculated properties:
 @property (readonly) NSString* longName;
@@ -49,7 +52,7 @@
 
 // Other methods
 - (void) awakeFromInsert;
-+ (NSColorList*) taskColorList;
+// + (NSColorList*) taskColorList;
 
 @end
 

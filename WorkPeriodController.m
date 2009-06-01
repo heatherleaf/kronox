@@ -36,12 +36,12 @@
 	NSTimeInterval duration = 0;
 	for (WorkPeriod* work in [self arrangedObjects]) {
 		if ([work isEqual: currentWorkPeriod])
-			duration += [self.currentDuration doubleValue];
+			duration += [[self currentDuration] doubleValue];
 		else 
-			duration += [work.duration doubleValue];
+			duration += [[work duration] doubleValue];
 	}
 	LOG(@"updateTotalDuration => %0.1f min", duration/60);
-	self.totalDuration = duration;
+	[self setTotalDuration: duration];
 }
 
 @dynamic numberOfSelectedObjects;
@@ -54,17 +54,17 @@
 #pragma mark ---- Recording ----
 
 - (void) tickTheClock: (id) sender {
-	if (self.isRecording) { 
-		self.currentDuration = [NSNumber numberWithDouble: -[self.currentWorkPeriod.start timeIntervalSinceNow]];
+	if ([self isRecording]) { 
+		[self setCurrentDuration: [NSNumber numberWithDouble: -[self.currentWorkPeriod.start timeIntervalSinceNow]]];
 	} else {
-		self.currentStartTime = [NSDate date];
+		[self setCurrentStartTime: [NSDate date]];
 	}
 }
 
 - (void) startRecordingTask: (Task*) newTask {
-	if (self.isRecording) {
+	if ([self isRecording]) {
 		// If already recording this task, don't to anything (i.e., return)
-		if (self.currentWorkPeriod.task == newTask) return;
+		if ([[self currentWorkPeriod] task] == newTask) return;
 		[self stopRecording: nil];
 	}
 	
@@ -79,16 +79,16 @@
 }
 
 - (IBAction) stopRecording: (id) sender { 
-	if (!self.isRecording) return;
+	if (![self isRecording]) return;
 	LOG(@"stopRecording: %@", [sender className]);
 	[[self managedObjectContext] beginUndoGroup: @"Stop Recording"];
-	NSTimeInterval duration = -[self.currentWorkPeriod.start timeIntervalSinceNow];
+	NSTimeInterval duration = -[[[self currentWorkPeriod] start] timeIntervalSinceNow];
 	NSTimeInterval minimumDuration = [PREFS doubleForKey: @"minimumWorkPeriodLength"];
 	if (duration < minimumDuration) {
-		[self removeObject: self.currentWorkPeriod];
+		[self removeObject: [self currentWorkPeriod]];
 		LOG(@"Discarded too short work period (%0.0f s)", duration);
 	}
-	self.currentWorkPeriod.duration = [NSNumber numberWithDouble: duration];
+	[[self currentWorkPeriod] setDuration: [NSNumber numberWithDouble: duration]];
 	[self setRecordingTo: nil];
 	[[self managedObjectContext] endUndoGroup];
 	[self fetch: sender];
@@ -96,17 +96,17 @@
 
 - (void) setRecordingTo: (WorkPeriod*) work {
 	if (work) {
-		LOG(@"setRecordingTo: %@", work.task.longName);
+		LOG(@"setRecordingTo: %@", [[work task] longName]);
 		[[[[self managedObjectContext] undoManager] prepareWithInvocationTarget: self] setRecordingTo: nil];
-		self.isRecording = YES;
-		self.currentStartTime = work.start;
-		self.currentWorkPeriod = work;
+		[self setIsRecording: YES];
+		[self setCurrentStartTime: [work start]];
+		[self setCurrentWorkPeriod: work];
 	} else {
 		LOG(@"setRecordingTo: NIL");
 		[[[[self managedObjectContext] undoManager] prepareWithInvocationTarget: self] setRecordingTo: self.currentWorkPeriod];
-		self.isRecording = NO;
-		self.currentDuration = nil;
-		self.currentWorkPeriod = nil;
+		[self setIsRecording: NO];
+		[self setCurrentDuration: nil];
+		[self setCurrentWorkPeriod: nil];
 	}
 	[self tableViewSelectionDidChange: nil];
 	[self synchronizeStatusTitle];
@@ -127,8 +127,8 @@
 	NSString* title; 
 	NSMutableDictionary* attrs = [NSMutableDictionary dictionary];
 	CGFloat size = [NSFont systemFontSize];
-	Task* task = self.currentWorkPeriod.task;
-	LOG(@"synchronizeStatusTitle: %@", task.longName);
+	Task* task = [[self currentWorkPeriod] task];
+	LOG(@"synchronizeStatusTitle: %@", [task longName]);
 	if (task) {
 		if ([PREFS boolForKey: @"statusItemBackgroundColorEnabled"]) {
 			NSColor* bgColor = [NSKeyedUnarchiver unarchiveObjectWithData: 
@@ -136,14 +136,14 @@
 			if (bgColor != nil) [attrs setValue: bgColor forKey: NSBackgroundColorAttributeName];
 		}
 		if ([PREFS boolForKey: @"statusItemForegroundColorEnabled"]) {
-			NSColor* fgColor = task.color;
+			NSColor* fgColor = [task color];
 			if (fgColor != nil) [attrs setValue: fgColor forKey: NSForegroundColorAttributeName];
 		}
 		int ix = [PREFS integerForKey: @"statusItemSymbolIndex"];
 		if (ix == 0) 
 			title = @" ▶ ";
 		else {
-			title = [NSString stringWithFormat:@" %@ ", (ix == 1 ? task.name : task.longName)];
+			title = [NSString stringWithFormat:@" %@ ", (ix == 1 ? [task name] : [task longName])];
 			size = [NSFont smallSystemFontSize];
 		}
 	} else {
@@ -161,7 +161,7 @@
 	[super fetch: sender];
 	[self synchronizeStatusTitle];
 	// this is so that bindings on currentWorkPeriod also will be updated:
-	self.currentWorkPeriod = self.currentWorkPeriod;
+	[self setCurrentWorkPeriod: [self currentWorkPeriod]];
 	[self updateTotalDuration];
 }
 
@@ -191,12 +191,12 @@
 				  duration: (NSTimeInterval) duration
 {
 	WorkPeriod* work = [self newWorkPeriod];
-	work.task = task;
-	work.start = start;
+	[work setTask: task];
+	[work setStart: start];
 	if (duration >= 0)
-		work.duration = [NSNumber numberWithDouble: duration];
+		[work setDuration: [NSNumber numberWithDouble: duration]];
 	[self addObject: work];
-	LOG(@"addForTask: %@  duration: %f  start: %@", task.name, duration, start);
+	LOG(@"addForTask: %@  duration: %f  start: %@", [task name], duration, start);
 	return work;
 }
 
@@ -222,7 +222,7 @@
 #pragma mark ---- Delegate method ----
 
 - (void) tableViewSelectionDidChange: (NSNotification*) notification {
-	self.canChangeDate = ! (isRecording && [[self selectedObjects] containsObject: currentWorkPeriod]);
+	[self setCanChangeDate: ! (isRecording && [[self selectedObjects] containsObject: currentWorkPeriod])];
 }
 
 @end

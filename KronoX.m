@@ -35,7 +35,7 @@
 #define DATABASEFILE @"KronoX-data.sql"
 #endif
 
-@synthesize taskColorListKeys, workPeriodSortDescriptors, tasksSortDescriptors, 
+@synthesize /* taskColorListKeys, */ workPeriodSortDescriptors, tasksSortDescriptors, 
 	contentViewSegment, viewPeriodSegment, viewPeriodDate, 
     viewPeriodStart, viewPeriodEnd, viewPeriodPredicate, 
     commentFilter, viewPeriodStartEnabled, viewPeriodEndEnabled,
@@ -45,18 +45,18 @@
 
 - (IBAction) changeContentView: (id) sender {
 	if (![sender isKindOfClass: [NSSegmentedControl class]] && [sender respondsToSelector: @selector(tag)])
-		self.contentViewSegment = [sender tag];
-	LOG(@"changeContentView: %d", self.contentViewSegment);
-	switch (self.contentViewSegment) {
+		[self setContentViewSegment: [sender tag]];
+	LOG(@"changeContentView: %d", [self contentViewSegment]);
+	switch ([self contentViewSegment]) {
 		case 0:
-			detailedViewMenuItem.state = NSOnState;
-			statisticsViewMenuItem.state = NSOffState;
+			[detailedViewMenuItem setState: NSOnState];
+			[statisticsViewMenuItem setState: NSOffState];
 			[contentView setDocumentView: workPeriodView];
 			[workPeriodView sizeToFit];
 			break;
 		case 1:
-			detailedViewMenuItem.state = NSOffState;
-			statisticsViewMenuItem.state = NSOnState;
+			[detailedViewMenuItem setState: NSOffState];
+			[statisticsViewMenuItem setState: NSOnState];
 			[contentView setDocumentView: statisticsView];
 			[statisticsView sizeToFit];
 			break;
@@ -66,8 +66,8 @@
 
 - (IBAction) changeWorkPeriodDate: (id) sender {
 	[self changeViewPeriodDate: sender];
-	LOG(@"SELECT: %d", [workPeriodDatePicker.selectedWorkPeriods count]);
-	[workPeriodController setSelectedObjects: workPeriodDatePicker.selectedWorkPeriods];
+	LOG(@"SELECT: %d", [[workPeriodDatePicker selectedWorkPeriods] count]);
+	[workPeriodController setSelectedObjects: [workPeriodDatePicker selectedWorkPeriods]];
 }
 
 - (IBAction) changeViewPeriodDate: (id) sender {
@@ -83,18 +83,18 @@
 		else if ([sender respondsToSelector: @selector(tag)])
 			delta = [sender tag];
 		if (delta) {
-			switch (self.viewPeriodSegment) {
-				case 1: newDate = [self.viewPeriodDate addDays: delta];
+			switch ([self viewPeriodSegment]) {
+				case 1: newDate = [[self viewPeriodDate] addDays: delta];
 					break;
-				case 2: newDate = [self.viewPeriodDate addWeeks: delta];
+				case 2: newDate = [[self viewPeriodDate] addWeeks: delta];
 					break;
-				case 3: newDate = [self.viewPeriodDate addMonths: delta];
+				case 3: newDate = [[self viewPeriodDate] addMonths: delta];
 					break;
 			}
 		}
 	}
-	self.viewPeriodDate = [newDate noon];
-	LOG(@"changeViewPeriodDate: %@", self.viewPeriodDate);
+	[self setViewPeriodDate: [newDate noon]];
+	LOG(@"changeViewPeriodDate: %@", [self viewPeriodDate]);
 	[self changeViewPeriodSpan: nil];
 }
 
@@ -107,36 +107,41 @@
 	if ([sender isKindOfClass: [NSSegmentedControl class]]) {
 		int seg = [sender selectedSegment];
 		if (seg==0 || seg==4) {
-			self.viewPeriodSegment = currentSegment;
+			[self setViewPeriodSegment: currentSegment];
 			[self changeViewPeriodDate: [NSNumber numberWithInt: seg==0 ? -1 : 1]];
 			return;
 		}
 	}
 	
 	if ([sender isKindOfClass: [NSSegmentedControl class]]) 
-		currentSegment = self.viewPeriodSegment;
+		currentSegment = [self viewPeriodSegment];
 	else if ([sender respondsToSelector: @selector(tag)])
 		currentSegment = [sender tag];
-	self.viewPeriodSegment = currentSegment;
-	LOG(@"changeViewPeriodSpan: %d", self.viewPeriodSegment);
+	[self setViewPeriodSegment: currentSegment];
+	LOG(@"changeViewPeriodSpan: %d", [self viewPeriodSegment]);
 
-	dailyViewMenuItem.state = weeklyViewMenuItem.state = monthlyViewMenuItem.state = NSOffState;
-	self.viewPeriodStartEnabled = self.viewPeriodEndEnabled = YES;
-	self.taskFilterEnabled = self.commentFilter = NO;
-	switch (self.viewPeriodSegment) {
+	[dailyViewMenuItem setState: NSOffState];
+	[weeklyViewMenuItem setState: NSOffState];
+	[monthlyViewMenuItem setState: NSOffState];
+	[self setViewPeriodStartEnabled: YES];
+    [self setViewPeriodEndEnabled: YES];
+	[self setTaskFilterEnabled: NO];
+    [self setCommentFilter: NO];
+	switch ([self viewPeriodSegment]) {
 		case 1: // view by day
-			self.viewPeriodStart = self.viewPeriodEnd = self.viewPeriodDate;
-			dailyViewMenuItem.state = NSOnState;
+			[self setViewPeriodStart: [self viewPeriodDate]];
+			[self setViewPeriodEnd: [self viewPeriodDate]];
+			[dailyViewMenuItem setState: NSOnState];
 			break;
 		case 2: // view by week
-			self.viewPeriodStart = [self.viewPeriodDate filterThroughComponents: NSYearCalendarUnit | NSWeekCalendarUnit];
-			self.viewPeriodEnd = [[self.viewPeriodStart addWeeks:1] addDays:-1];
-			weeklyViewMenuItem.state = NSOnState;
+			[self setViewPeriodStart: [[self viewPeriodDate] filterThroughComponents: NSYearCalendarUnit | NSWeekCalendarUnit]];
+			[self setViewPeriodEnd: [[[self viewPeriodStart] addWeeks:1] addDays:-1]];
+			[weeklyViewMenuItem setState: NSOnState];
 			break;
 		case 3: // view by month
-			self.viewPeriodStart = [self.viewPeriodDate filterThroughComponents: NSYearCalendarUnit | NSMonthCalendarUnit];
-			self.viewPeriodEnd = [[self.viewPeriodStart addMonths:1] addDays:-1];
-			monthlyViewMenuItem.state = NSOnState;
+			[self setViewPeriodStart: [[self viewPeriodDate] filterThroughComponents: NSYearCalendarUnit | NSMonthCalendarUnit]];
+			[self setViewPeriodEnd: [[[self viewPeriodStart] addMonths:1] addDays:-1]];
+			[monthlyViewMenuItem setState: NSOnState];
 			break;
 	}
 	[self updateViewPeriodPredicate: sender];
@@ -146,60 +151,64 @@
 	LOG(@"updateViewPeriodPredicate: %@", [sender className]);
 	int	hoursToAdd = [PREFS integerForKey: @"dateChangeHour"];
 	NSPredicate* fromPredicate = [NSPredicate predicateWithValue: YES];
-	if (self.viewPeriodStartEnabled && self.viewPeriodStart) {
+	if ([self viewPeriodStartEnabled] && [self viewPeriodStart]) {
 		LOG(@"filter: from");
 		fromPredicate = [NSPredicate predicateWithFormat: @"%@ <= start", 
-						 [self.viewPeriodStart lastMidnight]];
+						 [[self viewPeriodStart] lastMidnight]];
 		// alternatively [[from ...] addHours: hoursToAdd], 
 		// but then there are problems with changing times in edit work period panel
 	}
 	NSPredicate* uptoPredicate = [NSPredicate predicateWithValue: YES];
-	if (self.viewPeriodEndEnabled && self.viewPeriodEnd) {
+	if ([self viewPeriodEndEnabled] && [self viewPeriodEnd]) {
 		LOG(@"filter: upto");
 		uptoPredicate = [NSPredicate predicateWithFormat: @"start <= %@", 
-						 [[self.viewPeriodEnd lastMidnight] addHours: 24+hoursToAdd]];
+						 [[[self viewPeriodEnd] lastMidnight] addHours: 24+hoursToAdd]];
 	}
 	NSPredicate* taskPredicate = [NSPredicate predicateWithValue: YES];
-	if (self.taskFilterEnabled) {
+	if ([self taskFilterEnabled]) {
 		LOG(@"filter: task");
 		taskPredicate = [NSPredicate predicateWithFormat: @"task.enabled == YES OR task == nil"];
 	}
 	NSPredicate* commentPredicate = [NSPredicate predicateWithValue: YES];
-	if (self.commentFilterEnabled && [self.commentFilter length] > 0) {
+	if ([self commentFilterEnabled] && [[self commentFilter] length] > 0) {
 		LOG(@"filter: comment");
-		commentPredicate = [NSPredicate predicateWithFormat: @"comment CONTAINS[cd] %@", self.commentFilter];
+		commentPredicate = [NSPredicate predicateWithFormat: @"comment CONTAINS[cd] %@", [self commentFilter]];
 	}
 	NSArray* preds = [NSArray arrayWithObjects: fromPredicate, uptoPredicate, taskPredicate, commentPredicate, nil];
-	self.viewPeriodPredicate = [NSCompoundPredicate andPredicateWithSubpredicates: preds];
-	[workPeriodController setFilterPredicate: self.viewPeriodPredicate];
+	[self setViewPeriodPredicate: [NSCompoundPredicate andPredicateWithSubpredicates: preds]];
+	[workPeriodController setFilterPredicate: [self viewPeriodPredicate]];
 	[tasksController fetch: nil];
 }
 
 - (IBAction) showInconsistentWorkPeriods: (id) sender {
 	for (Task* task in [tasksArrayController arrangedObjects]) 
-		task.enabled =  [NSNumber numberWithBool: NO];
+		[task setEnabled: [NSNumber numberWithBool: NO]];
 	[self filterWorkPeriodsByTask];
 }
 
 - (IBAction) updateAdvancedViewPeriodPredicate: (id) sender {
 	[self updateViewPeriodPredicate: sender];
-	dailyViewMenuItem.state = weeklyViewMenuItem.state = monthlyViewMenuItem.state = NSOffState;
-	self.viewPeriodSegment = -1;
+	[dailyViewMenuItem setState: NSOffState];
+    [weeklyViewMenuItem setState: NSOffState];
+    [monthlyViewMenuItem setState: NSOffState];
+	[self setViewPeriodSegment: -1];
 }
 
 - (void) filterWorkPeriodsByTask {
-	self.taskFilterEnabled = YES;
-	self.commentFilterEnabled = self.viewPeriodStartEnabled = self.viewPeriodEndEnabled = NO;
+	[self setTaskFilterEnabled: YES];
+	[self setCommentFilterEnabled: NO];
+    [self setViewPeriodStartEnabled: NO];
+    [self setViewPeriodEndEnabled: NO];
 	[self updateAdvancedViewPeriodPredicate: nil];
 }
 
 - (NSDate*) getViewPeriodStart {
-	if (self.viewPeriodStartEnabled) return self.viewPeriodStart;
+	if ([self viewPeriodStartEnabled]) return [self viewPeriodStart];
 	return nil;
 }
 
 - (NSDate*) getViewPeriodEnd {
-	if (self.viewPeriodEndEnabled) return self.viewPeriodEnd;
+	if ([self viewPeriodEndEnabled]) return [self viewPeriodEnd];
 	return nil;
 }
 
@@ -210,7 +219,7 @@
 #pragma mark ---- Printing ----
 
 - (IBAction) print: (id) sender {
-	switch (self.contentViewSegment) {
+	switch ([self contentViewSegment]) {
 		case 0:
 			[workPeriodView print: sender];
 			break;
@@ -225,7 +234,7 @@
 - (IBAction) showGotoDatePanel: (id) sender {
 	LOG(@"showGotoDatePanel: %@", [sender className]);
 	[gotoDatePanel showModalBelow: viewPeriodSegmentedControl];
-	[self changeViewPeriodDate: self.viewPeriodDate];
+	[self changeViewPeriodDate: [self viewPeriodDate]];
 }
 
 
@@ -245,12 +254,11 @@
     return [[self managedObjectContext] undoManager];
 }
 
-
 #pragma mark ---- Initialization & Preferences ----
 
 - (IBAction) applyPreferences: (id) sender {
 	LOG(@"applyPreferences: %@", [sender className]);
-	self.taskColorListKeys = [[Task taskColorList] allKeys];
+	// [self setTaskColorListKeys: [[Task taskColorList] allKeys]];
 	[commentColumn setHidden: [PREFS boolForKey:@"hideCommentColumn"]];
 	[statisticsView setUsesAlternatingRowBackgroundColors: [PREFS boolForKey:@"viewAlternatingRows"]];
 	[workPeriodView setUsesAlternatingRowBackgroundColors: [PREFS boolForKey:@"viewAlternatingRows"]];
@@ -260,7 +268,7 @@
 + (void) initialize {
 	LOG(@"initialize");
 	NSDictionary* initialDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-									 @"Apple", @"colorListName",
+									 // @"Apple", @"colorListName",
 									 [NSNumber numberWithInt: [NSFont systemFontSize]], @"fontSize",
 									 [NSNumber numberWithInt:  30], @"minimumWorkPeriodLength",
 									 [NSNumber numberWithInt: 600], @"standardWorkPeriodLength",
@@ -282,8 +290,8 @@
 	
 	[tasksController registerForDragging: recordingView];
 	
-	self.workPeriodSortDescriptors = [NSArray arrayWithObject: [[NSSortDescriptor alloc] initWithKey: @"start" ascending: YES]];
-	self.tasksSortDescriptors      = [NSArray arrayWithObject: [[NSSortDescriptor alloc] initWithKey: @"order" ascending: YES]];
+	[self setWorkPeriodSortDescriptors: [NSArray arrayWithObject: [[NSSortDescriptor alloc] initWithKey: @"start" ascending: YES]]];
+	[self setTasksSortDescriptors:      [NSArray arrayWithObject: [[NSSortDescriptor alloc] initWithKey: @"order" ascending: YES]]];
 	
 	[workPeriodView setTarget: workPeriodPanel];
 	[workPeriodView setDoubleAction: @selector(makeKeyAndOrderFront:)];
@@ -320,12 +328,16 @@
 									repeats: YES];
 	
 	[workPeriodController tickTheClock: self];
+    [tasksController fetchImmediately: self];
 	if ([[[tasksController arrangedObjects] childNodes] count] == 0) {
 		// Show splash screen
 		NSRunAlertPanel(@"There are no tasks defined yet", 
 						@"Choose 'Edit Tasks...' from the 'KronoX' menu, add some tasks and then you are ready to start tracking",
 						@"OK", nil, nil);
 	}
+    [tasksController expandOutlineView:recordingView];
+    [tasksController expandOutlineView:statisticsView];
+    [tasksController expandOutlineView:tasksFilterView];
 }
 
 - (IBAction) activateApplication: (id) sender {

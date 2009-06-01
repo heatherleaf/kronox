@@ -34,8 +34,8 @@
 	[sp setAllowsOtherFileTypes: YES];
 	[sp setCanSelectHiddenExtension: YES];
 	[sp setAccessoryView: exportTextView];
-	self.exportDelimitor = @", ";
-	self.exportEncoding  = NSUTF8StringEncoding;
+	[self setExportDelimitor: @", "];
+	[self setExportEncoding: NSUTF8StringEncoding];
 	
 	int result = [sp runModalForDirectory: nil file: @"KronoX-data"];
 	if (result != NSOKButton) return;
@@ -48,10 +48,10 @@
 	NSArray* periods = [workPeriodController arrangedObjects];
 	LOG(@"Nr. work periods to export: %d", [periods count]);
 	
-	NSStringEncoding encoding = self.exportEncoding;
+	NSStringEncoding encoding = [self exportEncoding];
 	if (!encoding) encoding = NSUTF8StringEncoding;
 	
-	NSString* delim = self.exportDelimitor;
+	NSString* delim = [self exportDelimitor];
 	if (!delim) delim = @", ";
 	if ([delim isEqualToString: @"TAB"]) delim = @"\t";
 	
@@ -71,11 +71,11 @@
 			break;
 		}
 		[textData appendFormat: @"%@%@%@%@%@%@%@%@%@\n", 
-		 [work.start description],    delim,
-		 [work.end description],      delim,
-		 [work.duration stringValue], delim,
-		 work.task.longName,          delim,
-		 [work.comment stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]];
+		 [[work start] description],    delim,
+		 [[work end] description],      delim,
+		 [[work duration] stringValue], delim,
+		 [[work task] longName],          delim,
+		 [[work comment] stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]];
 		// kanske använda [comment stringByAddingPercentEscapesUsingEncoding: encoding]?
 		// fast den escapear inte "," ";" ":" vilket iallafall blir problem med ","-separering
 	}
@@ -111,11 +111,11 @@
 	[alert addButtonWithTitle: @"Export"];
 	[alert addButtonWithTitle: @"Cancel"];
 	[alert setAccessoryView: exportICalView];
-	self.iCalCalendars = [[[CalCalendarStore defaultCalendarStore] calendars] valueForKey: @"title"];
+	[self setICalCalendars: [[[CalCalendarStore defaultCalendarStore] calendars] valueForKey: @"title"]];
 	
 	int result = [alert runModal];
 	if (result != NSAlertFirstButtonReturn) return;
-	CalCalendar* calendar = [[store calendars] objectAtIndex: self.exportCalendar];
+	CalCalendar* calendar = [[store calendars] objectAtIndex: [self exportCalendar]];
 	
 	[progressPanel setTitle: @"Exporting to iCal"];
 	NSModalSession exportSession = [NSApp beginModalSessionForWindow: progressPanel];
@@ -133,8 +133,8 @@
 																	   calendars: [NSArray arrayWithObject: calendar]];
 	NSMutableSet* existingEvents = [NSMutableSet set];
 	for (CalEvent* event in [store eventsWithPredicate: eventsPredicate]) {
-		[existingEvents addObject: [event.title stringByAppendingFormat: @";%@;%@", 
-									[event.startDate description], [event.endDate description]]];
+		[existingEvents addObject: [[event title] stringByAppendingFormat: @";%@;%@", 
+									[[event startDate] description], [[event endDate] description]]];
 	}
 	LOG(@"Nr. existing events in iCal calendar: %d", [existingEvents count]);
 	
@@ -154,16 +154,16 @@
 			[NSApp runModalSession: exportSession] != NSRunContinuesResponse) {
 			break;
 		}
-		if ([existingEvents containsObject: [work.task.longName stringByAppendingFormat: @";%@;%@", 
-											 [work.start description], [work.end description]]])
+		if ([existingEvents containsObject: [[[work task] longName] stringByAppendingFormat: @";%@;%@", 
+											 [[work start] description], [[work end] description]]])
 			continue;
 		
 		CalEvent* event = [CalEvent event];
-		event.calendar = calendar;
-		event.title = work.task.longName;
-		event.notes = work.comment;
-		event.startDate = work.start;
-		event.endDate = work.end;
+		[event setCalendar: calendar];
+        [event setTitle: [[work task] longName]];
+        [event setNotes: [work comment]];
+        [event setStartDate: [work start]];
+        [event setEndDate: [work end]];
 		
 		NSError* error;
 		if (![store saveEvent:event span:CalSpanThisEvent error:&error]) {
@@ -177,7 +177,7 @@
 	NSRunAlertPanel(@"Finished exporting", 
 					@"%d work periods (out of %d) exported to iCal calendar %@",
 					@"OK", nil, nil,
-					exported, [periods count], calendar.title);
+					exported, [periods count], [calendar title]);
 	
 	[NSApp endModalSession: exportSession];
 	[progressPanel orderOut: self];

@@ -28,8 +28,8 @@
 @synthesize selectedWorkPeriods;
 
 - (void) selectWPs {
-	self.selectedWorkPeriods = [workPeriodController selectedObjects];
-	LOG(@"selectWPs: %d", [self.selectedWorkPeriods count]);
+	[self setSelectedWorkPeriods: [workPeriodController selectedObjects]];
+	LOG(@"selectWPs: %d", [[self selectedWorkPeriods] count]);
 }
 
 - (BOOL) becomeFirstResponder {

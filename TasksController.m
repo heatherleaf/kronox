@@ -29,7 +29,7 @@
 
 - (IBAction) addWorkPeriod: (id) sender { 
 	Task* task = [[self selectedObjects] count] > 0  ?  [[self selectedObjects] objectAtIndex: 0]  :  nil;
-	LOG(@"addWorkPeriod: %@", task.name);
+	LOG(@"addWorkPeriod: %@", [task name]);
 	[workPeriodController addForTask: task];
 	[workPeriodPanel makeKeyAndOrderFront: sender];
 }
@@ -58,26 +58,27 @@
 											   inManagedObjectContext: [self managedObjectContext]];
 	[self insertObject:task atArrangedObjectIndexPath:path];
 	[self reorderTasks];
-	[self.managedObjectContext endUndoGroup];
+	[[self managedObjectContext] endUndoGroup];
 	[taskPanel makeKeyAndOrderFront:sender];
 }
 
 - (IBAction) removeTask: (id) sender {
 	Task* task = [[self selectedObjects] objectAtIndex:0];
-	int nr_wps = [task.workperiods count];
+	int nr_wps = [[task workperiods] count];
 	if (nr_wps) {
 		NSInteger response = NSRunAlertPanel(@"Delete Task", 
 											 @"The task %@ contains %d work periods, which will be deleted too.\n\nAre you sure you want to delete this task?",
-											 @"Delete", @"Cancel", @"Show Work Periods", task.name, nr_wps);
+											 @"Delete", @"Cancel", @"Show Work Periods", [task name], nr_wps);
 		if (response == NSAlertOtherReturn) {
-			[self enableSelectedTasks: sender];
+            // Enabled tasks are not used anymore:
+			// [self enableSelectedTasks: sender];
 			[[NSApp delegate] performSelector: @selector(filterWorkPeriodsByTask)];
 		}
 		if (response != NSAlertDefaultReturn) return;
 	}		
-	[self.managedObjectContext beginUndoGroup: @"Remove Task"];
+	[[self managedObjectContext] beginUndoGroup: @"Remove Task"];
 	[self remove: sender];
-	[self.managedObjectContext endUndoGroup];
+	[[self managedObjectContext] endUndoGroup];
 	[self fetch: sender];
 }
 
@@ -85,7 +86,7 @@
 
 - (BOOL) allTasksAreEnabled {
 	for (Task* task in [tasksArrayController arrangedObjects]) 
-		if (! [task.enabled boolValue]) return NO;
+		if (! [[task enabled] boolValue]) return NO;
 	return YES;
 }
 
@@ -97,50 +98,40 @@
 - (IBAction) enableSelectedTasks: (id) sender {
 	NSArray* selectedTasks = [self selectedObjects];
 	for (Task* task in [tasksArrayController arrangedObjects]) 
-		task.enabled =  [NSNumber numberWithBool: [selectedTasks containsObject: task]];
+		[task setEnabled: [NSNumber numberWithBool: [selectedTasks containsObject: task]]];
 	[self fetch: sender];
 }
 
 - (IBAction) enableAllTasks: (id) sender {
 	for (Task* task in [tasksArrayController arrangedObjects]) 
-		task.enabled =  [NSNumber numberWithBool: YES];
+		[task setEnabled: [NSNumber numberWithBool: YES]];
 	[self fetch: sender];
 }
 
+#pragma mark ---- Expanding/collapsing tasks in an outline view (delegate methods) ----
 
-#pragma mark ---- Expanded tasks ----
-
-- (void) reexpandTree:(NSTreeNode*)node {
-	if (node == nil) {
-		node = [self arrangedObjects];
-	} else if (![node isLeaf]) {
+- (void) _expandTreeNode:(NSTreeNode*)node inOutlineView:(NSOutlineView*)view  {
+    if (node == nil) {
+        node = [self arrangedObjects];
+    } else if (![node isLeaf]) {
 		Task* task = [node representedObject];
-		BOOL expanded = [task.expanded boolValue];
-		[self expandOrCollapseItem:node expanded:expanded];
+		BOOL expanded = [[task expanded] boolValue];
+        if (expanded != [view isItemExpanded:node]) {
+            if (expanded) {
+                [view expandItem:node];
+            } else {
+                [view collapseItem:node];
+            }
+        }
 	}
 	for (NSTreeNode* child in [node childNodes]) {
-		[self reexpandTree:child];
+		[self _expandTreeNode:child inOutlineView:view];
 	}
 }
 
-- (void) expandOrCollapseItem:(id)item expanded:(BOOL)expanded {
-	[self expandOrCollapseItem:item expanded:expanded outlineView:recordingView];
-	[self expandOrCollapseItem:item expanded:expanded outlineView:statisticsView];
-	[self expandOrCollapseItem:item expanded:expanded outlineView:tasksFilterView];
-}
-
-- (void) expandOrCollapseItem:(id)item expanded:(BOOL)expanded outlineView:(NSOutlineView*)view {
-	if (expanded != [view isItemExpanded:item]) {
-		if (expanded) [view expandItem:item];
-		else [view collapseItem:item];
-	}
-}
-
-- (void) outlineViewItemDidExpandOrCollapse:(NSNotification*)notification expanded:(BOOL)expanded {
-	NSTreeNode* node = [[notification userInfo] valueForKey: @"NSObject"];
-	Task* task = [node representedObject];
-	task.expanded = [NSNumber numberWithBool:expanded];
-	[self expandOrCollapseItem:node expanded:expanded];
+- (void) expandOutlineView:(NSOutlineView*)view {
+    LOG(@"expandOutlineView: %@", view);
+    [self _expandTreeNode:nil inOutlineView:view];
 }
 
 - (void) outlineViewItemDidExpand:(NSNotification*)notification {
@@ -151,51 +142,75 @@
 	[self outlineViewItemDidExpandOrCollapse:notification expanded:NO];
 }
 
+- (void) outlineViewItemDidExpandOrCollapse:(NSNotification*)notification expanded:(BOOL)expanded {
+	NSTreeNode* node = [[notification userInfo] valueForKey: @"NSObject"];
+	Task* task = [node representedObject];
+    LOG(@"outlineViewItemDidExpandOrCollapse %d: %@", expanded, [task name]);
+	[task setExpanded: [NSNumber numberWithBool:expanded]];
+}
 
 #pragma mark ---- Updating ----
 
-// Bug in Leopard 10.5.6 (Issue #19 in Google Code):
-// After upgrading to 10.5.6, all items on level>=2 get collapsed on [super fetch...]
-// The reason is that new NSTreeNodes are created instead of reusing the old ones.
-
-// This is solved by adding a Task attribute "expanded", which has the additional 
-// advantage that expanded/collapsed tasks are remembered between sessions
+/* [090530] Apparently Issue #19 is fixed in 10.5.7
+ // Bug in Leopard 10.5.6 (Issue #19 in Google Code):
+ // After upgrading to 10.5.6, all items on level>=2 get collapsed on [super fetch...]
+ // The reason is that new NSTreeNodes are created instead of reusing the old ones.
+ // This is solved by adding a Task attribute "expanded", which has the additional 
+ // advantage that expanded/collapsed tasks are remembered between sessions
+ */
 
 - (void) fetch: (id) sender {
 	LOG(@"fetch: %@", [sender className]);
-	// Issue #19: We have to fetchImmediately instead of fetch
-	[self fetchImmediately: sender];
+    /* [090530] Apparently fixed in 10.5.7
+     // Issue #19: We have to fetchImmediately instead of fetch
+     // [self fetchImmediately: sender];
+     */
+	[super fetch: sender];
 	[tasksArrayController fetch: sender];
 	[workPeriodController fetch: sender];
 }
 
 - (void) fetchImmediately: (id) sender {
-	LOG(@"fetchImmediately: %@", [sender className]);
-	if (![self managedObjectContext]) return;
-	NSArray* selection = [self selectionIndexPaths];
-	NSError *error;
-	if (![super fetchWithRequest: nil merge: NO error: &error]) 
+    LOG(@"fetchImmediately: %@", [sender className]);
+    if (![self managedObjectContext]) return;
+    NSError *error;
+	if (![super fetchWithRequest:nil merge:NO error:&error]) 
 		[NSApp presentError: error];
-	[self reexpandTree:nil];
-	[self setSelectionIndexPaths:selection];
-}
+}    
+// [090530] Apparently Issue #19 is fixed in 10.5.7
+//    NSArray* selection = [self selectionIndexPaths];
+//    LOG(@"1. selected nodes before fetch:");
+//    for (NSTreeNode* n in [self selectedNodes])
+//		LOG(@"  * %@", [[n representedObject] longName]);
+//	NSError *error;
+//	if (![super fetchWithRequest:nil merge:NO error:&error]) 
+//		[NSApp presentError: error];
+//	LOG(@"2. selected nodes after fetch:");
+//	for (NSTreeNode* n in [self selectedNodes])
+//		LOG(@"  * %@", [[n representedObject] longName]);
+//	[self reexpandTree:nil];
+//	LOG(@"reexpanded tree");
+//	[self setSelectionIndexPaths:selection];
+//	LOG(@"3. selected nodes after reexpansion:");
+//	for (NSTreeNode* n in [self selectedNodes])
+//		LOG(@"  * %@", [[n representedObject] longName]);
 
-- (void) reorderTasks {
-	LOG(@"reorderTasks");
-	[self reorder: [self arrangedObjects] fromIndex: 0];
-}
-
-- (int) reorder: (NSTreeNode*) root fromIndex: (int) ix {
+- (int) _reorderTreeNode:(NSTreeNode*)root fromIndex:(int)ix {
 	for (NSTreeNode* child in [root childNodes]) {
 		Task* task = [child representedObject];
-		task.order = [NSNumber numberWithInt: ix];
-		ix = [self reorder: child fromIndex: ix+1];
+		[task setOrder:[NSNumber numberWithInt:ix]];
+		ix = [self _reorderTreeNode:child fromIndex:ix+1];
 	}
 	return ix;
 }
 
+- (void) reorderTasks {
+	LOG(@"reorderTasks");
+	[self _reorderTreeNode:[self arrangedObjects] fromIndex:0];
+}
 
-#pragma mark ---- Drag and drop ----
+
+#pragma mark ---- Drag and drop (delegate methods) ----
 
 #define TaskDragType @"Task Drag Type"
 
@@ -205,7 +220,7 @@
 }
 
 // Global variable used when dragging
-NSTreeNode* draggedNode;
+NSTreeNode* _draggedNode;
 
 // Beginning the drag from the outline view.
 - (BOOL) outlineView: (NSOutlineView*) view
@@ -217,7 +232,7 @@ NSTreeNode* draggedNode;
 	{
 		[pboard declareTypes: [NSArray arrayWithObject: TaskDragType] owner: self];
 		[pboard setData: [NSData data] forType: TaskDragType];
-		draggedNode = [items objectAtIndex: 0];
+		_draggedNode = [items objectAtIndex: 0];
 		return YES;
 	}
 	return NO;
@@ -231,7 +246,7 @@ NSTreeNode* draggedNode;
 {
 	// Check that we're not trying to drop on a descendant
 	while (item != nil) {
-		if (item == draggedNode) return NSDragOperationNone;
+		if (item == _draggedNode) return NSDragOperationNone;
 		item = [item parentNode];
 	}
     return NSDragOperationGeneric;
@@ -243,7 +258,7 @@ NSTreeNode* draggedNode;
 				item: (id) item
 		  childIndex: (NSInteger) index
 {
-	[self.managedObjectContext beginUndoGroup: @"Move Task"];
+	[[self managedObjectContext] beginUndoGroup: @"Move Task"];
 	NSIndexPath* newIndexPath;
 	if (index < 0) index = 0;
 	if (item == nil) {
@@ -252,10 +267,10 @@ NSTreeNode* draggedNode;
 		newIndexPath = [[item indexPath] indexPathByAddingIndex: index];
 	}
     // Use the tree controller to move the node
-    [self moveNode: draggedNode toIndexPath: newIndexPath];
+    [self moveNode: _draggedNode toIndexPath: newIndexPath];
 	// Finally reorder the nodes before fetching
 	[self reorderTasks];
-	[self.managedObjectContext endUndoGroup];
+	[[self managedObjectContext] endUndoGroup];
 	[self fetch: nil];
     return YES;
 }

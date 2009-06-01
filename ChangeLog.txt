@@ -3,6 +3,13 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
+Version 0.97b, 2009-06-01
+
+* Now each task can have any color, not just named colors
+  - IMPORTANT NOTE: All task colors previously defined will DISAPPEAR! You have to recreate them manually.
+* Changed appearance of start and end date, in the main window
+* (Fix, issue 19) Apple has solved the problem with NSOutlineView that caused issue #19, so lots of code have been removed
+
 Version 0.96, 2009-01-23
 
 * (Fix, issue 23) Fixed issue 23, which apparently wasn't fixed in v0.93 after all

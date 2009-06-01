@@ -36,7 +36,7 @@
 }
 
 - (NSInteger) showModalBelow: (NSView*) view {
-	self.viewThatSheetEmergesBelow = view;
+	[self setViewThatSheetEmergesBelow: view];
 	[NSApp beginSheet: self
 	   modalForWindow: [NSApp mainWindow] 
 		modalDelegate: nil

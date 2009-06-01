@@ -32,7 +32,7 @@
 @interface KronoX : NSObject 
 {
 	// Cocoa bindings
-	NSArray* taskColorListKeys;
+	// NSArray* taskColorListKeys;
 	NSArray* workPeriodSortDescriptors;
 	NSArray* tasksSortDescriptors;
 
@@ -80,7 +80,7 @@
     NSManagedObjectContext*       managedObjectContext;
 }
 
-@property (copy) NSArray* taskColorListKeys;
+// @property (copy) NSArray* taskColorListKeys;
 @property (copy) NSArray* workPeriodSortDescriptors;
 @property (copy) NSArray* tasksSortDescriptors;
 

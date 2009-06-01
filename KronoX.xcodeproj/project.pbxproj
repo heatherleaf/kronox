@@ -41,6 +41,7 @@
 		8B7B86130DCA7B8E00A87979 /* FontSizeToRowHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B86120DCA7B8E00A87979 /* FontSizeToRowHeight.m */; };
 		8B8805720E9C90AA003F4846 /* WorkPeriodDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */; };
 		8B8D2F360DA2B2D4009A4AB8 /* FontSizeToIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */; };
+		8B9AB9280FD3363F0093D722 /* KronoX-model-v3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AB9270FD3363F0093D722 /* KronoX-model-v3.xcmappingmodel */; };
 		8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CA4190F229D350005A79F /* dsa_pub.pem */; };
 		8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */; };
 		8BAE6AC20DA1468400423BA9 /* WorkPeriodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */; };
@@ -126,6 +127,8 @@
 		8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriodDatePicker.m; sourceTree = "<group>"; };
 		8B8D2F340DA2B2D4009A4AB8 /* FontSizeToIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSizeToIndex.h; sourceTree = "<group>"; };
 		8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSizeToIndex.m; sourceTree = "<group>"; };
+		8B9AB8790FD322990093D722 /* KronoX-model-v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model-v3.xcdatamodel"; sourceTree = "<group>"; };
+		8B9AB9270FD3363F0093D722 /* KronoX-model-v3.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "KronoX-model-v3.xcmappingmodel"; sourceTree = "<group>"; };
 		8B9CA4190F229D350005A79F /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Sparkle_appcast.xml; sourceTree = "<group>"; };
 		8BAE6AC00DA1468400423BA9 /* WorkPeriodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriodController.h; sourceTree = "<group>"; };
@@ -447,6 +450,7 @@
 				8B0702050EBE705E006BF98A /* SplitViewDelegate.m in Sources */,
 				8BB5616E0F1F8E2900953794 /* KronoX-model-v2.xcmappingmodel in Sources */,
 				8B083B810F2091A400689F95 /* TimeIntervalToNumber.m in Sources */,
+				8B9AB9280FD3363F0093D722 /* KronoX-model-v3.xcmappingmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,8 +605,10 @@
 				770B37EC0679A11B001EADE2 /* KronoX-model.xcdatamodel */,
 				8BB5616D0F1F8E2900953794 /* KronoX-model-v2.xcmappingmodel */,
 				8BB5616B0F1F8D6400953794 /* KronoX-model-v2.xcdatamodel */,
+				8B9AB9270FD3363F0093D722 /* KronoX-model-v3.xcmappingmodel */,
+				8B9AB8790FD322990093D722 /* KronoX-model-v3.xcdatamodel */,
 			);
-			currentVersion = 8BB5616B0F1F8D6400953794 /* KronoX-model-v2.xcdatamodel */;
+			currentVersion = 8B9AB8790FD322990093D722 /* KronoX-model-v3.xcdatamodel */;
 			path = "KronoX-model.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
