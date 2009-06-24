@@ -31,14 +31,13 @@
 @dynamic comment;
 @dynamic task;
 
+#define SECONDS_PER_DAY (24*60*60)
+
 @dynamic end;
 - (NSDate*) end {
 	if ([self duration] == nil) return nil;
 	return [[self start] addTimeInterval: [[self duration] doubleValue]];
 }
-
-#define SECONDS_PER_DAY (24*60*60)
-
 - (void) setEnd: (NSDate*) date {
 	if ([self start] == nil) return;
 	NSTimeInterval dur = [date timeIntervalSinceDate: [self start]];
@@ -47,6 +46,20 @@
 	while (dur > SECONDS_PER_DAY)
 		dur -= SECONDS_PER_DAY;
 	[self setDuration: [NSNumber numberWithDouble: dur]];
+}
+
+@dynamic date;
+- (NSDate*) date {
+    if ([self start] == nil) return nil;
+    return [[self start] lastMidnight];
+}
+- (void) setDate: (NSDate*) date {
+    if ([self start] == nil) {
+        [self setStart:[date lastMidnight]];
+    } else {
+        NSDateComponents* time = [[self start] components:[NSDate timeUnits]];
+        [self setStart:[[date lastMidnight] addComponents:time]];
+    }
 }
 
 @end

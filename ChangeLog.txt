@@ -3,6 +3,10 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
+Version 0.97
+
+* Cleaned some code in the work period editor: the WorkPeriodDatePicker class is not needed anymore
+
 Version 0.97b, 2009-06-01
 
 * Now each task can have any color, not just named colors

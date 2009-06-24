@@ -32,7 +32,9 @@
 @property (retain) NSString* comment;
 @property (retain) Task* task;
 
+// Calculated properties
 @property (retain) NSDate* end;
+@property (retain) NSDate* date;
 
 @end
 

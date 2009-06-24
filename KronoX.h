@@ -25,14 +25,12 @@
 #import "DateExtensions.h"
 #import "TasksController.h"
 #import "WorkPeriod.h"
-#import "WorkPeriodDatePicker.h"
 #import "Task.h"
 #import "ModalSheet.h"
 
 @interface KronoX : NSObject 
 {
 	// Cocoa bindings
-	// NSArray* taskColorListKeys;
 	NSArray* workPeriodSortDescriptors;
 	NSArray* tasksSortDescriptors;
 
@@ -72,7 +70,6 @@
 	IBOutlet NSSegmentedControl* viewPeriodSegmentedControl;
 	IBOutlet NSTextField* startDateTextField;
 	IBOutlet NSTextField* endDateTextField;
-	IBOutlet WorkPeriodDatePicker* workPeriodDatePicker;
 	
 	// Core Data variables
 	NSPersistentStoreCoordinator* persistentStoreCoordinator;
@@ -80,7 +77,6 @@
     NSManagedObjectContext*       managedObjectContext;
 }
 
-// @property (copy) NSArray* taskColorListKeys;
 @property (copy) NSArray* workPeriodSortDescriptors;
 @property (copy) NSArray* tasksSortDescriptors;
 
@@ -98,7 +94,6 @@
 
 // Views
 - (IBAction) changeContentView: (id) sender;
-- (IBAction) changeWorkPeriodDate: (id) sender;
 - (IBAction) changeViewPeriodDate: (id) sender;
 - (IBAction) changeViewPeriodSpan: (id) sender;
 - (IBAction) updateViewPeriodPredicate: (id) sender;

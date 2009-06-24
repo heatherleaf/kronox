@@ -35,7 +35,7 @@
 #define DATABASEFILE @"KronoX-data.sql"
 #endif
 
-@synthesize /* taskColorListKeys, */ workPeriodSortDescriptors, tasksSortDescriptors, 
+@synthesize workPeriodSortDescriptors, tasksSortDescriptors, 
 	contentViewSegment, viewPeriodSegment, viewPeriodDate, 
     viewPeriodStart, viewPeriodEnd, viewPeriodPredicate, 
     commentFilter, viewPeriodStartEnabled, viewPeriodEndEnabled,
@@ -62,12 +62,6 @@
 			break;
 	}
 	[tasksController fetch: sender];
-}
-
-- (IBAction) changeWorkPeriodDate: (id) sender {
-	[self changeViewPeriodDate: sender];
-	LOG(@"SELECT: %d", [[workPeriodDatePicker selectedWorkPeriods] count]);
-	[workPeriodController setSelectedObjects: [workPeriodDatePicker selectedWorkPeriods]];
 }
 
 - (IBAction) changeViewPeriodDate: (id) sender {
@@ -258,7 +252,6 @@
 
 - (IBAction) applyPreferences: (id) sender {
 	LOG(@"applyPreferences: %@", [sender className]);
-	// [self setTaskColorListKeys: [[Task taskColorList] allKeys]];
 	[commentColumn setHidden: [PREFS boolForKey:@"hideCommentColumn"]];
 	[statisticsView setUsesAlternatingRowBackgroundColors: [PREFS boolForKey:@"viewAlternatingRows"]];
 	[workPeriodView setUsesAlternatingRowBackgroundColors: [PREFS boolForKey:@"viewAlternatingRows"]];
@@ -268,7 +261,6 @@
 + (void) initialize {
 	LOG(@"initialize");
 	NSDictionary* initialDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-									 // @"Apple", @"colorListName",
 									 [NSNumber numberWithInt: [NSFont systemFontSize]], @"fontSize",
 									 [NSNumber numberWithInt:  30], @"minimumWorkPeriodLength",
 									 [NSNumber numberWithInt: 600], @"standardWorkPeriodLength",

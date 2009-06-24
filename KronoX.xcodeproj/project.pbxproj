@@ -229,6 +229,7 @@
 				8B67DB120D9635FB00A87B47 /* NSTransformers */,
 				8B5629E30EA00E240079AA8D /* Images */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				8B6E5EA80FD48F560037080F /* Obsolete */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -306,13 +307,20 @@
 			name = NSTransformers;
 			sourceTree = "<group>";
 		};
+		8B6E5EA80FD48F560037080F /* Obsolete */ = {
+			isa = PBXGroup;
+			children = (
+				8B8805700E9C90AA003F4846 /* WorkPeriodDatePicker.h */,
+				8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */,
+			);
+			name = Obsolete;
+			sourceTree = "<group>";
+		};
 		8B88056F0E9C9048003F4846 /* (Sub)Classes */ = {
 			isa = PBXGroup;
 			children = (
 				8B0701FF0EBE705E006BF98A /* ModalSheet.h */,
 				8B0702000EBE705E006BF98A /* ModalSheet.m */,
-				8B8805700E9C90AA003F4846 /* WorkPeriodDatePicker.h */,
-				8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */,
 			);
 			name = "(Sub)Classes";
 			sourceTree = "<group>";
