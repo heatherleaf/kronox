@@ -276,8 +276,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>31</integer>
-									<integer>23</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -321,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Sparkle_appcast.xml</string>
+								<string>ChangeLog.txt</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Sparkle_appcast.xml</string>
+										<string>ChangeLog.txt</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8BDEC8EB1066BD070007546E</string>
+										<string>8BDEC8EF1066BDE00007546E</string>
 										<key>history</key>
 										<array>
 											<string>8B88063E0E9C9451003F4846</string>
@@ -402,12 +401,12 @@
 											<string>8BDEC8C21066B9CC0007546E</string>
 											<string>8BDEC8C31066B9CC0007546E</string>
 											<string>8BDEC8C41066B9CC0007546E</string>
-											<string>8BDEC8D01066BBFA0007546E</string>
 											<string>8BDEC8D11066BBFA0007546E</string>
 											<string>8BDEC8E21066BD070007546E</string>
 											<string>8BDEC8E31066BD070007546E</string>
 											<string>8BDEC8E41066BD070007546E</string>
-											<string>8BDEC8E51066BD070007546E</string>
+											<string>8BDEC8EC1066BDE00007546E</string>
+											<string>8BDEC8D01066BBFA0007546E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -554,6 +553,7 @@
 											<string>8BDEC8E81066BD070007546E</string>
 											<string>8BDEC8E91066BD070007546E</string>
 											<string>8BDEC8EA1066BD070007546E</string>
+											<string>8BDEC8ED1066BDE00007546E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
