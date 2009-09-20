@@ -33,13 +33,6 @@
 - (NSDate*) addWeeks: (int) weeks;
 - (NSDate*) addMonths: (int) months;
 
-//- (NSDate*) addHours: (int) hours
-//			 minutes: (int) minutes
-//			 seconds: (int) seconds;
-//- (NSDate*) addDays: (int) days
-//			  weeks: (int) weeks
-//			 months: (int) months;
-
 - (NSDate*) noon;
 - (NSDate*) lastMidnight;
 

@@ -7,6 +7,21 @@
 	<language>en</language>
 
 	<item>
+		<title>Version 0.98</title>
+		<sparkle:releaseNotesLink>
+			http://kronox.googlecode.com/svn/trunk/ChangeLog.txt
+		</sparkle:releaseNotesLink>
+		<pubDate>Sun, 20 Sep 2009 21:41:36 +0200</pubDate>
+		<enclosure 
+			url="https://kronox.googlecode.com/files/KronoX-0.98.dmg"
+			sparkle:version="0.98"
+			type="application/octet-stream"
+			length="909793"
+			sparkle:dsaSignature="MCwCFCDqVjBYD/dP5cO+OCPugyBfG8g5AhRMTpq2lXUyPtUlNy5hOSQJKCP/gg=="
+		/>
+	</item>
+
+	<item>
 		<title>Version 0.97b</title>
 		<sparkle:releaseNotesLink>
 			http://kronox.googlecode.com/svn/trunk/ChangeLog.txt

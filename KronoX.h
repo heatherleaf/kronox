@@ -40,12 +40,13 @@
 	NSDate* viewPeriodStart;
 	NSDate* viewPeriodEnd;
 	NSPredicate* viewPeriodPredicate;
-	NSString* commentFilter;
 	BOOL viewPeriodStartEnabled;
 	BOOL viewPeriodEndEnabled;
-	BOOL taskFilterEnabled;
-	BOOL commentFilterEnabled;
-	
+    NSString* searchString;
+    
+    NSInteger searchAttribute;
+    NSInteger comparisonOperator;
+    
 	// Outlets
 	IBOutlet WorkPeriodController* workPeriodController;
 	IBOutlet NSArrayController* tasksArrayController;
@@ -56,13 +57,18 @@
 	IBOutlet NSMenuItem* monthlyViewMenuItem;
 	IBOutlet NSMenuItem* detailedViewMenuItem;
 	IBOutlet NSMenuItem* statisticsViewMenuItem;
+    
+    IBOutlet NSView* searchView;
+    IBOutlet NSPopUpButton* searchAttributePopup;
+    IBOutlet NSPopUpButton* comparisonOperatorPopup;
+    IBOutlet NSSearchField* searchField;
 	
 	IBOutlet NSScrollView* contentView;
 	IBOutlet NSOutlineView* statisticsView;
 	IBOutlet NSOutlineView* recordingView;
-	IBOutlet NSOutlineView* tasksFilterView;
 	IBOutlet NSTableView* workPeriodView;
 	IBOutlet NSTableColumn* commentColumn;
+    IBOutlet NSTableColumn* taskFilterColumn;
 	IBOutlet NSPanel* workPeriodPanel;
 	IBOutlet ModalSheet* gotoDatePanel;
 	IBOutlet ModalSheet* startDatePanel;
@@ -86,24 +92,36 @@
 @property (copy) NSDate* viewPeriodStart;
 @property (copy) NSDate* viewPeriodEnd;
 @property (copy) NSPredicate* viewPeriodPredicate;
-@property (copy) NSString* commentFilter;
 @property BOOL viewPeriodStartEnabled;
 @property BOOL viewPeriodEndEnabled;
-@property BOOL taskFilterEnabled;
-@property BOOL commentFilterEnabled;
+@property (copy) NSString* searchString;
+
+@property NSInteger searchAttribute;
+@property NSInteger comparisonOperator;
 
 // Views
 - (IBAction) changeContentView: (id) sender;
 - (IBAction) changeViewPeriodDate: (id) sender;
 - (IBAction) changeViewPeriodSpan: (id) sender;
-- (IBAction) updateViewPeriodPredicate: (id) sender;
+
+// Showing & hiding the search view 
+- (void) setSearchViewHidden:(BOOL)hidden;
+- (IBAction) showSearchView:(id)sender;
+- (IBAction) hideSearchView:(id)sender;
+
+// Searching
 - (IBAction) showInconsistentWorkPeriods: (id) sender;
+- (IBAction) filterWorkPeriodsByTask: (id) sender;
+- (void) searchForTasksEqualTo:(NSString*)taskname;
+- (IBAction) updateViewPeriodPredicate: (id) sender;
 - (IBAction) updateAdvancedViewPeriodPredicate: (id) sender;
-- (void) filterWorkPeriodsByTask;
+
+// Called by other classes, via performSelector:
 - (NSDate*) getViewPeriodStart;
 - (NSDate*) getViewPeriodEnd;
 - (NSNumber*) totalDurationOfWorkPeriods;
 
+// Printing
 - (IBAction) print: (id) sender;
 
 // Modal dialogs

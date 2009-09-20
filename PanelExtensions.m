@@ -27,9 +27,9 @@
 
 - (void) toggleVisibility: (id) sender {
 	if ([self isKeyWindow]) {
-		[self orderOut: sender];
+		[self orderOut:sender];
 	} else {
-		[self makeKeyAndOrderFront: sender];
+		[self makeKeyAndOrderFront:sender];
 	}
 }
 

@@ -34,15 +34,16 @@
 }
 
 + (NSString*) transformedValue: (NSDate*) date {
-	if (date == nil) return nil;
+	if (date == nil) 
+        return nil;
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateStyle: NSDateFormatterLongStyle];
-	[dateFormatter setTimeStyle: NSDateFormatterNoStyle];
-	return [dateFormatter stringFromDate: date];
+	[dateFormatter setDateStyle:NSDateFormatterLongStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+	return [dateFormatter stringFromDate:date];
 }
 
 - (NSString*) transformedValue: (NSDate*) date {
-	return [DateToButtonTitle transformedValue: date];
+	return [DateToButtonTitle transformedValue:date];
 }
 
 

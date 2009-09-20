@@ -32,7 +32,6 @@
 @property (retain) NSString* name;
 @property (retain) NSNumber* enabled;
 @property (retain) NSNumber* expanded;
-//@property (retain) NSString* appearance;
 @property (retain) NSSet* children;
 @property (retain) Task* parent;
 @property (retain) NSSet* workperiods;
@@ -48,11 +47,10 @@
 @property (readonly) NSTimeInterval totalDuration;
 @property (readonly) NSNumber* durationPercent;
 @property (readonly) NSNumber* totalDurationPercent;
-@property (readonly) BOOL allParentsAreEnabled;
+// @property (readonly) BOOL allParentsAreEnabled;
 
 // Other methods
 - (void) awakeFromInsert;
-// + (NSColorList*) taskColorList;
 
 @end
 

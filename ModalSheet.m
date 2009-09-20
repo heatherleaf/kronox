@@ -36,20 +36,28 @@
 }
 
 - (NSInteger) showModalBelow: (NSView*) view {
-	[self setViewThatSheetEmergesBelow: view];
-	[NSApp beginSheet: self
-	   modalForWindow: [NSApp mainWindow] 
-		modalDelegate: nil
-	   didEndSelector: nil
-		  contextInfo: nil];
-	NSInteger response = [NSApp runModalForWindow: self];
-	[NSApp endSheet: self];
-	[self orderOut: nil];
+	[self setViewThatSheetEmergesBelow:view];
+	[NSApp beginSheet:self
+	   modalForWindow:[NSApp mainWindow] 
+		modalDelegate:nil
+	   didEndSelector:nil
+		  contextInfo:nil];
+	NSInteger response = [NSApp runModalForWindow:self];
+	[NSApp endSheet:self];
+	[self orderOut:nil];
 	return response;
 }
 
-- (IBAction) stopModal: (id) sender { [NSApp stopModal]; }
-- (IBAction) abortModal: (id) sender { [NSApp abortModal]; }
-- (IBAction) stopModalWithTag: (id) sender { [NSApp stopModalWithCode: [sender tag]]; }
+- (IBAction) stopModal: (id) sender { 
+    [NSApp stopModal]; 
+}
+
+- (IBAction) abortModal: (id) sender { 
+    [NSApp abortModal]; 
+}
+
+- (IBAction) stopModalWithTag: (id) sender { 
+    [NSApp stopModalWithCode:[sender tag]]; 
+}
 
 @end

@@ -27,7 +27,7 @@
 
 - (void) beginUndoGroup: (NSString*) action {
 	[[self undoManager] beginUndoGrouping];
-	[[self undoManager] setActionName: action];
+	[[self undoManager] setActionName:action];
 }
 
 - (void) endUndoGroup {

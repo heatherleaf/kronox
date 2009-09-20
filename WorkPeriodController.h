@@ -34,6 +34,7 @@
 	NSStatusItem* statusItem;
 	IBOutlet NSMenu* recordingMenu;
 
+    // Total duration of all visible work periods
 	NSTimeInterval totalDuration;
 	
 	// Current recording
@@ -45,11 +46,11 @@
 	IBOutlet NSDateFormatter* currentDurationFormatter;
 }
 
-@property (retain) WorkPeriod* currentWorkPeriod;
-@property (copy) NSDate*   currentStartTime;
+@property (assign) WorkPeriod* currentWorkPeriod;
+@property (copy) NSDate* currentStartTime;
 @property (copy) NSNumber* currentDuration;
-@property        BOOL      isRecording;
-@property        BOOL      canChangeDate;
+@property BOOL isRecording;
+@property BOOL canChangeDate;
 
 // Information on the status line
 @property NSTimeInterval totalDuration;

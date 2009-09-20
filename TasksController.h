@@ -35,7 +35,6 @@
 	
 	IBOutlet NSOutlineView* statisticsView;
 	IBOutlet NSOutlineView* recordingView;
-	IBOutlet NSOutlineView* tasksFilterView;
 }
 
 // Manage work periods
@@ -46,17 +45,11 @@
 - (IBAction) addTask: (id) sender;
 - (IBAction) removeTask: (id) sender;
 
-// Enabled tasks
-- (BOOL) allTasksAreEnabled;
-- (IBAction) toggleEnableAllTasks: (id) sender;
-- (IBAction) enableSelectedTasks: (id) sender;
-- (IBAction) enableAllTasks: (id) sender;
-
 // Expanding/collapsing tasks in an outline view (delegate methods)
-- (void) expandOutlineView:(NSOutlineView*)view;
-- (void) outlineViewItemDidExpandOrCollapse:(NSNotification*)notification expanded:(BOOL)expanded;
-- (void) outlineViewItemDidExpand:(NSNotification*)notification;
-- (void) outlineViewItemDidCollapse:(NSNotification*)notification;
+- (void) expandOutlineView: (NSOutlineView*) view;
+- (void) outlineViewItemDidExpandOrCollapse: (NSNotification*) notification expanded: (BOOL) expanded;
+- (void) outlineViewItemDidExpand: (NSNotification*) notification;
+- (void) outlineViewItemDidCollapse: (NSNotification*) notification;
 
 // Updating
 // - (void) fetch: (id) sender;

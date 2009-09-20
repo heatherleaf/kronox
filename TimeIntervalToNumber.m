@@ -34,9 +34,11 @@
 }
 
 - (NSNumber*) transformedValue: (NSNumber*) value {
-	if (value == nil) return nil;
+	if (value == nil) 
+        return nil;
 	NSTimeInterval seconds = [value doubleValue];
-	if (seconds < -0.0001) return nil;
+	if (seconds < -0.0001) 
+        return nil;
 	int hours = seconds/3600;
 	double minutes = seconds/60 - hours*60;
 	double formatted = hours*100 + minutes;
@@ -44,9 +46,11 @@
 }
 
 - (NSNumber*) reverseTransformedValue: (NSNumber*) value {
-	if (value == nil) return nil;
+	if (value == nil) 
+        return nil;
 	double formatted = [value doubleValue];
-	if (formatted <= 0) return [NSNumber numberWithInt:0];
+	if (formatted <= 0) 
+        return [NSNumber numberWithInt:0];
 	int hours = formatted/100;
 	double minutes = formatted - hours*100;
 	NSTimeInterval seconds = hours*3600 + minutes*60;

@@ -34,19 +34,15 @@
 }
 
 - (NSString*) transformedValue: (NSNumber*) time {
-	if (time == nil) return nil;
-	if (![time intValue]) return nil;
-	NSString* interval;
+	if (time == nil) 
+        return nil;
+	if (![time intValue]) 
+        return nil;
 	int minutes = ([time intValue] + 30) / 60;
 	switch ([PREFS integerForKey: @"durationAppearance"]) {
-		case 0:
-			interval = [NSString stringWithFormat: @"%d:%02d", minutes/60, minutes%60];
-			break;
-		case 1:
-			interval = [NSString stringWithFormat: @"%.1fh", (float)minutes/60];
-			break;
+		case 0: return [NSString stringWithFormat:@"%d:%02d", minutes/60, minutes%60];
+		case 1: return [NSString stringWithFormat:@"%.1fh", (float)minutes/60];
 	}
-	return interval;
 }
 
 @end

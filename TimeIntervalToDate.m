@@ -34,21 +34,23 @@
 }
 
 - (NSDate*) transformedValue: (NSNumber*) time {
-	if (time == nil) return nil;
+	if (time == nil) 
+        return nil;
 	NSTimeZone* tz = [NSTimeZone defaultTimeZone];
 	NSTimeInterval seconds = [time doubleValue] - [tz secondsFromGMT];
 	if ([tz isDaylightSavingTime]) 
 		seconds += [tz daylightSavingTimeOffset];
-	return [NSDate dateWithTimeIntervalSinceReferenceDate: seconds];
+	return [NSDate dateWithTimeIntervalSinceReferenceDate:seconds];
 }
 
 - (NSNumber*) reverseTransformedValue: (NSDate*) date {
-	if (date == nil) return nil;
+	if (date == nil) 
+        return nil;
 	NSTimeZone* tz = [NSTimeZone defaultTimeZone];
 	NSTimeInterval seconds = [date timeIntervalSinceReferenceDate] + [tz secondsFromGMT];
 	if ([tz isDaylightSavingTime]) 
 		seconds -= [tz daylightSavingTimeOffset];
-	return [NSNumber numberWithDouble: seconds];
+	return [NSNumber numberWithDouble:seconds];
 }
 
 @end

@@ -36,16 +36,16 @@
 @dynamic end;
 - (NSDate*) end {
 	if ([self duration] == nil) return nil;
-	return [[self start] addTimeInterval: [[self duration] doubleValue]];
+	return [[self start] addTimeInterval:[[self duration] doubleValue]];
 }
 - (void) setEnd: (NSDate*) date {
 	if ([self start] == nil) return;
-	NSTimeInterval dur = [date timeIntervalSinceDate: [self start]];
+	NSTimeInterval dur = [date timeIntervalSinceDate:[self start]];
 	while (dur < 0) 
 		dur += SECONDS_PER_DAY;
 	while (dur > SECONDS_PER_DAY)
 		dur -= SECONDS_PER_DAY;
-	[self setDuration: [NSNumber numberWithDouble: dur]];
+	[self setDuration:[NSNumber numberWithDouble:dur]];
 }
 
 @dynamic date;

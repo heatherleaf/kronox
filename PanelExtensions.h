@@ -25,9 +25,6 @@
 
 @interface NSPanel (PanelExtensions)
 
-// @property BOOL isKeyWindow;
-// @property BOOL isVisible;
-
 - (void) toggleVisibility: (id) sender;
 
 @end

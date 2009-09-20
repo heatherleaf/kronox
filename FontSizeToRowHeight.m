@@ -34,7 +34,7 @@
 }
 
 - (NSNumber*) transformedValue: (NSNumber*) fontSize {
-	return [NSNumber numberWithDouble: 4 + [fontSize doubleValue]];
+	return [NSNumber numberWithDouble:4 + [fontSize doubleValue]];
 }
 
 @end

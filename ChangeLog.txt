@@ -3,9 +3,9 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
-Version 0.97
+Version 0.98
 
-* Cleaned some code in the work period editor: the WorkPeriodDatePicker class is not needed anymore
+* New, simplified, search interface
 
 Version 0.97b, 2009-06-01
 
