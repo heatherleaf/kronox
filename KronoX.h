@@ -27,6 +27,7 @@
 #import "WorkPeriod.h"
 #import "Task.h"
 #import "ModalSheet.h"
+#import "TimeIntervalToNormalWorkingTime.h"
 
 @interface KronoX : NSObject 
 {
@@ -62,21 +63,24 @@
     IBOutlet NSPopUpButton* searchAttributePopup;
     IBOutlet NSPopUpButton* comparisonOperatorPopup;
     IBOutlet NSSearchField* searchField;
-	
+    
+// 	IBOutlet NSSplitView* splitView;
 	IBOutlet NSScrollView* contentView;
+    IBOutlet NSView* contentEnclosingView;
 	IBOutlet NSOutlineView* statisticsView;
 	IBOutlet NSOutlineView* recordingView;
 	IBOutlet NSTableView* workPeriodView;
-	IBOutlet NSTableColumn* commentColumn;
-    IBOutlet NSTableColumn* taskFilterColumn;
+    
 	IBOutlet NSPanel* workPeriodPanel;
 	IBOutlet ModalSheet* gotoDatePanel;
-	IBOutlet ModalSheet* startDatePanel;
-	IBOutlet ModalSheet* endDatePanel;
+// 	IBOutlet ModalSheet* startDatePanel;
+// 	IBOutlet ModalSheet* endDatePanel;
 	IBOutlet NSSegmentedControl* viewPeriodSegmentedControl;
-	IBOutlet NSTextField* startDateTextField;
-	IBOutlet NSTextField* endDateTextField;
-	
+// 	IBOutlet NSTextField* startDateTextField;
+// 	IBOutlet NSTextField* endDateTextField;
+    
+    IBOutlet NSTextFieldCell* normalWorkingTimeTextField;
+    
 	// Core Data variables
 	NSPersistentStoreCoordinator* persistentStoreCoordinator;
     NSManagedObjectModel*         managedObjectModel;
@@ -99,8 +103,12 @@
 @property NSInteger searchAttribute;
 @property NSInteger comparisonOperator;
 
-// Views
+// Content views
 - (IBAction) changeContentView: (id) sender;
+- (IBAction) sizeTableColumnsToFit: (id) sender;
+
+// View periods
+- (NSNumber*) viewPeriodTimeInterval;
 - (IBAction) changeViewPeriodDate: (id) sender;
 - (IBAction) changeViewPeriodSpan: (id) sender;
 
@@ -120,6 +128,7 @@
 - (NSDate*) getViewPeriodStart;
 - (NSDate*) getViewPeriodEnd;
 - (NSNumber*) totalDurationOfWorkPeriods;
+- (NSColor*) getColorIfOverlappingTime: (NSDate*) time;
 
 // Printing
 - (IBAction) print: (id) sender;
@@ -133,6 +142,7 @@
 
 // Initialization & Preferences
 - (IBAction) applyPreferences: (id) sender;
+- (IBAction) setNormalWorkingTimeInterval: (id) sender;
 + (void) initialize;
 - (void) awakeFromNib;
 - (IBAction) activateApplication: (id) sender;
@@ -146,5 +156,6 @@
 - (NSPersistentStoreCoordinator*) persistentStoreCoordinator;
 - (NSManagedObjectModel*) managedObjectModel;
 - (NSManagedObjectContext*) managedObjectContext;
+
 
 @end

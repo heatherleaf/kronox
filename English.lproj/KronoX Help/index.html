@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>KronoX Help</title>
+  <meta name="AppleTitle" content="KronoX Help">
+  <meta name="AppleIcon" content="KronoX-icon.png">
+  <style type="text/css">
+    body   {margin: 0pt; 
+            padding: 5pt 20pt;
+            font: 10pt "Optima", serif}
+    h1     {margin: -10pt -20pt 5pt;
+            padding: 25pt 10pt 5pt; 
+            font: 14pt normal "Lucida Grande", "Verdana", sans-serif;
+            background-color: #aaffff}
+    h2     {margin: 15pt -20pt 10pt;
+            padding: 5pt 10pt; 
+            clear: both;
+            font: 11pt normal "Lucida Grande", "Verdana", sans-serif;
+            background-color: #ffeeaa}
+    b      {padding: 0pt 2pt;
+            background-color: #ccffcc}
+    .icon  {float: left; 
+            margin-left: -10pt}
+  </style>
+</head>
+
+<body>
+<img src="KronoX-icon.png" class="icon">
+<h1>KronoX Help</h1>
+
+This is a very brief manual of KronoX. Some day there will perhaps even be a better one.
+
+<h2>Hierarchical Tasks</h2>
+
+A task can have any number of subtasks. This can be used to group similar tasks together. When showing statistics, some of the columns show the total time, including subtasks.
+<p>
+Tasks are added, edited and removed from the <b>File</b> menu.
+<p>
+A task can have a colour. If it doesn't, it inherits the colour from its parent. A task can have an associated comment; which can be used for address information or other references. You can also specify your normal working time for a task. Then you can see if you have been working too much or too little on a task.
+
+<h2>Work Periods</h2>
+
+When you start recording a task, a new work period is created. When you stop recording, or switch to another task, the work period is finalised.
+<p>
+Recordings are started and stopped from the File menu, or in the toolbar. If you forgot to record a work period, you can add a new one by choosing <b>File > New Work Period</b>. (Or delete, or edit).
+<p>
+Work periods have an associated date, start time, end time and duration. They also have an optional comment, where you can specify any information you want.
+
+<h2>Filtering/searching work periods</h2>
+
+Show all work periods for a given day, week or month, by selecting from the <b>View</b> menu. Move around in time by selecting the menu items <b>Next</b>, <b>Previous</b>, <b>Go to Today</b> or <b>Go to Date...</b>. Or use the keyboard shortcuts or the toolbar.
+<p>
+You can also choose any date interval to show your work periods from. Or remove the date interval by clicking the <b>x</b> button next to the dates.
+<p>
+You can also perform more advanced searches, e.g., show all work periods for a specific task, by selecting <b>Edit > Find</b>.
+
+<h2>Statistics</h2>
+
+To show the statistics view, choose <b>View > Statistics View</b> from the menu, or press the <b>∑</b> button in the toolbar. Then you see statistics for all work periods that are shown in the work period view. Change the filter and the statistics changes instantly.
+<p>
+You can show and hide any columns in the statistics view (and in the work period view), by selecting from the menu <b>View > Columns</b>, or by right-clicking (or ctrl-clicking) in the table header.
+
+<h2>Importing and Exporting</h2>
+
+You can export work periods, either to an iCal calendar, or to a comma-separated text file (or another delimiter).
+<p>
+Importing is not implemented yet.
+
+<h2>The Status Menu</h2>
+
+KronoX adds a menu to the status bar in the top right. From this menu you can start and stop recordings. In the Preferences you can select how the status item should show up: as a symbol or as the name of the currently recording task. You can also select if the status item should be coloured or not.
+
+<h2>Preferences</h2>
+
+In the <b>Timing</b> preferences tab, you can do the following:
+<ul>
+<li>Set your normal working time (per week, month or year). This is used in some statistics columns.
+<li>Set the minimum duration of a recording. All recordings shorter than this will be discarded.
+<li>Set the default duration of new work periods. Note that the duration of a specific work period can always be changed.
+<li>Set the hour in the night when the working day ends. This is normally midnight, but if you are a late worker, you can select a later hour.
+<li>Set if KronoX should give a warning if the computer has been idle for some time, during a recording. This can be useful if you tend to forget to stop your recordings.
+</ul>
+
+In the <b>Viewing</b> tab, you can do the following:
+<ul>
+<li>Set how the tables should be shown.
+<li>Set how the status menu item should be shown (see above).
+<li>Set if overlapping work periods should be shown in red.
+<li>Set how duration times should be shown: as hours:minutes, or as hours in decimal.
+</ul>
+
+In the <b>Updating</b> tab, you can set if KronoX should automatically check for new updates.
+
+</body>
+</html>

@@ -24,6 +24,7 @@
 #define PREFS [NSUserDefaults standardUserDefaults]
 
 #define CONCAT(str1,str2) [(str1) stringByAppendingString:(str2)]
+#define LINES(...) [[NSArray arrayWithObjects: __VA_ARGS__, nil] componentsJoinedByString:@"\n"] 
 #define PADSTR(str,pad)   [(str) stringByPaddingToLength:(pad) withString:@" " startingAtIndex:0]
 
 #ifdef DEBUG

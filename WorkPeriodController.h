@@ -44,6 +44,10 @@
 	BOOL isRecording;
 	BOOL canChangeDate;
 	IBOutlet NSDateFormatter* currentDurationFormatter;
+    
+    // Checking idle time
+    IBOutlet NSPanel* editWorkperiodPanel;
+    IBOutlet NSDatePicker* endtimeDatePicker;
 }
 
 @property (assign) WorkPeriod* currentWorkPeriod;
@@ -51,17 +55,21 @@
 @property (copy) NSNumber* currentDuration;
 @property BOOL isRecording;
 @property BOOL canChangeDate;
-
-// Information on the status line
 @property NSTimeInterval totalDuration;
 @property (readonly) NSNumber* numberOfSelectedObjects;
-- (void) updateTotalDuration;
+
+// Checking idle time
+- (NSTimeInterval) currentIdleTime;
+- (void) checkIdleTime: (id) sender;
 
 // Recording
 - (void)     tickTheClock: (id) sender;
 - (void)     startRecordingTask: (Task*) newTask;
 - (IBAction) stopRecording: (id) sender;
 - (void)     setRecordingTo: (WorkPeriod*) work;
+
+// Information on the status line
+- (void) updateTotalDuration;
 
 // The status item/menu
 - (void) initStatusMenu;
@@ -79,7 +87,7 @@
 				  duration: (NSTimeInterval) duration;
 - (void) addForTask: (Task*) task;
 
-// Delegate method
+// Delegate methods
 - (void) tableViewSelectionDidChange: (NSNotification*) notification;
 
 @end

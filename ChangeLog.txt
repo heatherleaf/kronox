@@ -3,6 +3,25 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
+Version 0.99, 2009-10-09
+
+* Added some basic help (available from the Help menu)
+* (Issue 12) Added new attributes to Tasks: comment, and normal working time:
+  - Both are optional, but if normal working time is used, 
+    the statistics view will calculate the percentage of how much you have worked;
+  - in that case you need to set the (total) normal working time in the preferences.
+* Added a contextual menu where the user can show/hide different table columns in 
+  the detailed and statistics views.
+  This columns menu is also in the main menu (View -> Columns)
+* (Issue 8) Better printing, but still not very good.
+* (Issue 27) Added checking for idle time. The behaviour can be set in the preferences.
+* (Issue 13) Overlapping work periods are marked in red (if activated in the preferences).
+* (Issue 28, still not sure if it's fixed) 
+  Fixed a bug with automatic saving of the database, which could retract pending changes.
+* Changed the keyboard shortcuts for creating, editing and deleting Tasks.
+* The detailed and statistics views now remember their own size.
+  Also, the column widths and visibility are remembered between invocations.
+
 Version 0.98, 2009-09-20
 
 * New, simplified, search interface

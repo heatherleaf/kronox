@@ -47,21 +47,48 @@
 	if (![sender isKindOfClass:[NSSegmentedControl class]] && [sender respondsToSelector:@selector(tag)])
 		[self setContentViewSegment:[sender tag]];
 	LOG(@"changeContentView: %d", [self contentViewSegment]);
+    NSWindow* window = [contentView window];
 	switch ([self contentViewSegment]) {
-		case 0:
+		case 1:
+            if ([contentView documentView] == workPeriodView)
+                [window saveFrameUsingName:@"workPeriodViewWindowFrame"];
+            [detailedViewMenuItem setState:NSOffState];
+			[statisticsViewMenuItem setState:NSOnState];
+			[contentView setDocumentView:statisticsView];
+            [window setFrameUsingName:@"statisticsViewWindowFrame"];
+			break;
+		default:
+            if ([contentView documentView] == statisticsView)
+                [window saveFrameUsingName:@"statisticsViewWindowFrame"];
 			[detailedViewMenuItem setState:NSOnState];
 			[statisticsViewMenuItem setState:NSOffState];
 			[contentView setDocumentView:workPeriodView];
-			[workPeriodView sizeToFit];
-			break;
-		case 1:
-			[detailedViewMenuItem setState:NSOffState];
-			[statisticsViewMenuItem setState:NSOnState];
-			[contentView setDocumentView:statisticsView];
-			[statisticsView sizeToFit];
+            [window setFrameUsingName:@"workPeriodViewWindowFrame"];
 			break;
 	}
+    [[contentView documentView] sizeToFit];
 	[tasksController fetch:sender];
+}
+
+- (IBAction) sizeTableColumnsToFit: (id) sender {
+    LOG(@"sizeTableColumnsToFit");
+    switch ([self contentViewSegment]) {
+        case 1:  [statisticsView sizeToFit]; break;
+        default: [workPeriodView sizeToFit]; break;
+    }
+}
+
+
+#pragma mark ---- Content views and view periods ----
+
+- (NSNumber*) viewPeriodTimeInterval {
+    if ([self viewPeriodStartEnabled] && [self viewPeriodEndEnabled]) {
+        NSTimeInterval interval = [[[[self viewPeriodEnd] lastMidnight] addHours:24]
+                                   timeIntervalSinceDate:[[self viewPeriodStart] lastMidnight]];
+        return [NSNumber numberWithDouble:interval];
+    } else {
+        return nil;
+    }
 }
 
 - (IBAction) changeViewPeriodDate: (id) sender {
@@ -142,7 +169,8 @@
 # pragma mark ---- Showing & hiding the search view ----
 
 - (void) setSearchViewHidden:(BOOL)hidden {
-    NSRect contentFrame = [contentView frame];
+    LOG(@"setSearchViewHidden: %d", hidden);
+    NSRect contentFrame = [contentEnclosingView frame];
     NSRect searchFrame = [searchView frame];
     [searchView setHidden:hidden];
     if (hidden) {
@@ -150,7 +178,7 @@
     } else {
         contentFrame.size.height = searchFrame.origin.y - contentFrame.origin.y;
     }
-    [contentView setFrame:contentFrame];
+    [contentEnclosingView setFrame:contentFrame];
 }
 
 - (IBAction) showSearchView:(id)sender {
@@ -238,6 +266,7 @@
 	[self setViewPeriodSegment:-1];
 }
 
+
 #pragma mark ---- Called by other classes, via performSelector: ----
 
 - (NSDate*) getViewPeriodStart {
@@ -252,17 +281,37 @@
 	return [NSNumber numberWithDouble:[workPeriodController totalDuration]];
 }
 
+- (NSColor*) getColorIfOverlappingTime: (NSDate*) time {
+    for (WorkPeriod* other in [workPeriodController arrangedObjects]) {
+        if ([time isBetween:[other start] and:[other end]])
+            return [NSColor redColor];
+    }
+    return nil;
+}
+
 #pragma mark ---- Printing ----
 
+// TODO: transform the tables to HTML and print that instead
+
 - (IBAction) print: (id) sender {
-	switch ([self contentViewSegment]) {
-		case 0:
-			[workPeriodView print:sender];
-			break;
-		case 1:
-			[statisticsView print:sender];
-			break;
-	}
+    // Mess up the content view
+    NSSize size = [contentView frame].size;
+    CGFloat originalHeight = size.height;
+    NSTableView* table = [contentView documentView];
+    size.height = [table frame].size.height + [[table headerView] frame].size.height;
+    [contentView setFrameSize:size];
+    [contentView setHasVerticalScroller:NO];
+    // Show the print panel
+    NSPrintInfo* printInfo = [NSPrintInfo sharedPrintInfo];
+    [printInfo setHorizontalPagination:NSFitPagination];
+    [printInfo setVerticalPagination:NSAutoPagination];
+    NSPrintOperation* op = [NSPrintOperation printOperationWithView:contentView
+                                                          printInfo:printInfo];
+    [op runOperation];
+    // Restore the content view
+    size.height = originalHeight;
+    [contentView setFrameSize:size];
+    [contentView setHasVerticalScroller:YES];
 }
 
 #pragma mark ---- Modal dialogs ----
@@ -290,14 +339,25 @@
     return [[self managedObjectContext] undoManager];
 }
 
+
 #pragma mark ---- Initialization & Preferences ----
 
 - (IBAction) applyPreferences: (id) sender {
 	LOG(@"applyPreferences: %@", [sender className]);
-	[commentColumn setHidden:[PREFS boolForKey:@"hideCommentColumn"]];
 	[statisticsView setUsesAlternatingRowBackgroundColors:[PREFS boolForKey:@"viewAlternatingRows"]];
 	[workPeriodView setUsesAlternatingRowBackgroundColors:[PREFS boolForKey:@"viewAlternatingRows"]];
+    [workPeriodController checkIdleTime:sender];
 	[tasksController fetch:sender];
+}
+
+// We need to to this, otherwise the normalWorkingTime text field is not updated
+// Called by popup buttons changing normalWorkingTimeInterval
+// (in edit task panel & preferences panel) 
+- (IBAction) setNormalWorkingTimeInterval: (id) sender {
+    [normalWorkingTimeTextField setDoubleValue:
+     [TimeIntervalToNormalWorkingTime transform:
+      [PREFS doubleForKey:@"normalWorkingTimePerYear"]]];
+    [tasksController fetch:sender];
 }
 
 + (void) initialize {
@@ -307,13 +367,21 @@
 									 [NSNumber numberWithInt:  30], @"minimumWorkPeriodLength",
 									 [NSNumber numberWithInt: 600], @"standardWorkPeriodLength",
 									 [NSNumber numberWithInt:   3], @"dateChangeHour",
-									 [NSNumber numberWithInt:   0], @"durationAppearance",
-									 [NSNumber numberWithBool: NO], @"hideCommentColumn",
+                                     // 0 = 37:30, 1 = 37h30m, 2 = 37.5, 3 = 37.5h
+ 									 [NSNumber numberWithInt:   0], @"durationAppearance",
+                                     [NSNumber numberWithInt:   0], @"idleTimeInterval",
+                                     // 40 hrs/week * 365.25 days/year / 7 days/week * 3600 secs/hr = X secs/year
+									 [NSNumber numberWithDouble: 40*365.25/7*3600], @"normalWorkingTimePerYear",
+                                     // 0 = hrs/week, 1 = hrs/month, 2 = hrs/year
+									 [NSNumber numberWithInt:   0], @"normalWorkingTimeInterval",
 									 [NSNumber numberWithBool: NO], @"viewAlternatingRows",
+                                     [NSNumber numberWithBool: NO], @"showOverlappingTimes",
+                                     // 0 = Generic symbol, 1 = Last task in path, 2 = All tasks in path
 									 [NSNumber numberWithInt:   0], @"statusItemSymbolIndex",
 									 [NSNumber numberWithBool: NO], @"statusItemAnimated",
 									 [NSNumber numberWithBool: NO], @"statusItemForegroundColorEnabled",
 									 [NSNumber numberWithBool: NO], @"statusItemColorEnabled",
+                                     [NSNumber numberWithFloat: 150], @"splitViewDividerPosition",
 									 [NSKeyedArchiver archivedDataWithRootObject:[NSColor whiteColor]], 
                                      @"statusItemBackgroundColor",
 									 nil];
@@ -322,11 +390,13 @@
 
 - (void) awakeFromNib {
 	LOG(@"awakeFromNib");
-	
+    	
 	[tasksController registerForDragging:recordingView];
 	
-	[self setWorkPeriodSortDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"start" ascending:YES]]];
-	[self setTasksSortDescriptors:     [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES]]];
+	[self setWorkPeriodSortDescriptors:
+     [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"start" ascending:YES]]];
+	[self setTasksSortDescriptors:
+     [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES]]];
 	
 	[workPeriodView setTarget:workPeriodPanel];
 	[workPeriodView setDoubleAction:@selector(makeKeyAndOrderFront:)];
@@ -345,11 +415,11 @@
 	
 	[[NSNotificationCenter defaultCenter] addObserver:tasksController
 											 selector:@selector(fetch:)
-												 name:@"NSUndoManagerDidUndoChangeNotification" 
+												 name:NSUndoManagerDidUndoChangeNotification
 											   object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:tasksController
 											 selector:@selector(fetch:)
-												 name:@"NSUndoManagerDidRedoChangeNotification" 
+												 name:NSUndoManagerDidRedoChangeNotification
 											   object:nil];
 	
 	[NSTimer scheduledTimerWithTimeInterval:1
@@ -362,24 +432,23 @@
 								   selector:@selector(saveManagedObjectContext:)
 								   userInfo:nil
 									repeats:YES];
-	
+    
 	[workPeriodController tickTheClock:self];
     [tasksController fetchImmediately:self];
 	if ([[[tasksController arrangedObjects] childNodes] count] == 0) {
 		// Show splash screen
 		NSRunAlertPanel(@"There are no tasks defined yet", 
-						@"Choose 'Edit Tasks...' from the 'KronoX' menu, add some tasks and then you are ready to start tracking",
+						@"Choose 'New Task...' from the 'KronoX' menu, \
+                        and then you are ready to start tracking",
 						@"OK", nil, nil);
 	}
     [tasksController expandOutlineView:recordingView];
     [tasksController expandOutlineView:statisticsView];
-//     [tasksController expandOutlineView:tasksFilterView];
 }
 
 - (IBAction) activateApplication: (id) sender {
 	[NSApp activateIgnoringOtherApps:YES];
 }
-
 
 #pragma mark ---- Termination ----
 
@@ -418,7 +487,7 @@
 - (IBAction) saveManagedObjectContext: (id) sender {
     NSError *error;
     if ([[self managedObjectContext] hasChanges]) {
-		LOG(@"Saving managedObjectContext");
+		LOG(@"saveManagedObjectContext: %@", [sender className]);
 		if (![[self managedObjectContext] save:&error])
 			[NSApp presentError:error];
 	}
@@ -451,7 +520,7 @@
 		NSURL* url = [NSURL fileURLWithPath:[applicationSupportFolder stringByAppendingPathComponent:DATABASEFILE]];
 		persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
 		NSDictionary *optionsDictionary = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] 
-																	  forKey:NSMigratePersistentStoresAutomaticallyOption]; 		
+																	  forKey:NSMigratePersistentStoresAutomaticallyOption];
 		NSError* error;
 		NSPersistentStore* store = [persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
 																			configuration:nil

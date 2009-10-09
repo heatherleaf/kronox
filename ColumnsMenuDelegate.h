@@ -1,9 +1,10 @@
 //
-//  WorkPeriod.h
+//  ColumnsMenuDelegate.h
 //  KronoX
 //
-//  Created by Peter Ljunglöf on 2008-02-23.
-//  Copyright (C) 2008, Peter Ljunglöf. All rights reserved.
+//  Created by Peter Ljunglöf on 2009-09-21.
+//  Copyright 2009 Heatherleaf. All rights reserved.
+//
 /*
  This file is part of KronoX.
  
@@ -21,23 +22,19 @@
  along with KronoX.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <CoreData/CoreData.h>
+#import <Cocoa/Cocoa.h>
 
-@class Task;
+@interface ColumnsMenuDelegate : NSObject {
+    IBOutlet NSScrollView* enclosingView;
+}
 
-@interface WorkPeriod :  NSManagedObject 
+- (NSInteger) numberOfItemsInMenu: (NSMenu*) menu;
 
-@property (retain) NSDate* start;
-@property (retain) NSNumber* duration;
-@property (retain) NSString* comment;
-@property (retain) Task* task;
+- (BOOL) menu: (NSMenu*) menu
+   updateItem: (NSMenuItem*) item 
+	  atIndex: (NSInteger) index
+ shouldCancel: (BOOL) shouldCancel;
 
-// Calculated properties
-@property (retain) NSDate* end;
-@property (retain) NSDate* date;
-
-@property (readonly) NSColor* overlappingStartColor;
-@property (readonly) NSColor* overlappingEndColor;
+- (void) toggleVisibility: (id) sender;
 
 @end
-

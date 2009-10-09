@@ -25,6 +25,8 @@
 
 @interface NSDate (DateExtensions)
 
+- (NSString*) asTimeString;
+
 - (NSDate*) addHours: (int) hours;
 - (NSDate*) addMinutes: (int) minutes;
 - (NSDate*) addSeconds: (int) seconds;
@@ -47,5 +49,7 @@
 + (NSUInteger) dateUnits;
 + (NSUInteger) timeUnits;
 + (NSUInteger) allUnits;
+
+- (BOOL) isBetween: (NSDate*) start and: (NSDate*) end;
 
 @end

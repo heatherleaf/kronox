@@ -58,6 +58,7 @@
 											   inManagedObjectContext: [self managedObjectContext]];
 	[self insertObject:task atArrangedObjectIndexPath:path];
 	[self reorderTasks];
+    [[NSApp delegate] performSelector:@selector(saveManagedObjectContext:) withObject:task];
 	[[self managedObjectContext] endUndoGroup];
 	[taskPanel makeKeyAndOrderFront:sender];
 }

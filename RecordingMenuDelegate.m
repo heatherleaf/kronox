@@ -39,7 +39,9 @@ NSImage* disclosureTransparent;
 }
 
 - (NSInteger) numberOfItemsInMenu: (NSMenu*) menu {
-	return [tasksView numberOfRows] + EXTRA_ITEMS_ON_TOP;
+    NSInteger nrows = [tasksView numberOfRows] + EXTRA_ITEMS_ON_TOP;
+    LOG(@"numberOfItemsInMenu: %d", nrows);
+	return nrows;
 }
 
 - (BOOL) menu: (NSMenu*) menu

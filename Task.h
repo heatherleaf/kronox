@@ -25,7 +25,7 @@
 #import "WorkPeriod.h"
 #import "DateExtensions.h"
 
-@interface Task :  NSManagedObject  
+@interface Task : NSManagedObject  
 
 // Properties in the data model:
 @property (retain) NSNumber* order;
@@ -35,19 +35,23 @@
 @property (retain) NSSet* children;
 @property (retain) Task* parent;
 @property (retain) NSSet* workperiods;
-
 @property (retain) NSColor* colorValue;
 @property (retain) NSNumber* colorEnabled;
+@property (retain) NSString* comment;
+@property (retain) NSNumber* normalWorkingTimePerYear;
 
 // Calculated properties:
 @property (readonly) NSString* longName;
 @property (readonly) NSString* startRecordingName;
 @property (readonly) NSColor* color;
 @property (readonly) NSTimeInterval duration;
-@property (readonly) NSTimeInterval totalDuration;
 @property (readonly) NSNumber* durationPercent;
+@property (readonly) NSTimeInterval totalDuration;
 @property (readonly) NSNumber* totalDurationPercent;
-// @property (readonly) BOOL allParentsAreEnabled;
+@property (readonly) NSTimeInterval totalNormalWorkingTimePerYear;
+@property (readonly) NSTimeInterval normalDuration;
+@property (readonly) NSNumber* normalDurationPercent;
+@property (readonly) NSNumber* relativeDurationPercent;
 
 // Other methods
 - (void) awakeFromInsert;

@@ -27,6 +27,10 @@
 
 unsigned dateCalendarUnits = NSEraCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit  | NSDayCalendarUnit;
 
+- (NSString*) asTimeString {
+    return [self descriptionWithCalendarFormat:@"%H:%M:%S" timeZone:nil locale:nil];
+}
+
 - (NSDate*) addHours: (int) hours {
 	NSDateComponents* comps = [[NSDateComponents alloc] init];
 	[comps setHour:hours];
@@ -108,6 +112,10 @@ unsigned dateCalendarUnits = NSEraCalendarUnit | NSYearCalendarUnit | NSMonthCal
 
 + (NSUInteger) allUnits  {
 	return [NSDate dateUnits] | [NSDate timeUnits];
+}
+
+- (BOOL) isBetween: (NSDate*) start and: (NSDate*) end {
+    return [start compare:self] == NSOrderedAscending && [self compare:end] == NSOrderedAscending;
 }
 
 @end

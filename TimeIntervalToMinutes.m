@@ -1,9 +1,9 @@
 //
-//  TimeIntervalToStatistics.m
+//  TimeIntervalToMinutes.m
 //  KronoX
 //
-//  Created by Peter Ljunglöf on 2008-04-03.
-//  Copyright (C) 2008, Peter Ljunglöf. All rights reserved.
+//  Created by Peter Ljunglöf on 9/26/09.
+//  Copyright 2009 Heatherleaf. All rights reserved.
 /*
  This file is part of KronoX.
  
@@ -21,28 +21,32 @@
  along with KronoX.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "TimeIntervalToStatistics.h"
+#import "TimeIntervalToMinutes.h"
 
-@implementation TimeIntervalToStatistics
+@implementation TimeIntervalToMinutes
 
 + (Class) transformedValueClass { 
-	return [NSString class]; 
+	return [NSNumber class]; 
 }
 
 + (BOOL) allowsReverseTransformation { 
-	return NO; 
+	return YES; 
 }
 
-- (NSString*) transformedValue: (NSNumber*) time {
-	if (time == nil) 
+- (NSNumber*) transformedValue: (NSNumber*) value {
+	if (value == nil) 
         return nil;
-	if (![time intValue]) 
+	NSTimeInterval seconds = [value doubleValue];
+    NSInteger minutes = (NSInteger) (seconds+30)/60;
+	return [NSNumber numberWithInteger:minutes];
+}
+
+- (NSNumber*) reverseTransformedValue: (NSNumber*) value {
+	if (value == nil) 
         return nil;
-	int minutes = ([time intValue] + 30) / 60;
-	switch ([PREFS integerForKey: @"durationAppearance"]) {
-		case 1:  return [NSString stringWithFormat:@"%.1fh", (float)minutes/60];
-		default: return [NSString stringWithFormat:@"%d:%02d", minutes/60, minutes%60];
-	}
+    NSInteger minutes = [value integerValue];
+	return [NSNumber numberWithInteger:minutes*60];
 }
 
 @end
+

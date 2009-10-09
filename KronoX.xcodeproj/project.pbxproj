@@ -41,22 +41,28 @@
 		8B7B86130DCA7B8E00A87979 /* FontSizeToRowHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7B86120DCA7B8E00A87979 /* FontSizeToRowHeight.m */; };
 		8B8805720E9C90AA003F4846 /* WorkPeriodDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */; };
 		8B8D2F360DA2B2D4009A4AB8 /* FontSizeToIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */; };
-		8B9AB9280FD3363F0093D722 /* KronoX-model-v3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AB9270FD3363F0093D722 /* KronoX-model-v3.xcmappingmodel */; };
+		8B9AB9280FD3363F0093D722 /* KronoX-model-v2-v3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AB9270FD3363F0093D722 /* KronoX-model-v2-v3.xcmappingmodel */; };
 		8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CA4190F229D350005A79F /* dsa_pub.pem */; };
 		8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */; };
 		8BAE6AC20DA1468400423BA9 /* WorkPeriodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */; };
 		8BAF02F20F1E08E100720336 /* ChangeLog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF02F10F1E08E100720336 /* ChangeLog.txt */; };
 		8BB5616A0F1F8D6400953794 /* KronoX-model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BB561690F1F8D6400953794 /* KronoX-model.xcdatamodeld */; };
-		8BB5616E0F1F8E2900953794 /* KronoX-model-v2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5616D0F1F8E2900953794 /* KronoX-model-v2.xcmappingmodel */; };
+		8BB5616E0F1F8E2900953794 /* KronoX-model-v1-v2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5616D0F1F8E2900953794 /* KronoX-model-v1-v2.xcmappingmodel */; };
 		8BB9ED840D7B53EF00E1A813 /* TimeIntervalToDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9ED830D7B53EF00E1A813 /* TimeIntervalToDate.m */; };
 		8BBC1C340DC1317E00685052 /* KronoX.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1C330DC1317E00685052 /* KronoX.m */; };
 		8BC89B530E9EA54B00367A46 /* RecordingMenuDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC89B520E9EA54B00367A46 /* RecordingMenuDelegate.m */; };
 		8BC8BE5A0EEC525C00F52232 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8BC8BE590EEC525B00F52232 /* Credits.rtf */; };
 		8BC8BED90EEC620800F52232 /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BC8BED80EEC620800F52232 /* COPYING.txt */; };
+		8BDC5005107C8713001F74C9 /* KronoX Help in Resources */ = {isa = PBXBuildFile; fileRef = 8BDC5001107C8713001F74C9 /* KronoX Help */; };
 		8BE0FD680D70C115003B3842 /* TasksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD670D70C115003B3842 /* TasksController.m */; };
 		8BE0FD6B0D70C176003B3842 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD6A0D70C176003B3842 /* Task.m */; };
 		8BE0FD6E0D70C299003B3842 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD6D0D70C299003B3842 /* WorkPeriod.m */; };
 		8BE1B2A10EA29A1B00686209 /* Pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE1B2A00EA29A1B00686209 /* Pencil.png */; };
+		8BE4AB7D106EC55400AD621C /* TimeIntervalToDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE4AB7C106EC55400AD621C /* TimeIntervalToDuration.m */; };
+		8BE4AB80106EC55F00AD621C /* TimeIntervalToMinutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE4AB7F106EC55F00AD621C /* TimeIntervalToMinutes.m */; };
+		8BE4ABD3106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE4ABD2106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.m */; };
+		8BE4AC56106ED80800AD621C /* KronoX-model-v3-v4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8BE4AC55106ED80800AD621C /* KronoX-model-v3-v4.xcmappingmodel */; };
+		8BE75274106818DD008C1482 /* ColumnsMenuDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE75273106818DD008C1482 /* ColumnsMenuDelegate.m */; };
 		8BF2DB1E0DA1634800A3CBBF /* UndoExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */; };
 		8BF7E27E0F231B8C009AC0C7 /* googlecode_upload.py in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7E27D0F231B8C009AC0C7 /* googlecode_upload.py */; };
 		8BF7E2AD0F231D61009AC0C7 /* upload_kronox.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */; };
@@ -117,6 +123,7 @@
 		8B360B620EA00AA1005CA047 /* DisclosureRight.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DisclosureRight.tiff; sourceTree = "<group>"; };
 		8B360B630EA00AA1005CA047 /* DisclosureTransparent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DisclosureTransparent.tiff; sourceTree = "<group>"; };
 		8B360B670EA00AB2005CA047 /* KronoX-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "KronoX-icon.icns"; sourceTree = "<group>"; };
+		8B3DC252107FE6570011F37A /* KronoX-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "KronoX-icon.png"; path = "English.lproj/KronoX Help/KronoX-icon.png"; sourceTree = "<group>"; };
 		8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KronoX.xib; sourceTree = "<group>"; };
 		8B67DB130D96362F00A87B47 /* DateToButtonTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateToButtonTitle.h; sourceTree = "<group>"; };
 		8B67DB140D96362F00A87B47 /* DateToButtonTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateToButtonTitle.m; sourceTree = "<group>"; };
@@ -128,21 +135,23 @@
 		8B8D2F340DA2B2D4009A4AB8 /* FontSizeToIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontSizeToIndex.h; sourceTree = "<group>"; };
 		8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontSizeToIndex.m; sourceTree = "<group>"; };
 		8B9AB8790FD322990093D722 /* KronoX-model-v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model-v3.xcdatamodel"; sourceTree = "<group>"; };
-		8B9AB9270FD3363F0093D722 /* KronoX-model-v3.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "KronoX-model-v3.xcmappingmodel"; sourceTree = "<group>"; };
+		8B9AB9270FD3363F0093D722 /* KronoX-model-v2-v3.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "KronoX-model-v2-v3.xcmappingmodel"; sourceTree = "<group>"; };
 		8B9CA4190F229D350005A79F /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Sparkle_appcast.xml; sourceTree = "<group>"; };
 		8BAE6AC00DA1468400423BA9 /* WorkPeriodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriodController.h; sourceTree = "<group>"; };
 		8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriodController.m; sourceTree = "<group>"; };
 		8BAF02F10F1E08E100720336 /* ChangeLog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog.txt; sourceTree = "<group>"; };
 		8BB5616B0F1F8D6400953794 /* KronoX-model-v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model-v2.xcdatamodel"; sourceTree = "<group>"; };
-		8BB5616D0F1F8E2900953794 /* KronoX-model-v2.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "KronoX-model-v2.xcmappingmodel"; sourceTree = "<group>"; };
+		8BB5616D0F1F8E2900953794 /* KronoX-model-v1-v2.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "KronoX-model-v1-v2.xcmappingmodel"; sourceTree = "<group>"; };
 		8BB9ED820D7B53EF00E1A813 /* TimeIntervalToDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToDate.h; sourceTree = "<group>"; };
 		8BB9ED830D7B53EF00E1A813 /* TimeIntervalToDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToDate.m; sourceTree = "<group>"; };
 		8BBC1C330DC1317E00685052 /* KronoX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KronoX.m; sourceTree = "<group>"; };
+		8BC4D1A0106BF5FC001E64D9 /* KronoX-model-v4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model-v4.xcdatamodel"; sourceTree = "<group>"; };
 		8BC89B510E9EA54B00367A46 /* RecordingMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingMenuDelegate.h; sourceTree = "<group>"; };
 		8BC89B520E9EA54B00367A46 /* RecordingMenuDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingMenuDelegate.m; sourceTree = "<group>"; };
 		8BC8BE590EEC525B00F52232 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		8BC8BED80EEC620800F52232 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
+		8BDC5002107C8713001F74C9 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/KronoX Help"; sourceTree = "<group>"; };
 		8BE0FD660D70C115003B3842 /* TasksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksController.h; sourceTree = "<group>"; };
 		8BE0FD670D70C115003B3842 /* TasksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksController.m; sourceTree = "<group>"; };
 		8BE0FD690D70C176003B3842 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
@@ -150,6 +159,15 @@
 		8BE0FD6C0D70C299003B3842 /* WorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriod.h; sourceTree = "<group>"; };
 		8BE0FD6D0D70C299003B3842 /* WorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriod.m; sourceTree = "<group>"; };
 		8BE1B2A00EA29A1B00686209 /* Pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pencil.png; sourceTree = "<group>"; };
+		8BE4AB7B106EC55400AD621C /* TimeIntervalToDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToDuration.h; sourceTree = "<group>"; };
+		8BE4AB7C106EC55400AD621C /* TimeIntervalToDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToDuration.m; sourceTree = "<group>"; };
+		8BE4AB7E106EC55F00AD621C /* TimeIntervalToMinutes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToMinutes.h; sourceTree = "<group>"; };
+		8BE4AB7F106EC55F00AD621C /* TimeIntervalToMinutes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToMinutes.m; sourceTree = "<group>"; };
+		8BE4ABD1106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToNormalWorkingTime.h; sourceTree = "<group>"; };
+		8BE4ABD2106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToNormalWorkingTime.m; sourceTree = "<group>"; };
+		8BE4AC55106ED80800AD621C /* KronoX-model-v3-v4.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "KronoX-model-v3-v4.xcmappingmodel"; sourceTree = "<group>"; };
+		8BE75272106818DD008C1482 /* ColumnsMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnsMenuDelegate.h; sourceTree = "<group>"; };
+		8BE75273106818DD008C1482 /* ColumnsMenuDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnsMenuDelegate.m; sourceTree = "<group>"; };
 		8BF2DB1C0DA1634800A3CBBF /* UndoExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoExtensions.h; sourceTree = "<group>"; };
 		8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoExtensions.m; sourceTree = "<group>"; };
 		8BF7E27D0F231B8C009AC0C7 /* googlecode_upload.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = googlecode_upload.py; sourceTree = "<group>"; };
@@ -239,6 +257,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8BDC5001107C8713001F74C9 /* KronoX Help */,
 				8BC8BE590EEC525B00F52232 /* Credits.rtf */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -293,12 +312,12 @@
 			children = (
 				8BB9ED820D7B53EF00E1A813 /* TimeIntervalToDate.h */,
 				8BB9ED830D7B53EF00E1A813 /* TimeIntervalToDate.m */,
-				8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToStatistics.h */,
-				8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */,
-				8B083B7F0F2091A400689F95 /* TimeIntervalToNumber.h */,
-				8B083B800F2091A400689F95 /* TimeIntervalToNumber.m */,
-				8B67DB130D96362F00A87B47 /* DateToButtonTitle.h */,
-				8B67DB140D96362F00A87B47 /* DateToButtonTitle.m */,
+				8BE4AB7B106EC55400AD621C /* TimeIntervalToDuration.h */,
+				8BE4AB7C106EC55400AD621C /* TimeIntervalToDuration.m */,
+				8BE4AB7E106EC55F00AD621C /* TimeIntervalToMinutes.h */,
+				8BE4AB7F106EC55F00AD621C /* TimeIntervalToMinutes.m */,
+				8BE4ABD1106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.h */,
+				8BE4ABD2106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.m */,
 				8B8D2F340DA2B2D4009A4AB8 /* FontSizeToIndex.h */,
 				8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */,
 				8B7B86110DCA7B8E00A87979 /* FontSizeToRowHeight.h */,
@@ -310,6 +329,12 @@
 		8B6E5EA80FD48F560037080F /* Obsolete */ = {
 			isa = PBXGroup;
 			children = (
+				8B67DB130D96362F00A87B47 /* DateToButtonTitle.h */,
+				8B67DB140D96362F00A87B47 /* DateToButtonTitle.m */,
+				8B083B7F0F2091A400689F95 /* TimeIntervalToNumber.h */,
+				8B083B800F2091A400689F95 /* TimeIntervalToNumber.m */,
+				8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToStatistics.h */,
+				8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */,
 				8B8805700E9C90AA003F4846 /* WorkPeriodDatePicker.h */,
 				8B8805710E9C90AA003F4846 /* WorkPeriodDatePicker.m */,
 			);
@@ -330,6 +355,8 @@
 			children = (
 				8BC89B510E9EA54B00367A46 /* RecordingMenuDelegate.h */,
 				8BC89B520E9EA54B00367A46 /* RecordingMenuDelegate.m */,
+				8BE75272106818DD008C1482 /* ColumnsMenuDelegate.h */,
+				8BE75273106818DD008C1482 /* ColumnsMenuDelegate.m */,
 				8B0702010EBE705E006BF98A /* SplitViewDelegate.h */,
 				8B0702020EBE705E006BF98A /* SplitViewDelegate.m */,
 			);
@@ -409,6 +436,7 @@
 				8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */,
 				8BF7E27E0F231B8C009AC0C7 /* googlecode_upload.py in Resources */,
 				8BF7E2AD0F231D61009AC0C7 /* upload_kronox.sh in Resources */,
+				8BDC5005107C8713001F74C9 /* KronoX Help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,9 +484,14 @@
 				8B0702030EBE705E006BF98A /* ExportImportController.m in Sources */,
 				8B0702040EBE705E006BF98A /* ModalSheet.m in Sources */,
 				8B0702050EBE705E006BF98A /* SplitViewDelegate.m in Sources */,
-				8BB5616E0F1F8E2900953794 /* KronoX-model-v2.xcmappingmodel in Sources */,
+				8BB5616E0F1F8E2900953794 /* KronoX-model-v1-v2.xcmappingmodel in Sources */,
 				8B083B810F2091A400689F95 /* TimeIntervalToNumber.m in Sources */,
-				8B9AB9280FD3363F0093D722 /* KronoX-model-v3.xcmappingmodel in Sources */,
+				8B9AB9280FD3363F0093D722 /* KronoX-model-v2-v3.xcmappingmodel in Sources */,
+				8BE75274106818DD008C1482 /* ColumnsMenuDelegate.m in Sources */,
+				8BE4AB7D106EC55400AD621C /* TimeIntervalToDuration.m in Sources */,
+				8BE4AB80106EC55F00AD621C /* TimeIntervalToMinutes.m in Sources */,
+				8BE4ABD3106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.m in Sources */,
+				8BE4AC56106ED80800AD621C /* KronoX-model-v3-v4.xcmappingmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +512,15 @@
 				089C165DFE840E0CC02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8BDC5001107C8713001F74C9 /* KronoX Help */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B3DC252107FE6570011F37A /* KronoX-icon.png */,
+				8BDC5002107C8713001F74C9 /* English */,
+			);
+			name = "KronoX Help";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -611,12 +653,14 @@
 			isa = XCVersionGroup;
 			children = (
 				770B37EC0679A11B001EADE2 /* KronoX-model.xcdatamodel */,
-				8BB5616D0F1F8E2900953794 /* KronoX-model-v2.xcmappingmodel */,
+				8BB5616D0F1F8E2900953794 /* KronoX-model-v1-v2.xcmappingmodel */,
 				8BB5616B0F1F8D6400953794 /* KronoX-model-v2.xcdatamodel */,
-				8B9AB9270FD3363F0093D722 /* KronoX-model-v3.xcmappingmodel */,
+				8B9AB9270FD3363F0093D722 /* KronoX-model-v2-v3.xcmappingmodel */,
 				8B9AB8790FD322990093D722 /* KronoX-model-v3.xcdatamodel */,
+				8BE4AC55106ED80800AD621C /* KronoX-model-v3-v4.xcmappingmodel */,
+				8BC4D1A0106BF5FC001E64D9 /* KronoX-model-v4.xcdatamodel */,
 			);
-			currentVersion = 8B9AB8790FD322990093D722 /* KronoX-model-v3.xcdatamodel */;
+			currentVersion = 8BC4D1A0106BF5FC001E64D9 /* KronoX-model-v4.xcdatamodel */;
 			path = "KronoX-model.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -45,7 +45,6 @@
 }
 
 - (NSNumber*) reverseTransformedValue: (NSNumber*) index {
-	double size;
 	switch ([index intValue]) {
 		case 1:  return [NSNumber numberWithDouble: SmallSize];
 		case 2:  return [NSNumber numberWithDouble: MiniSize];

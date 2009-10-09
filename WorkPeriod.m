@@ -62,4 +62,18 @@
     }
 }
 
+@dynamic overlappingStartColor;
+- (NSColor*) overlappingStartColor {
+    if (![PREFS boolForKey:@"showOverlappingTimes"])
+        return nil;
+    return [[NSApp delegate] performSelector:@selector(getColorIfOverlappingTime:) withObject:[self start]];
+}
+
+@dynamic overlappingEndColor;
+- (NSColor*) overlappingEndColor {
+    if (![PREFS boolForKey:@"showOverlappingTimes"])
+        return nil;
+    return [[NSApp delegate] performSelector:@selector(getColorIfOverlappingTime:) withObject:[self end]];
+}
+
 @end

@@ -25,33 +25,61 @@
 
 @implementation WorkPeriodController
 
-@synthesize currentStartTime, currentDuration, isRecording, canChangeDate, currentWorkPeriod;
+@synthesize currentStartTime, currentDuration, canChangeDate, currentWorkPeriod;
 
 
-#pragma mark ---- Information on the status line ----
+#pragma mark ---- Checking idle time ----
 
-@synthesize totalDuration; 
-- (void) updateTotalDuration {
-	[self fetchImmediately:nil];
-	NSTimeInterval duration = 0;
-	for (WorkPeriod* work in [self arrangedObjects]) {
-		if ([work isEqual:currentWorkPeriod])
-			duration += [[self currentDuration] doubleValue];
-		else 
-			duration += [[work duration] doubleValue];
-	}
-	LOG(@"updateTotalDuration => %0.1f min", duration/60);
-	[self setTotalDuration:duration];
+- (NSTimeInterval) currentIdleTime {
+    return (NSTimeInterval) CGEventSourceSecondsSinceLastEventType(kCGEventSourceStateHIDSystemState, kCGAnyInputEventType);
 }
 
-@dynamic numberOfSelectedObjects;
-- (NSNumber*) numberOfSelectedObjects {
-	[self fetchImmediately:nil];
-	return [NSNumber numberWithInt:[[self arrangedObjects] count]];
+- (void) checkIdleTime: (id) sender {
+    static NSTimer* idleTimer;
+    NSTimeInterval idleTimeInterval = [PREFS floatForKey:@"idleTimeInterval"];
+    if (idleTimeInterval < 1.0)
+        return;
+    NSTimeInterval idleTime = [self currentIdleTime];
+    LOG(@"checkIdleTime: %.1f s, interval: %.1f ", idleTime, idleTimeInterval);
+    [idleTimer invalidate];
+    if (![self isRecording])
+        return;
+    if (idleTime >= idleTimeInterval) {
+        NSInteger answer = NSRunAlertPanel(@"You have been idle", 
+                                           @"You have been idle for more than %.0f minutes.\
+                                           Do you want to stop recording the current task?\
+                                           (Remember to check the end time of the work period)",
+                                           @"Stop recording", @"Continue recording", nil, idleTime/60);
+        if (answer == NSAlertDefaultReturn) {
+            [self stopRecording:sender];
+            [editWorkperiodPanel makeKeyAndOrderFront:sender];
+            [editWorkperiodPanel makeFirstResponder:endtimeDatePicker];
+        } else {
+            [self checkIdleTime:sender];
+        }
+    } else {
+        NSTimeInterval nextTime = 1.0 + idleTimeInterval - idleTime;
+        LOG(@"next time to checkIdleTime: %@ (%.1f s from now)", 
+            [[NSDate dateWithTimeIntervalSinceNow:nextTime] asTimeString], nextTime);
+        idleTimer = [NSTimer scheduledTimerWithTimeInterval:nextTime
+                                                     target:self
+                                                   selector:@selector(checkIdleTime:)
+                                                   userInfo:nil
+                                                    repeats:NO];
+    }
 }
 
 
 #pragma mark ---- Recording ----
+
+@dynamic isRecording;
+- (BOOL) isRecording {
+    return isRecording;
+}
+- (void) setIsRecording: (BOOL) isrec {
+    isRecording = isrec;
+    [self checkIdleTime:nil];
+}
 
 - (void) tickTheClock: (id) sender {
 	if ([self isRecording]) { 
@@ -111,6 +139,29 @@
 	[self synchronizeStatusTitle];
 	[self tickTheClock:nil];
 }
+
+#pragma mark ---- Information on the status line ----
+
+@synthesize totalDuration; 
+- (void) updateTotalDuration {
+	[self fetchImmediately:nil];
+	NSTimeInterval duration = 0;
+	for (WorkPeriod* work in [self arrangedObjects]) {
+		if ([work isEqual:currentWorkPeriod])
+			duration += [[self currentDuration] doubleValue];
+		else 
+			duration += [[work duration] doubleValue];
+	}
+	LOG(@"updateTotalDuration => %0.1f min", duration/60);
+	[self setTotalDuration:duration];
+}
+
+@dynamic numberOfSelectedObjects;
+- (NSNumber*) numberOfSelectedObjects {
+	[self fetchImmediately:nil];
+	return [NSNumber numberWithInt:[[self arrangedObjects] count]];
+}
+
 
 #pragma mark ---- The status menu/item
 
@@ -197,6 +248,7 @@
 		[work setDuration:[NSNumber numberWithDouble:duration]];
 	[self addObject:work];
 	LOG(@"addForTask: %@  duration: %f  start: %@", [task name], duration, start);
+    [[NSApp delegate] performSelector:@selector(saveManagedObjectContext:) withObject:work];
 	return work;
 }
 
@@ -216,7 +268,7 @@
 	[[self managedObjectContext] endUndoGroup];
 }
 
-#pragma mark ---- Delegate method ----
+#pragma mark ---- Delegate methods ----
 
 - (void) tableViewSelectionDidChange: (NSNotification*) notification {
     BOOL cannotChange = isRecording && [[self selectedObjects] containsObject:currentWorkPeriod];
