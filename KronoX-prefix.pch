@@ -28,8 +28,7 @@
 #define PADSTR(str,pad)   [(str) stringByPaddingToLength:(pad) withString:@" " startingAtIndex:0]
 
 #ifdef DEBUG
-#define LOG(...) NSLog([[NSString stringWithFormat: @"<%@> ", [self className]] stringByAppendingFormat: __VA_ARGS__])
-// #define LOG(...) NSLog([CONCAT(PADSTR([self className], 20), @": ") stringByAppendingFormat:__VA_ARGS__])
+#define LOG(...) NSLog(@"<%@> %@", [self className], [NSString stringWithFormat: __VA_ARGS__])
 #else
 #define LOG(...)
 #endif

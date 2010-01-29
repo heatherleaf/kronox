@@ -43,39 +43,50 @@
 
 #pragma mark ---- Content views and view periods ----
 
+- (NSTableView*) selectedContentView {
+    return [self contentViewSegment]==1 ? statisticsView : workPeriodView;
+}
+
+#define STATISTICS_SIZE_KEY @"statisticsViewSize"
+#define WORKPERIOD_SIZE_KEY @"workperiodViewSize"
+
+// This is called from the toolbar and the View menu
+// It toggles between Detailed View (workPeriodView) and Statistics View
 - (IBAction) changeContentView: (id) sender {
-	if (![sender isKindOfClass:[NSSegmentedControl class]] && [sender respondsToSelector:@selector(tag)])
+	if (![sender isKindOfClass:[NSSegmentedControl class]] && [sender respondsToSelector:@selector(tag)]) {
+        // If the sender is not the segmented control in the toolbar,
+        // we have to change the appearance of the toolbar.
 		[self setContentViewSegment:[sender tag]];
+    }
 	LOG(@"changeContentView: %d", [self contentViewSegment]);
     NSWindow* window = [contentView window];
-	switch ([self contentViewSegment]) {
-		case 1:
-            if ([contentView documentView] == workPeriodView)
-                [window saveFrameUsingName:@"workPeriodViewWindowFrame"];
-            [detailedViewMenuItem setState:NSOffState];
-			[statisticsViewMenuItem setState:NSOnState];
-			[contentView setDocumentView:statisticsView];
-            [window setFrameUsingName:@"statisticsViewWindowFrame"];
-			break;
-		default:
-            if ([contentView documentView] == statisticsView)
-                [window saveFrameUsingName:@"statisticsViewWindowFrame"];
-			[detailedViewMenuItem setState:NSOnState];
-			[statisticsViewMenuItem setState:NSOffState];
-			[contentView setDocumentView:workPeriodView];
-            [window setFrameUsingName:@"workPeriodViewWindowFrame"];
-			break;
-	}
-    [[contentView documentView] sizeToFit];
+    NSTableView* currentContentView = [contentView documentView];
+    NSTableView* newContentView = [self selectedContentView];
+    if (currentContentView != newContentView) {
+        // We only change the size of the window if the user selected a different content view.
+        NSRect frame = [window frame];
+        NSString* key = newContentView==workPeriodView ? WORKPERIOD_SIZE_KEY : STATISTICS_SIZE_KEY;
+        NSString* newSizeString = [PREFS stringForKey:key];
+        NSSize newSize = newSizeString == nil ? frame.size : NSSizeFromString(newSizeString);
+        LOG(@"change content view size: %@ --> %@", NSStringFromSize(frame.size), NSStringFromSize(newSize));
+        if (currentContentView == workPeriodView || currentContentView == statisticsView) {
+            // We don't want to do this when KronoX starts, since none of the views is current then.
+            NSString* key = currentContentView==workPeriodView ? WORKPERIOD_SIZE_KEY : STATISTICS_SIZE_KEY;
+            [PREFS setObject:NSStringFromSize(frame.size) forKey:key];
+        }
+        frame.origin.y += frame.size.height - newSize.height;
+        frame.size = newSize;
+        [contentView setDocumentView:newContentView];
+        [window setFrame:frame display:YES animate:YES];
+    }
+    [detailedViewMenuItem setState: (newContentView == workPeriodView ? NSOnState : NSOffState)];
+    [statisticsViewMenuItem setState: (newContentView == statisticsView ? NSOnState : NSOffState)];
 	[tasksController fetch:sender];
 }
 
 - (IBAction) sizeTableColumnsToFit: (id) sender {
     LOG(@"sizeTableColumnsToFit");
-    switch ([self contentViewSegment]) {
-        case 1:  [statisticsView sizeToFit]; break;
-        default: [workPeriodView sizeToFit]; break;
-    }
+    [[self selectedContentView] sizeToFit]; 
 }
 
 

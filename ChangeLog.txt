@@ -3,6 +3,11 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
+Version 0.99.9, 2010-01-..
+
+* (Issue 33) Fixed the problem with the main window jumping around,
+  also added some animation when the window resizes.
+
 Version 0.99, 2009-10-09
 
 * Added some basic help (available from the Help menu)
