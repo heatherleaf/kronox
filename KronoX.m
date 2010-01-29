@@ -102,6 +102,10 @@
     }
 }
 
+// This is called by:
+//  - Next, Previous, Go to Today (in the View menu)
+//  - addForTask:, startRecordingTask: (in WorkPeriodController)
+//  - changeViewPeriodSpan:, showGotoDatePanel:, awakeFromNib (in KronoX)
 - (IBAction) changeViewPeriodDate: (id) sender {
 	NSDate* newDate = [NSDate date];
 	if ([sender isKindOfClass:[NSDate class]]) {
@@ -110,10 +114,11 @@
 		newDate = [sender dateValue];
 	} else {
 		NSInteger delta = 0;
-		if ([sender respondsToSelector:@selector(intValue)])
+		if ([sender isKindOfClass:[NSNumber class]]) {
 			delta = [sender intValue];
-		else if ([sender respondsToSelector:@selector(tag)])
+		} else if ([sender respondsToSelector:@selector(tag)]) {
 			delta = [sender tag];
+        }
 		if (delta) {
 			switch ([self viewPeriodSegment]) {
 				case 1: newDate = [[self viewPeriodDate] addDays:delta];
