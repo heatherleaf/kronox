@@ -83,7 +83,8 @@
 
 - (void) tickTheClock: (id) sender {
 	if ([self isRecording]) { 
-		[self setCurrentDuration:[NSNumber numberWithDouble:-[self.currentWorkPeriod.start timeIntervalSinceNow]]];
+		[self setCurrentDuration:[NSNumber numberWithDouble:
+                                  -[[[self currentWorkPeriod] start] timeIntervalSinceNow]]];
 	} else {
 		[self setCurrentStartTime:[NSDate date]];
 	}
@@ -114,8 +115,8 @@
 	if (duration < minimumDuration) {
 		[self removeObject:[self currentWorkPeriod]];
 		LOG(@"Discarded too short work period (%0.0f s)", duration);
-	}
-	[[self currentWorkPeriod] setDuration:[NSNumber numberWithDouble:duration]];
+	} 
+    [[self currentWorkPeriod] setDuration:[NSNumber numberWithDouble:duration]];
 	[self setRecordingTo:nil];
 	[[self managedObjectContext] endUndoGroup];
 	[self fetch:sender];
@@ -124,13 +125,15 @@
 - (void) setRecordingTo: (WorkPeriod*) work {
 	if (work) {
 		LOG(@"setRecordingTo: %@", [[work task] longName]);
-		[[[[self managedObjectContext] undoManager] prepareWithInvocationTarget:self] setRecordingTo:nil];
+		[[[[self managedObjectContext] undoManager] 
+          prepareWithInvocationTarget:self] setRecordingTo:nil];
 		[self setIsRecording:YES];
 		[self setCurrentStartTime:[work start]];
 		[self setCurrentWorkPeriod:work];
 	} else {
 		LOG(@"setRecordingTo: NIL");
-		[[[[self managedObjectContext] undoManager] prepareWithInvocationTarget:self] setRecordingTo:[self currentWorkPeriod]];
+		[[[[self managedObjectContext] undoManager] 
+          prepareWithInvocationTarget:self] setRecordingTo:[self currentWorkPeriod]];
 		[self setIsRecording:NO];
 		[self setCurrentDuration:nil];
 		[self setCurrentWorkPeriod:nil];
@@ -228,6 +231,9 @@
 
 - (void) remove: (id) sender {
 	[[self managedObjectContext] beginUndoGroup:@"Remove Work Period"];
+    if (isRecording && [[self selectedObjects] containsObject:[self currentWorkPeriod]]) {
+        [self setRecordingTo:nil];
+    }
 	[super remove:sender];
 	[[self managedObjectContext] endUndoGroup];
 }
@@ -244,8 +250,9 @@
 	WorkPeriod* work = [self newWorkPeriod];
 	[work setTask:task];
 	[work setStart:start];
-	if (duration >= 0)
+	if (duration >= 0) {
 		[work setDuration:[NSNumber numberWithDouble:duration]];
+    }
 	[self addObject:work];
 	LOG(@"addForTask: %@  duration: %f  start: %@", [task name], duration, start);
     [[NSApp delegate] performSelector:@selector(saveManagedObjectContext:) withObject:work];
@@ -271,7 +278,7 @@
 #pragma mark ---- Delegate methods ----
 
 - (void) tableViewSelectionDidChange: (NSNotification*) notification {
-    BOOL cannotChange = isRecording && [[self selectedObjects] containsObject:currentWorkPeriod];
+    BOOL cannotChange = isRecording && [[self selectedObjects] containsObject:[self currentWorkPeriod]];
 	[self setCanChangeDate:!cannotChange];
 }
 
