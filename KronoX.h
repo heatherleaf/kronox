@@ -31,7 +31,7 @@
 
 @interface KronoX : NSObject 
 {
-    // Cocoa bindings
+    // Cocoa bindings variables:
     NSArray* workPeriodSortDescriptors;
     NSArray* tasksSortDescriptors;
 
@@ -48,7 +48,7 @@
     NSInteger searchAttribute;
     NSInteger comparisonOperator;
     
-    // Outlets
+    // Outlets in Interface Builder:
     IBOutlet WorkPeriodController* workPeriodController;
     IBOutlet NSArrayController* tasksArrayController;
     IBOutlet TasksController* tasksController;
@@ -81,12 +81,13 @@
     
     IBOutlet NSTextFieldCell* normalWorkingTimeTextField;
     
-    // Core Data variables
+    // Core Data variables:
     NSPersistentStoreCoordinator* persistentStoreCoordinator;
     NSManagedObjectModel*         managedObjectModel;
     NSManagedObjectContext*       managedObjectContext;
 }
 
+// Cocoa bindings:
 @property (copy) NSArray* workPeriodSortDescriptors;
 @property (copy) NSArray* tasksSortDescriptors;
 
