@@ -435,11 +435,19 @@
 }
 
 // From NSWindowDelegate Protocol Reference:
-// "Tells the delegate that the window’s undo manager has been requested. 
+// "Tells the delegate that the window's undo manager has been requested. 
 // Returns the appropriate undo manager for the window."
 - (NSUndoManager*) windowWillReturnUndoManager: (NSWindow*) window {
     // We want to use the core data undo manager, not the default one:
     return [[self managedObjectContext] undoManager];
+}
+
+// From NSWindowDelegate Protocol Reference:
+// "Informs the delegate that the window has resigned key window status."
+- (void) windowDidResignKey:(NSNotification*)note {
+    // If edit workperiod (or task) panel did close, save its content:
+    LOG(@"windowDid Resign Key: %@", [note object]);
+    [self saveManagedObjectContext:nil];
 }
 
 

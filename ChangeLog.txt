@@ -3,9 +3,17 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
+Version 0.99.2, ??
+
+* Fixed issue 28: Comments in the currently recording work period sometimes disappear
+
 Version 0.99.1, 2010-01-30
 
-* Fixed issues 31, 33, 35, 37, 38
+* Fixed issue 31: Error when trying to remove a 'normal working hours' setting
+* Fixed issue 33: Main window jumps around screen when starting a new time period
+* Fixed issue 35: Can't stop/start new work after deleting active task
+* Fixed issue 37: Wrong date selections when moving from summary to detailed view
+* Fixed issue 38: Repeatedly pressing Today when in Summary view keeps changing months
 
 Version 0.99, 2009-10-09
 

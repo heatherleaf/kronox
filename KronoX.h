@@ -140,6 +140,7 @@
 // Delegate methods
 - (NSRect) window:(NSWindow*)window willPositionSheet:(ModalSheet*)sheet usingRect:(NSRect)rect;
 - (NSUndoManager*) windowWillReturnUndoManager: (NSWindow*) window;
+- (void) windowDidResignKey:(NSNotification*)note;
 
 // Initialization & Preferences
 - (IBAction) applyPreferences: (id) sender;
