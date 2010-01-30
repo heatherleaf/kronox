@@ -25,8 +25,8 @@
 #import "WorkPeriodController.h"
 
 @interface WorkPeriodDatePicker : NSDatePicker {
-	IBOutlet WorkPeriodController* workPeriodController;
-	NSArray* selectedWorkPeriods;
+    IBOutlet WorkPeriodController* workPeriodController;
+    NSArray* selectedWorkPeriods;
 }
 
 @property (copy) NSArray* selectedWorkPeriods;

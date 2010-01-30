@@ -44,7 +44,7 @@
 
 - (NSDateComponents*) components: (NSUInteger) unitFlags;
 - (NSDateComponents*) components: (NSUInteger) unitFlags
-					   sinceDate: (NSDate*) date;
+                       sinceDate: (NSDate*) date;
 
 + (NSUInteger) dateUnits;
 + (NSUInteger) timeUnits;

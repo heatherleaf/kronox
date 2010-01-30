@@ -28,13 +28,13 @@
 #import "Task.h"
 
 @interface TasksController : NSTreeController {
-	IBOutlet NSArrayController* tasksArrayController;
-	IBOutlet WorkPeriodController* workPeriodController;
-	IBOutlet NSPanel* workPeriodPanel;
-	IBOutlet NSPanel* taskPanel;
-	
-	IBOutlet NSOutlineView* statisticsView;
-	IBOutlet NSOutlineView* recordingView;
+    IBOutlet NSArrayController* tasksArrayController;
+    IBOutlet WorkPeriodController* workPeriodController;
+    IBOutlet NSPanel* workPeriodPanel;
+    IBOutlet NSPanel* taskPanel;
+    
+    IBOutlet NSOutlineView* statisticsView;
+    IBOutlet NSOutlineView* recordingView;
 }
 
 // Manage work periods
@@ -60,18 +60,18 @@
 - (void) registerForDragging: (NSOutlineView*) view;
 
 - (BOOL) outlineView: (NSOutlineView*) ov
-		  writeItems: (NSArray*) items
-		toPasteboard: (NSPasteboard*) pboard;
+          writeItems: (NSArray*) items
+        toPasteboard: (NSPasteboard*) pboard;
 
 - (NSDragOperation) outlineView: (NSOutlineView*) ov
-				   validateDrop: (id <NSDraggingInfo>) info
-				   proposedItem: (id) item
-			 proposedChildIndex: (NSInteger) index;
+                   validateDrop: (id <NSDraggingInfo>) info
+                   proposedItem: (id) item
+             proposedChildIndex: (NSInteger) index;
 
 - (BOOL) outlineView: (NSOutlineView*) ov 
-		  acceptDrop: (id <NSDraggingInfo>) info
-				item: (id) item
-		  childIndex: (NSInteger) index;
+          acceptDrop: (id <NSDraggingInfo>) info
+                item: (id) item
+          childIndex: (NSInteger) index;
 
 @end
 

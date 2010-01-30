@@ -28,18 +28,18 @@
 @synthesize selectedWorkPeriods;
 
 - (void) selectWPs {
-	[self setSelectedWorkPeriods: [workPeriodController selectedObjects]];
-	LOG(@"selectWPs: %d", [[self selectedWorkPeriods] count]);
+    [self setSelectedWorkPeriods: [workPeriodController selectedObjects]];
+    LOG(@"selectWPs: %d", [[self selectedWorkPeriods] count]);
 }
 
 - (BOOL) becomeFirstResponder {
-	[self selectWPs];
-	return YES;
+    [self selectWPs];
+    return YES;
 }
 
 - (void) mouseDown: (NSEvent*) event {
-	[self selectWPs];
-	[super mouseDown: event];
+    [self selectWPs];
+    [super mouseDown: event];
 }
 
 @end

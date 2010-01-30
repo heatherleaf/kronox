@@ -30,20 +30,20 @@
 
 
 @interface WorkPeriodController : NSArrayController {
-	// Status item, -menu, -line
-	NSStatusItem* statusItem;
-	IBOutlet NSMenu* recordingMenu;
+    // Status item, -menu, -line
+    NSStatusItem* statusItem;
+    IBOutlet NSMenu* recordingMenu;
 
     // Total duration of all visible work periods
-	NSTimeInterval totalDuration;
-	
-	// Current recording
-	WorkPeriod* currentWorkPeriod;
-	NSDate* currentStartTime;
-	NSNumber* currentDuration;
-	BOOL isRecording;
-	BOOL canChangeDate;
-	IBOutlet NSDateFormatter* currentDurationFormatter;
+    NSTimeInterval totalDuration;
+    
+    // Current recording
+    WorkPeriod* currentWorkPeriod;
+    NSDate* currentStartTime;
+    NSNumber* currentDuration;
+    BOOL isRecording;
+    BOOL canChangeDate;
+    IBOutlet NSDateFormatter* currentDurationFormatter;
     
     // Checking idle time
     IBOutlet NSPanel* editWorkperiodPanel;
@@ -83,8 +83,8 @@
 // - (void) remove: (id) sender;
 - (WorkPeriod*) newWorkPeriod;
 - (WorkPeriod*) addForTask: (Task*) task 
-					 start: (NSDate*) start
-				  duration: (NSTimeInterval) duration;
+                     start: (NSDate*) start
+                  duration: (NSTimeInterval) duration;
 - (void) addForTask: (Task*) task;
 
 // Delegate methods

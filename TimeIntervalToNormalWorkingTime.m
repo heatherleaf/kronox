@@ -31,20 +31,20 @@
 #define WEEKS_PER_YEAR (365.25/7)
 
 + (Class) transformedValueClass { 
-	return [NSNumber class]; 
+    return [NSNumber class]; 
 }
 
 + (BOOL) allowsReverseTransformation { 
-	return YES; 
+    return YES; 
 }
 
 - (NSNumber*) transformedValue: (NSNumber*) value {
-	if (value == nil) return nil;
+    if (value == nil) return nil;
     return [NSNumber numberWithDouble:[[self class] transform:[value doubleValue]]];
 }
 
 - (NSNumber*) reverseTransformedValue: (NSNumber*) value {
-	if (value == nil) return nil;
+    if (value == nil) return nil;
     return [NSNumber numberWithDouble:[[self class] reverseTransform:[value doubleValue]]];
 }
 

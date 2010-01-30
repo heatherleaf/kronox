@@ -26,15 +26,15 @@
 @implementation FontSizeToRowHeight
 
 + (Class) transformedValueClass { 
-	return [NSNumber class]; 
+    return [NSNumber class]; 
 }
 
 + (BOOL) allowsReverseTransformation { 
-	return NO; 
+    return NO; 
 }
 
 - (NSNumber*) transformedValue: (NSNumber*) fontSize {
-	return [NSNumber numberWithDouble:4 + [fontSize doubleValue]];
+    return [NSNumber numberWithDouble:4 + [fontSize doubleValue]];
 }
 
 @end

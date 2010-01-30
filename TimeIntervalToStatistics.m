@@ -26,23 +26,23 @@
 @implementation TimeIntervalToStatistics
 
 + (Class) transformedValueClass { 
-	return [NSString class]; 
+    return [NSString class]; 
 }
 
 + (BOOL) allowsReverseTransformation { 
-	return NO; 
+    return NO; 
 }
 
 - (NSString*) transformedValue: (NSNumber*) time {
-	if (time == nil) 
+    if (time == nil) 
         return nil;
-	if (![time intValue]) 
+    if (![time intValue]) 
         return nil;
-	int minutes = ([time intValue] + 30) / 60;
-	switch ([PREFS integerForKey: @"durationAppearance"]) {
-		case 1:  return [NSString stringWithFormat:@"%.1fh", (float)minutes/60];
-		default: return [NSString stringWithFormat:@"%d:%02d", minutes/60, minutes%60];
-	}
+    int minutes = ([time intValue] + 30) / 60;
+    switch ([PREFS integerForKey: @"durationAppearance"]) {
+        case 1:  return [NSString stringWithFormat:@"%.1fh", (float)minutes/60];
+        default: return [NSString stringWithFormat:@"%d:%02d", minutes/60, minutes%60];
+    }
 }
 
 @end

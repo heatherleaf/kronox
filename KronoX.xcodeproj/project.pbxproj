@@ -64,12 +64,11 @@
 		8BE4AC56106ED80800AD621C /* KronoX-model-v3-v4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8BE4AC55106ED80800AD621C /* KronoX-model-v3-v4.xcmappingmodel */; };
 		8BE75274106818DD008C1482 /* ColumnsMenuDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE75273106818DD008C1482 /* ColumnsMenuDelegate.m */; };
 		8BF2DB1E0DA1634800A3CBBF /* UndoExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */; };
-		8BF7E27E0F231B8C009AC0C7 /* googlecode_upload.py in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7E27D0F231B8C009AC0C7 /* googlecode_upload.py */; };
-		8BF7E2AD0F231D61009AC0C7 /* upload_kronox.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */; };
 		8BFD8C9C0DA4E8D500F389F4 /* TimeIntervalToStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		D0E2DD5711140F76003E1B99 /* release_new_version.sh in Resources */ = {isa = PBXBuildFile; fileRef = D0E2DD5611140F76003E1B99 /* release_new_version.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,11 +170,11 @@
 		8BF2DB1C0DA1634800A3CBBF /* UndoExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoExtensions.h; sourceTree = "<group>"; };
 		8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoExtensions.m; sourceTree = "<group>"; };
 		8BF7E27D0F231B8C009AC0C7 /* googlecode_upload.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = googlecode_upload.py; sourceTree = "<group>"; };
-		8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = upload_kronox.sh; sourceTree = "<group>"; };
 		8BFD8C9A0DA4E8D500F389F4 /* TimeIntervalToStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToStatistics.h; sourceTree = "<group>"; };
 		8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToStatistics.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* KronoX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KronoX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E2DD5611140F76003E1B99 /* release_new_version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = release_new_version.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,7 +265,7 @@
 				8BC8BED80EEC620800F52232 /* COPYING.txt */,
 				8B9CA4190F229D350005A79F /* dsa_pub.pem */,
 				8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */,
-				8BF7E2AC0F231D61009AC0C7 /* upload_kronox.sh */,
+				D0E2DD5611140F76003E1B99 /* release_new_version.sh */,
 				8BF7E27D0F231B8C009AC0C7 /* googlecode_upload.py */,
 			);
 			name = Resources;
@@ -434,9 +433,8 @@
 				8BAF02F20F1E08E100720336 /* ChangeLog.txt in Resources */,
 				8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */,
 				8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */,
-				8BF7E27E0F231B8C009AC0C7 /* googlecode_upload.py in Resources */,
-				8BF7E2AD0F231D61009AC0C7 /* upload_kronox.sh in Resources */,
 				8BDC5005107C8713001F74C9 /* KronoX Help in Resources */,
+				D0E2DD5711140F76003E1B99 /* release_new_version.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

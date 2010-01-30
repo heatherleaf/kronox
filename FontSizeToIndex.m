@@ -30,26 +30,26 @@
 #define MiniSize   [NSFont systemFontSizeForControlSize: NSMiniControlSize]
 
 + (Class) transformedValueClass { 
-	return [NSNumber class]; 
+    return [NSNumber class]; 
 }
 
 + (BOOL) allowsReverseTransformation { 
-	return YES; 
+    return YES; 
 }
 
 - (NSNumber*) transformedValue: (NSNumber*) fontSize {
-	int index = 1 + SmallSize - [fontSize intValue];
-	if (index < 0) index = 0;
-	if (index > 2) index = 2;
-	return [NSNumber numberWithInt:index];
+    int index = 1 + SmallSize - [fontSize intValue];
+    if (index < 0) index = 0;
+    if (index > 2) index = 2;
+    return [NSNumber numberWithInt:index];
 }
 
 - (NSNumber*) reverseTransformedValue: (NSNumber*) index {
-	switch ([index intValue]) {
-		case 1:  return [NSNumber numberWithDouble: SmallSize];
-		case 2:  return [NSNumber numberWithDouble: MiniSize];
-		default: return [NSNumber numberWithDouble: NormalSize];
-	}
+    switch ([index intValue]) {
+        case 1:  return [NSNumber numberWithDouble: SmallSize];
+        case 2:  return [NSNumber numberWithDouble: MiniSize];
+        default: return [NSNumber numberWithDouble: NormalSize];
+    }
 }
 
 @end

@@ -28,24 +28,24 @@
 @synthesize viewThatSheetEmergesBelow;
 
 - (IBAction) showModal: (id) sender {
-	[self showModal];
+    [self showModal];
 }
 
 - (NSInteger) showModal {
-	return [self showModalBelow:nil];
+    return [self showModalBelow:nil];
 }
 
 - (NSInteger) showModalBelow: (NSView*) view {
-	[self setViewThatSheetEmergesBelow:view];
-	[NSApp beginSheet:self
-	   modalForWindow:[NSApp mainWindow] 
-		modalDelegate:nil
-	   didEndSelector:nil
-		  contextInfo:nil];
-	NSInteger response = [NSApp runModalForWindow:self];
-	[NSApp endSheet:self];
-	[self orderOut:nil];
-	return response;
+    [self setViewThatSheetEmergesBelow:view];
+    [NSApp beginSheet:self
+       modalForWindow:[NSApp mainWindow] 
+        modalDelegate:nil
+       didEndSelector:nil
+          contextInfo:nil];
+    NSInteger response = [NSApp runModalForWindow:self];
+    [NSApp endSheet:self];
+    [self orderOut:nil];
+    return response;
 }
 
 - (IBAction) stopModal: (id) sender { 

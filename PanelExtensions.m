@@ -26,11 +26,11 @@
 @implementation NSPanel (PanelExtensions)
 
 - (void) toggleVisibility: (id) sender {
-	if ([self isKeyWindow]) {
-		[self orderOut:sender];
-	} else {
-		[self makeKeyAndOrderFront:sender];
-	}
+    if ([self isKeyWindow]) {
+        [self orderOut:sender];
+    } else {
+        [self makeKeyAndOrderFront:sender];
+    }
 }
 
 @end

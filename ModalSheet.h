@@ -24,7 +24,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ModalSheet : NSPanel {
-	NSView* viewThatSheetEmergesBelow;
+    NSView* viewThatSheetEmergesBelow;
 }
 
 @property (retain) NSView* viewThatSheetEmergesBelow;

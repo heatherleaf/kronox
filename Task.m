@@ -47,16 +47,16 @@
 
 @dynamic longName;
 - (NSString*) longName {
-	NSString* pname = [self name];
-	Task* prnt = self;
-	while (prnt = [prnt parent]) 
-		pname = [NSString stringWithFormat:@"%@ - %@", [prnt name], pname];
-	return pname;
+    NSString* pname = [self name];
+    Task* prnt = self;
+    while (prnt = [prnt parent]) 
+        pname = [NSString stringWithFormat:@"%@ - %@", [prnt name], pname];
+    return pname;
 }
 
 @dynamic startRecordingName;
 - (NSString*) startRecordingName {
-	return [NSString stringWithFormat:@"Start \"%@\"", [self longName]];
+    return [NSString stringWithFormat:@"Start \"%@\"", [self longName]];
 }
 
 @dynamic color;
@@ -72,38 +72,38 @@
 
 @dynamic duration; 
 - (NSTimeInterval) duration {
-	NSPredicate* pred = [[NSApp delegate] performSelector:@selector(viewPeriodPredicate)];
-	if (!pred) return 0;
-	NSTimeInterval dur = 0;
-	for (WorkPeriod* work in [[self workperiods] filteredSetUsingPredicate:pred]) 
-		dur += [[work duration] doubleValue];
-	return dur;
+    NSPredicate* pred = [[NSApp delegate] performSelector:@selector(viewPeriodPredicate)];
+    if (!pred) return 0;
+    NSTimeInterval dur = 0;
+    for (WorkPeriod* work in [[self workperiods] filteredSetUsingPredicate:pred]) 
+        dur += [[work duration] doubleValue];
+    return dur;
 }
 
 @dynamic durationPercent;
 - (NSNumber*) durationPercent {
     NSTimeInterval duration = [self duration];
-	NSTimeInterval totalTotal = [[[NSApp delegate] performSelector:@selector(totalDurationOfWorkPeriods)] doubleValue];
-	if (duration && totalTotal) 
-		return [NSNumber numberWithDouble: duration / totalTotal];
-	return nil;
+    NSTimeInterval totalTotal = [[[NSApp delegate] performSelector:@selector(totalDurationOfWorkPeriods)] doubleValue];
+    if (duration && totalTotal) 
+        return [NSNumber numberWithDouble: duration / totalTotal];
+    return nil;
 }
 
 @dynamic totalDuration;
 - (NSTimeInterval) totalDuration {
-	NSTimeInterval dur = 0;
-	for (Task* child in [self children]) 
-		dur += [child totalDuration];
-	return dur + [self duration];
+    NSTimeInterval dur = 0;
+    for (Task* child in [self children]) 
+        dur += [child totalDuration];
+    return dur + [self duration];
 }
 
 @dynamic totalDurationPercent;
 - (NSNumber*) totalDurationPercent {
     NSTimeInterval total = [self totalDuration];
-	NSTimeInterval totalTotal = [[[NSApp delegate] performSelector:@selector(totalDurationOfWorkPeriods)] doubleValue];
-	if (total > 1 && totalTotal > 1) 
-		return [NSNumber numberWithDouble: total / totalTotal];
-	return nil;
+    NSTimeInterval totalTotal = [[[NSApp delegate] performSelector:@selector(totalDurationOfWorkPeriods)] doubleValue];
+    if (total > 1 && totalTotal > 1) 
+        return [NSNumber numberWithDouble: total / totalTotal];
+    return nil;
 }
 
 @dynamic totalNormalWorkingTimePerYear;
@@ -144,11 +144,11 @@
 #pragma mark ---- Other methods ----
 
 - (void) awakeFromInsert {
-	[super awakeFromInsert];
-	static int nr = 1;
-	[self setName:[NSString stringWithFormat:@"New Task %i", nr]];
-	[self setOrder:[NSNumber numberWithInt:-nr]];
-	nr++;
+    [super awakeFromInsert];
+    static int nr = 1;
+    [self setName:[NSString stringWithFormat:@"New Task %i", nr]];
+    [self setOrder:[NSNumber numberWithInt:-nr]];
+    nr++;
 }
 
 @end

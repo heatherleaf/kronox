@@ -26,35 +26,35 @@
 @implementation TimeIntervalToNumber
 
 + (Class) transformedValueClass { 
-	return [NSNumber class]; 
+    return [NSNumber class]; 
 }
 
 + (BOOL) allowsReverseTransformation { 
-	return YES; 
+    return YES; 
 }
 
 - (NSNumber*) transformedValue: (NSNumber*) value {
-	if (value == nil) 
+    if (value == nil) 
         return nil;
-	NSTimeInterval seconds = [value doubleValue];
-	if (seconds < -0.0001) 
+    NSTimeInterval seconds = [value doubleValue];
+    if (seconds < -0.0001) 
         return nil;
-	int hours = seconds/3600;
-	double minutes = seconds/60 - hours*60;
-	double formatted = hours*100 + minutes;
-	return [NSNumber numberWithDouble:formatted];
+    int hours = seconds/3600;
+    double minutes = seconds/60 - hours*60;
+    double formatted = hours*100 + minutes;
+    return [NSNumber numberWithDouble:formatted];
 }
 
 - (NSNumber*) reverseTransformedValue: (NSNumber*) value {
-	if (value == nil) 
+    if (value == nil) 
         return nil;
-	double formatted = [value doubleValue];
-	if (formatted <= 0) 
+    double formatted = [value doubleValue];
+    if (formatted <= 0) 
         return [NSNumber numberWithInt:0];
-	int hours = formatted/100;
-	double minutes = formatted - hours*100;
-	NSTimeInterval seconds = hours*3600 + minutes*60;
-	return [NSNumber numberWithDouble:seconds];
+    int hours = formatted/100;
+    double minutes = formatted - hours*100;
+    NSTimeInterval seconds = hours*3600 + minutes*60;
+    return [NSNumber numberWithDouble:seconds];
 }
 
 @end

@@ -26,26 +26,26 @@
 @implementation TimeIntervalToMinutes
 
 + (Class) transformedValueClass { 
-	return [NSNumber class]; 
+    return [NSNumber class]; 
 }
 
 + (BOOL) allowsReverseTransformation { 
-	return YES; 
+    return YES; 
 }
 
 - (NSNumber*) transformedValue: (NSNumber*) value {
-	if (value == nil) 
+    if (value == nil) 
         return nil;
-	NSTimeInterval seconds = [value doubleValue];
+    NSTimeInterval seconds = [value doubleValue];
     NSInteger minutes = (NSInteger) (seconds+30)/60;
-	return [NSNumber numberWithInteger:minutes];
+    return [NSNumber numberWithInteger:minutes];
 }
 
 - (NSNumber*) reverseTransformedValue: (NSNumber*) value {
-	if (value == nil) 
+    if (value == nil) 
         return nil;
     NSInteger minutes = [value integerValue];
-	return [NSNumber numberWithInteger:minutes*60];
+    return [NSNumber numberWithInteger:minutes*60];
 }
 
 @end

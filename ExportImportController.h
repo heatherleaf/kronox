@@ -25,20 +25,20 @@
 #import "WorkPeriodController.h"
 
 @interface ExportImportController : NSObject {
-	// Outlets
-	IBOutlet NSPanel* progressPanel;
-	IBOutlet NSProgressIndicator* progressIndicator;
-	IBOutlet NSView* exportTextView;
-	IBOutlet NSView* exportICalView;
-	IBOutlet WorkPeriodController* workPeriodController;
-	
-	// Bindings
-	NSDate* exportFromDate;
-	NSDate* exportToDate;
-	NSString* exportDelimitor;
-	NSStringEncoding exportEncoding;
-	int exportCalendar;
-	NSArray* iCalCalendars;
+    // Outlets
+    IBOutlet NSPanel* progressPanel;
+    IBOutlet NSProgressIndicator* progressIndicator;
+    IBOutlet NSView* exportTextView;
+    IBOutlet NSView* exportICalView;
+    IBOutlet WorkPeriodController* workPeriodController;
+    
+    // Bindings
+    NSDate* exportFromDate;
+    NSDate* exportToDate;
+    NSString* exportDelimitor;
+    NSStringEncoding exportEncoding;
+    int exportCalendar;
+    NSArray* iCalCalendars;
 }
 
 @property (copy) NSDate* exportFromDate;

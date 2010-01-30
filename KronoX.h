@@ -31,58 +31,58 @@
 
 @interface KronoX : NSObject 
 {
-	// Cocoa bindings
-	NSArray* workPeriodSortDescriptors;
-	NSArray* tasksSortDescriptors;
+    // Cocoa bindings
+    NSArray* workPeriodSortDescriptors;
+    NSArray* tasksSortDescriptors;
 
-	NSInteger contentViewSegment;
-	NSInteger viewPeriodSegment;
-	NSDate* viewPeriodDate;
-	NSDate* viewPeriodStart;
-	NSDate* viewPeriodEnd;
-	NSPredicate* viewPeriodPredicate;
-	BOOL viewPeriodStartEnabled;
-	BOOL viewPeriodEndEnabled;
+    NSInteger contentViewSegment;
+    NSInteger viewPeriodSegment;
+    NSDate* viewPeriodDate;
+    NSDate* viewPeriodStart;
+    NSDate* viewPeriodEnd;
+    NSPredicate* viewPeriodPredicate;
+    BOOL viewPeriodStartEnabled;
+    BOOL viewPeriodEndEnabled;
     NSString* searchString;
     
     NSInteger searchAttribute;
     NSInteger comparisonOperator;
     
-	// Outlets
-	IBOutlet WorkPeriodController* workPeriodController;
-	IBOutlet NSArrayController* tasksArrayController;
-	IBOutlet TasksController* tasksController;
+    // Outlets
+    IBOutlet WorkPeriodController* workPeriodController;
+    IBOutlet NSArrayController* tasksArrayController;
+    IBOutlet TasksController* tasksController;
 
-	IBOutlet NSMenuItem* dailyViewMenuItem;
-	IBOutlet NSMenuItem* weeklyViewMenuItem;
-	IBOutlet NSMenuItem* monthlyViewMenuItem;
-	IBOutlet NSMenuItem* detailedViewMenuItem;
-	IBOutlet NSMenuItem* statisticsViewMenuItem;
+    IBOutlet NSMenuItem* dailyViewMenuItem;
+    IBOutlet NSMenuItem* weeklyViewMenuItem;
+    IBOutlet NSMenuItem* monthlyViewMenuItem;
+    IBOutlet NSMenuItem* detailedViewMenuItem;
+    IBOutlet NSMenuItem* statisticsViewMenuItem;
     
     IBOutlet NSView* searchView;
     IBOutlet NSPopUpButton* searchAttributePopup;
     IBOutlet NSPopUpButton* comparisonOperatorPopup;
     IBOutlet NSSearchField* searchField;
     
-// 	IBOutlet NSSplitView* splitView;
-	IBOutlet NSScrollView* contentView;
+//     IBOutlet NSSplitView* splitView;
+    IBOutlet NSScrollView* contentView;
     IBOutlet NSView* contentEnclosingView;
-	IBOutlet NSOutlineView* statisticsView;
-	IBOutlet NSOutlineView* recordingView;
-	IBOutlet NSTableView* workPeriodView;
+    IBOutlet NSOutlineView* statisticsView;
+    IBOutlet NSOutlineView* recordingView;
+    IBOutlet NSTableView* workPeriodView;
     
-	IBOutlet NSPanel* workPeriodPanel;
-	IBOutlet ModalSheet* gotoDatePanel;
-// 	IBOutlet ModalSheet* startDatePanel;
-// 	IBOutlet ModalSheet* endDatePanel;
-	IBOutlet NSSegmentedControl* viewPeriodSegmentedControl;
-// 	IBOutlet NSTextField* startDateTextField;
-// 	IBOutlet NSTextField* endDateTextField;
+    IBOutlet NSPanel* workPeriodPanel;
+    IBOutlet ModalSheet* gotoDatePanel;
+//     IBOutlet ModalSheet* startDatePanel;
+//     IBOutlet ModalSheet* endDatePanel;
+    IBOutlet NSSegmentedControl* viewPeriodSegmentedControl;
+//     IBOutlet NSTextField* startDateTextField;
+//     IBOutlet NSTextField* endDateTextField;
     
     IBOutlet NSTextFieldCell* normalWorkingTimeTextField;
     
-	// Core Data variables
-	NSPersistentStoreCoordinator* persistentStoreCoordinator;
+    // Core Data variables
+    NSPersistentStoreCoordinator* persistentStoreCoordinator;
     NSManagedObjectModel*         managedObjectModel;
     NSManagedObjectContext*       managedObjectContext;
 }

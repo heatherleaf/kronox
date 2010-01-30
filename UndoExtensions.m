@@ -26,12 +26,12 @@
 @implementation NSManagedObjectContext (UndoExtensions)
 
 - (void) beginUndoGroup: (NSString*) action {
-	[[self undoManager] beginUndoGrouping];
-	[[self undoManager] setActionName:action];
+    [[self undoManager] beginUndoGrouping];
+    [[self undoManager] setActionName:action];
 }
 
 - (void) endUndoGroup {
-	[[self undoManager] endUndoGrouping];
+    [[self undoManager] endUndoGrouping];
 }
 
 

@@ -26,31 +26,31 @@
 @implementation TimeIntervalToDate
 
 + (Class) transformedValueClass { 
-	return [NSDate class]; 
+    return [NSDate class]; 
 }
 
 + (BOOL) allowsReverseTransformation { 
-	return YES; 
+    return YES; 
 }
 
 - (NSDate*) transformedValue: (NSNumber*) time {
-	if (time == nil) 
+    if (time == nil) 
         return nil;
-	NSTimeZone* tz = [NSTimeZone defaultTimeZone];
-	NSTimeInterval seconds = [time doubleValue] - [tz secondsFromGMT];
-	if ([tz isDaylightSavingTime]) 
-		seconds += [tz daylightSavingTimeOffset];
-	return [NSDate dateWithTimeIntervalSinceReferenceDate:seconds];
+    NSTimeZone* tz = [NSTimeZone defaultTimeZone];
+    NSTimeInterval seconds = [time doubleValue] - [tz secondsFromGMT];
+    if ([tz isDaylightSavingTime]) 
+        seconds += [tz daylightSavingTimeOffset];
+    return [NSDate dateWithTimeIntervalSinceReferenceDate:seconds];
 }
 
 - (NSNumber*) reverseTransformedValue: (NSDate*) date {
-	if (date == nil) 
+    if (date == nil) 
         return nil;
-	NSTimeZone* tz = [NSTimeZone defaultTimeZone];
-	NSTimeInterval seconds = [date timeIntervalSinceReferenceDate] + [tz secondsFromGMT];
-	if ([tz isDaylightSavingTime]) 
-		seconds -= [tz daylightSavingTimeOffset];
-	return [NSNumber numberWithDouble:seconds];
+    NSTimeZone* tz = [NSTimeZone defaultTimeZone];
+    NSTimeInterval seconds = [date timeIntervalSinceReferenceDate] + [tz secondsFromGMT];
+    if ([tz isDaylightSavingTime]) 
+        seconds -= [tz daylightSavingTimeOffset];
+    return [NSNumber numberWithDouble:seconds];
 }
 
 @end

@@ -32,7 +32,7 @@
 
 - (BOOL) menu: (NSMenu*) menu
    updateItem: (NSMenuItem*) item 
-	  atIndex: (NSInteger) index
+      atIndex: (NSInteger) index
  shouldCancel: (BOOL) shouldCancel;
 
 - (void) toggleVisibility: (id) sender;
