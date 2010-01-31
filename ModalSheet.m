@@ -25,18 +25,9 @@
 
 @implementation ModalSheet
 
-@synthesize viewThatSheetEmergesBelow;
-
-- (IBAction) showModal: (id) sender {
-    [self showModal];
-}
+@synthesize enclosingView;
 
 - (NSInteger) showModal {
-    return [self showModalBelow:nil];
-}
-
-- (NSInteger) showModalBelow: (NSView*) view {
-    [self setViewThatSheetEmergesBelow:view];
     [NSApp beginSheet:self
        modalForWindow:[NSApp mainWindow] 
         modalDelegate:nil
@@ -46,6 +37,10 @@
     [NSApp endSheet:self];
     [self orderOut:nil];
     return response;
+}
+
+- (IBAction) showModal: (id) sender {
+    [self showModal];
 }
 
 - (IBAction) stopModal: (id) sender { 

@@ -87,8 +87,10 @@
         frame.origin.y += frame.size.height - newSize.height;
         frame.size = newSize;
         [contentView setDocumentView:newContentView];
+        [recordingView setNextKeyView:newContentView];
         [window setFrame:frame display:YES animate:YES];
     }
+    
     
     // Change the state of the menu items:
     [detailedViewMenuItem setState: (newContentView == workPeriodView ? NSOnState : NSOffState)];
@@ -122,6 +124,7 @@
 
 // This is called by:
 //  - Next, Previous, Go to Today (in the View menu)
+//  - when changing date in the Edit Workperiod panel
 //  - addForTask:, startRecordingTask: (in WorkPeriodController)
 //  - changeViewPeriodSpan:, showGotoDatePanel:, awakeFromNib (in KronoX)
 - (IBAction) changeViewPeriodDate: (id) sender {
@@ -411,7 +414,7 @@
 // Called by "Go to Date..." in the View menu.
 - (IBAction) showGotoDatePanel: (id) sender {
     LOG(@"showGotoDatePanel: %@", [sender className]);
-    [gotoDatePanel showModalBelow:viewPeriodSegmentedControl];
+    [gotoDatePanel showModal];
     [self changeViewPeriodDate:[self viewPeriodDate]];
 }
 
@@ -422,16 +425,16 @@
 // "Tells the delegate that the window is about to show a sheet at the specified location, 
 // giving it the opportunity to return a custom location for the attachment of the sheet to the window."
 - (NSRect) window:(NSWindow*)window willPositionSheet:(ModalSheet*)sheet usingRect:(NSRect)rect {
-    // If the sheet hasn't specified a view where it should emerge, just return the default location:
-    if (![sheet viewThatSheetEmergesBelow]) return rect;
-    
-    // Calculate a new location, relative to the specified view:
-    NSRect newRect = [[sheet viewThatSheetEmergesBelow] frame];
-    NSRect superRect = [[[sheet viewThatSheetEmergesBelow] superview] frame];
-    newRect.origin.x += rect.size.width - superRect.size.width;
-    newRect.origin.y += 2;
-    newRect.size.height = 0;
-    return newRect;
+    if ([sheet enclosingView]) {
+        // Calculate a new location, relative to the enclosing view:
+        NSView* view = [sheet enclosingView];
+        NSSize viewSize = [view frame].size;
+        CGFloat ypos = [view isFlipped] ? 0 : viewSize.height;
+        rect.origin = [view convertPoint:NSMakePoint(0, ypos) toView:nil];
+        rect.size = NSMakeSize(viewSize.width, 0);
+        LOG(@"window:willPositionSheet:usingRect: %@", NSStringFromRect(rect));
+    }
+    return rect;
 }
 
 // From NSWindowDelegate Protocol Reference:

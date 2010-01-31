@@ -6,6 +6,8 @@ ChangeLog for the KronoX time tracker
 Version 0.99.2, ??
 
 * Fixed issue 28: Comments in the currently recording work period sometimes disappear
+  - I hope this is fixed now
+* Removed the "Add" and "Remove" buttons in the Edit Task panel - they were unintuitive
 
 Version 0.99.1, 2010-01-30
 

@@ -24,14 +24,13 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ModalSheet : NSPanel {
-    NSView* viewThatSheetEmergesBelow;
+    IBOutlet NSView* enclosingView;
 }
 
-@property (retain) NSView* viewThatSheetEmergesBelow;
+@property (readonly) NSView* enclosingView;
 
-- (IBAction) showModal: (id) sender;
 - (NSInteger) showModal;
-- (NSInteger) showModalBelow: (NSView*) view;
+- (IBAction) showModal: (id) sender;
 - (IBAction) stopModal: (id) sender;
 - (IBAction) abortModal: (id) sender;
 - (IBAction) stopModalWithTag: (id) sender;
