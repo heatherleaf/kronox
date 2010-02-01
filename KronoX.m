@@ -569,10 +569,6 @@
                                    userInfo:nil
                                     repeats:YES];
     
-    // Make sure the tasks are expanded/collapsed the same way as last time:
-    [tasksController expandOutlineView:recordingView];
-    [tasksController expandOutlineView:statisticsView];
-
     // And final initializations that we only can do after all data have been fetched:
     [tasksController fetch:nil];
     [NSTimer scheduledTimerWithTimeInterval:0
@@ -584,6 +580,10 @@
 
 // Initializations that we do *after* all data have been fetched from the database.
 - (void) finalInitializations: (id) sender {
+    // Make sure the tasks are expanded/collapsed the same way as last time:
+    [tasksController expandOutlineView:recordingView];
+    [tasksController expandOutlineView:statisticsView];
+    
     // If there are no tasks, show a splash screen:
     if ([[[tasksController arrangedObjects] childNodes] count] == 0) {
         // Show splash screen
