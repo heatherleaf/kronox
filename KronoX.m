@@ -448,9 +448,17 @@
 // From NSWindowDelegate Protocol Reference:
 // "Informs the delegate that the window has resigned key window status."
 - (void) windowDidResignKey:(NSNotification*)note {
-    // If edit workperiod (or task) panel did close, save its content:
     LOG(@"windowDid Resign Key: %@", [note object]);
+    
+    // In case edit workperiod (or task) panel did close, save its content:
     [self saveManagedObjectContext:nil];
+    
+    // We have to wait until the database is saved, before we can redisplay:
+    [NSTimer scheduledTimerWithTimeInterval:0
+                                     target:tasksController
+                                   selector:@selector(fetch:)
+                                   userInfo:nil
+                                    repeats:NO];
 }
 
 
@@ -546,7 +554,8 @@
                                                  name:NSUndoManagerDidRedoChangeNotification
                                                object:nil];
     
-    // Tick the clock during recording, every second:
+    // Tick the clock during recording, every second, starting now:
+    [workPeriodController tickTheClock:nil];
     [NSTimer scheduledTimerWithTimeInterval:1
                                      target:workPeriodController
                                    selector:@selector(tickTheClock:)
@@ -560,10 +569,21 @@
                                    userInfo:nil
                                     repeats:YES];
     
-    // And some final things...
-    [workPeriodController tickTheClock:self];
-    [tasksController fetchImmediately:self];
-    
+    // Make sure the tasks are expanded/collapsed the same way as last time:
+    [tasksController expandOutlineView:recordingView];
+    [tasksController expandOutlineView:statisticsView];
+
+    // And final initializations that we only can do after all data have been fetched:
+    [tasksController fetch:nil];
+    [NSTimer scheduledTimerWithTimeInterval:0
+                                     target:self
+                                   selector:@selector(finalInitializations:)
+                                   userInfo:nil
+                                    repeats:NO];
+}
+
+// Initializations that we do *after* all data have been fetched from the database.
+- (void) finalInitializations: (id) sender {
     // If there are no tasks, show a splash screen:
     if ([[[tasksController arrangedObjects] childNodes] count] == 0) {
         // Show splash screen
@@ -572,10 +592,6 @@
                         and then you are ready to start tracking",
                         @"OK", nil, nil);
     }
-    
-    // Make sure the tasks are expanded/collapsed the same way as last time:
-    [tasksController expandOutlineView:recordingView];
-    [tasksController expandOutlineView:statisticsView];
 }
 
 // Called from the status menu.

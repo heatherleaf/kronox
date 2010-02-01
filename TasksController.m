@@ -134,14 +134,6 @@
     [workPeriodController fetch:sender];
 }
 
-- (void) fetchImmediately: (id) sender {
-    LOG(@"fetchImmediately: %@", [sender className]);
-    if (![self managedObjectContext]) return;
-    NSError *error;
-    if (![super fetchWithRequest:nil merge:NO error:&error]) 
-        [NSApp presentError:error];
-}    
-
 - (int) _reorderTreeNode: (NSTreeNode*) root fromIndex: (int) ix {
     for (NSTreeNode* child in [root childNodes]) {
         Task* task = [child representedObject];

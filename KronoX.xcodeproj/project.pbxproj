@@ -68,6 +68,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		D060D30C1116C3B000B280FD /* EscapableDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D060D30B1116C3B000B280FD /* EscapableDatePicker.m */; };
 		D0E2DD5711140F76003E1B99 /* release_new_version.sh in Resources */ = {isa = PBXBuildFile; fileRef = D0E2DD5611140F76003E1B99 /* release_new_version.sh */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +175,8 @@
 		8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToStatistics.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* KronoX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KronoX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D060D30A1116C3B000B280FD /* EscapableDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EscapableDatePicker.h; sourceTree = "<group>"; };
+		D060D30B1116C3B000B280FD /* EscapableDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EscapableDatePicker.m; sourceTree = "<group>"; };
 		D0E2DD5611140F76003E1B99 /* release_new_version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = release_new_version.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -345,6 +348,8 @@
 			children = (
 				8B0701FF0EBE705E006BF98A /* ModalSheet.h */,
 				8B0702000EBE705E006BF98A /* ModalSheet.m */,
+				D060D30A1116C3B000B280FD /* EscapableDatePicker.h */,
+				D060D30B1116C3B000B280FD /* EscapableDatePicker.m */,
 			);
 			name = "(Sub)Classes";
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 				8BE4AB80106EC55F00AD621C /* TimeIntervalToMinutes.m in Sources */,
 				8BE4ABD3106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.m in Sources */,
 				8BE4AC56106ED80800AD621C /* KronoX-model-v3-v4.xcmappingmodel in Sources */,
+				D060D30C1116C3B000B280FD /* EscapableDatePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

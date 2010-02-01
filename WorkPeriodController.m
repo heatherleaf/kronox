@@ -146,8 +146,7 @@
 #pragma mark ---- Information on the status line ----
 
 @synthesize totalDuration; 
-- (void) updateTotalDuration {
-    [self fetchImmediately:nil];
+- (void) updateTotalDuration: (id) sender {
     NSTimeInterval duration = 0;
     for (WorkPeriod* work in [self arrangedObjects]) {
         if ([work isEqual:currentWorkPeriod])
@@ -161,7 +160,6 @@
 
 @dynamic numberOfSelectedObjects;
 - (NSNumber*) numberOfSelectedObjects {
-    [self fetchImmediately:nil];
     return [NSNumber numberWithInt:[[self arrangedObjects] count]];
 }
 
@@ -213,18 +211,17 @@
     LOG(@"fetch: %@", [sender className]);
     [super fetch:sender];
     [self synchronizeStatusTitle];
+    
     // this is so that bindings on currentWorkPeriod also will be updated:
     [self setCurrentWorkPeriod:[self currentWorkPeriod]];
-    [self updateTotalDuration];
-}
-
-- (void) fetchImmediately: (id) sender {
-    LOG(@"fetchImmediately: %@", [sender className]);
-    if (![self managedObjectContext]) 
-        return;
-    NSError *error;
-    if (![super fetchWithRequest:nil merge:NO error:&error]) 
-        [NSApp presentError:error];
+    
+    // we have to schedule the status line updating, until all data have been
+    // fetched from the database:
+    [NSTimer scheduledTimerWithTimeInterval:0
+                                     target:self
+                                   selector:@selector(updateTotalDuration:)
+                                   userInfo:nil
+                                    repeats:NO];
 }
 
 #pragma mark ---- Adding, removing ----

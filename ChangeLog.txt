@@ -3,11 +3,13 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
-Version 0.99.2, ??
+Version 0.99.2, not released yet
 
 * Fixed issue 28: Comments in the currently recording work period sometimes disappear
   - I hope this is fixed now
 * Removed the "Add" and "Remove" buttons in the Edit Task panel - they were unintuitive
+* Implemented a fix for a Snow Leopard bug, which had the effect that you couldn't close
+  the Edit Workperiod Panel by pressing ESCAPE, if you were editing one of the dates.
 
 Version 0.99.1, 2010-01-30
 

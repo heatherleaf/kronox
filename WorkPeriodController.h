@@ -69,7 +69,7 @@
 - (void)     setRecordingTo: (WorkPeriod*) work;
 
 // Information on the status line
-- (void) updateTotalDuration;
+- (void) updateTotalDuration: (id) sender;
 
 // The status item/menu
 - (void) initStatusMenu;
@@ -77,7 +77,6 @@
 
 // Updating
 // - (void) fetch: (id) sender;
-- (void) fetchImmediately: (id) sender;
 
 // Adding, removing
 // - (void) remove: (id) sender;

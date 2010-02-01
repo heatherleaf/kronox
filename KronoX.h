@@ -147,6 +147,7 @@
 - (IBAction) setNormalWorkingTimeInterval: (id) sender;
 + (void) initialize;
 - (void) awakeFromNib;
+- (void) finalInitializations: (id) sender;
 - (IBAction) activateApplication: (id) sender;
 
 // Termination

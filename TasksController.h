@@ -53,7 +53,6 @@
 
 // Updating
 // - (void) fetch: (id) sender;
-- (void) fetchImmediately: (id) sender;
 - (void) reorderTasks;
 
 // Drag and drop (delegate methods)
