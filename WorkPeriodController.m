@@ -172,36 +172,44 @@
     [statusItem setHighlightMode:YES];
     [statusItem setToolTip:@"KronoX Task Timer"];
     [statusItem setMenu:recordingMenu];
+    NSImage* statusMenuImage = [NSImage imageNamed: @"StatusMenuIcon.tiff"];
+    [statusItem setImage:statusMenuImage];
 }
 
 - (void) synchronizeStatusTitle {
-    NSString* title; 
-    NSMutableDictionary* attrs = [NSMutableDictionary dictionary];
-    CGFloat size = [NSFont systemFontSize];
     Task* task = [[self currentWorkPeriod] task];
     LOG(@"synchronizeStatusTitle: %@", [task longName]);
     if (task) {
+        NSString* title; 
+        CGFloat size;
+        NSMutableDictionary* attrs = [NSMutableDictionary dictionary];
         if ([PREFS boolForKey: @"statusItemBackgroundColorEnabled"]) {
             NSColor* bgColor = [NSKeyedUnarchiver unarchiveObjectWithData: 
                                 [PREFS dataForKey:@"statusItemBackgroundColor"]];
-            if (bgColor != nil) [attrs setValue:bgColor forKey:NSBackgroundColorAttributeName];
+            if (bgColor != nil) {
+                [attrs setValue:bgColor forKey:NSBackgroundColorAttributeName];
+            }
         }
         if ([PREFS boolForKey: @"statusItemForegroundColorEnabled"]) {
             NSColor* fgColor = [task color];
-            if (fgColor != nil) [attrs setValue:fgColor forKey:NSForegroundColorAttributeName];
+            if (fgColor != nil) {
+                [attrs setValue:fgColor forKey:NSForegroundColorAttributeName];
+            }
         }
         int ix = [PREFS integerForKey: @"statusItemSymbolIndex"];
-        if (ix == 0) 
-            title = @" ▶ ";
-        else {
+        if (ix == 0) {
+            // title = @" ⟳ ↻ ∞ ⌘ ✍ ☞  ⟳⃝  ↻⃝  ∞⃝  ⌘⃝  ✍⃝  ☞⃝  ⟳⃣  ↻⃣  ∞⃣  ⌘⃣  ✍⃣  ☞⃣ ";
+            title = @"✔";
+            size = 2.0 + [NSFont systemFontSize];
+        } else {
             title = [NSString stringWithFormat:@" %@ ", (ix == 1 ? [task name] : [task longName])];
             size = [NSFont smallSystemFontSize];
         }
+        [attrs setValue:[NSFont menuBarFontOfSize:size] forKey:NSFontAttributeName];
+        [statusItem setAttributedTitle:[[NSAttributedString alloc] initWithString:title attributes:attrs]];
     } else {
-        title = @" ◐ ";
+        [statusItem setTitle:@""];
     }
-    [attrs setValue: [NSFont menuFontOfSize:size] forKey:NSFontAttributeName];
-    [statusItem setAttributedTitle:[[NSAttributedString alloc] initWithString:title attributes:attrs]];
 }
 
 

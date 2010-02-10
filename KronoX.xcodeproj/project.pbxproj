@@ -68,8 +68,8 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		D01B820C1122B61900FF8821 /* StatusMenuIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D01B820B1122B61900FF8821 /* StatusMenuIcon.tiff */; };
 		D060D30C1116C3B000B280FD /* EscapableDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D060D30B1116C3B000B280FD /* EscapableDatePicker.m */; };
-		D0E2DD5711140F76003E1B99 /* release_new_version.sh in Resources */ = {isa = PBXBuildFile; fileRef = D0E2DD5611140F76003E1B99 /* release_new_version.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,9 +175,12 @@
 		8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToStatistics.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* KronoX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KronoX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01B820B1122B61900FF8821 /* StatusMenuIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = StatusMenuIcon.tiff; sourceTree = "<group>"; };
 		D060D30A1116C3B000B280FD /* EscapableDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EscapableDatePicker.h; sourceTree = "<group>"; };
 		D060D30B1116C3B000B280FD /* EscapableDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EscapableDatePicker.m; sourceTree = "<group>"; };
 		D0E2DD5611140F76003E1B99 /* release_new_version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = release_new_version.sh; sourceTree = "<group>"; };
+		D0F701CC11237182003F9765 /* kronos-god-v2.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "kronos-god-v2.xcf"; path = "icons/kronos-god-v2.xcf"; sourceTree = "<group>"; };
+		D0F701CD11237182003F9765 /* statusmenu-icon.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "statusmenu-icon.xcf"; path = "icons/statusmenu-icon.xcf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +308,9 @@
 				8B360B630EA00AA1005CA047 /* DisclosureTransparent.tiff */,
 				8BE1B2A00EA29A1B00686209 /* Pencil.png */,
 				8B0586BE0EC044D600D9C0FB /* CheckMark.gif */,
+				D01B820B1122B61900FF8821 /* StatusMenuIcon.tiff */,
+				D0F701CC11237182003F9765 /* kronos-god-v2.xcf */,
+				D0F701CD11237182003F9765 /* statusmenu-icon.xcf */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -439,7 +445,7 @@
 				8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */,
 				8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */,
 				8BDC5005107C8713001F74C9 /* KronoX Help in Resources */,
-				D0E2DD5711140F76003E1B99 /* release_new_version.sh in Resources */,
+				D01B820C1122B61900FF8821 /* StatusMenuIcon.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

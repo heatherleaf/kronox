@@ -3,11 +3,19 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
-Version 0.99.2, not released yet
+Version 0.99.2, 2010-02-11
 
+* New icons for the status menu:
+  - now there is one generic KronoX icon which is always there,
+    and the symbol shown when recording is the Unicode Checkmark symbol 
+  - this fixes issue 29, since there is no "play" (or "pause") icon anymore;
+    but suggestions for alternative icons are welcome
+* New program icon:
+  - now there's a clock behind the god Kronos 
 * Fixed issue 28: Comments in the currently recording work period sometimes disappear
-  - I hope this is fixed now
-* Removed the "Add" and "Remove" buttons in the Edit Task panel - they were unintuitive
+  - I hope this is finally fixed, but you never know...
+* Removed the "Add" and "Remove" buttons in the Edit Task panel:
+  - they were unintuitive, and unnecessary
 * Implemented a fix for a Snow Leopard bug, which had the effect that you couldn't close
   the Edit Workperiod Panel by pressing ESCAPE, if you were editing one of the dates.
 
