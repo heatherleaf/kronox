@@ -3,7 +3,7 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
-Version 0.99.2, 2010-02-11
+Version 1.0 beta, 2010-02-11
 
 * New icons for the status menu:
   - now there is one generic KronoX icon which is always there,
