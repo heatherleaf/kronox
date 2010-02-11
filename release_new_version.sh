@@ -66,7 +66,7 @@ SIGNATURE=$(
 if [ "$SIGNATURE" ]; then true; else
     echo "==> Unable to load signing private key with name '$KEYCHAIN_PRIVKEY_NAME' from keychain"
     exit 1
-}
+fi
 
 cat <<EOF
 --------------------------------------------------------------
