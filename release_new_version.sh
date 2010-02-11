@@ -8,7 +8,7 @@ set -o errexit
 
 USERNAME="peter.ljunglof@heatherleaf.se"
 CODE_URL="https://kronox.googlecode.com"
-RELEASENOTES_URL="$CODE_URL/svn/trunk/ChangeLog.txt"
+RELEASENOTES_URL="http://kronox.googlecode.com/svn/trunk/ChangeLog.txt"
 
 VERSION=$(defaults read "$PWD/build/Release/KronoX.app/Contents/Info" CFBundleVersion)
 if [ "$VERSION" == "" ]; then exit 1; fi

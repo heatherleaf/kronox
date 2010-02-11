@@ -9,7 +9,7 @@
 	<item>
 		<title>Version 1.0b</title>
 		<sparkle:releaseNotesLink>
-			https://kronox.googlecode.com/svn/trunk/ChangeLog.txt
+			http://kronox.googlecode.com/svn/trunk/ChangeLog.txt
 		</sparkle:releaseNotesLink>
 		<pubDate>Tor, 11 Feb 2010 01:08:18 +0100</pubDate>
 		<enclosure 
