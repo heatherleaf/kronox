@@ -99,13 +99,13 @@ echo "3. Commiting final changes"
 svn commit -m "Released new version $VERSION"
 echo
 
-echo "4. Uploading $DMGFILE"
+echo "4. Uploading $ARCHIVE_FILENAME"
 python googlecode_upload.py \
     --summary "KronoX, version $VERSION" \
     --project kronox \
     --user "$USERNAME" \
     --labels Featured \
-    "$DMGFILE"
+    "$ARCHIVE_FILENAME"
 echo
 
 echo "5. Tagging the new release, $VOLNAME"
