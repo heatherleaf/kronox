@@ -13,6 +13,7 @@ RELEASENOTES_URL="$CODE_URL/svn/trunk/ChangeLog.txt"
 VERSION=$(defaults read "$PWD/build/Release/KronoX.app/Contents/Info" CFBundleVersion)
 if [ "$VERSION" == "" ]; then exit 1; fi
 
+BUILT_PRODUCTS_DIR="build/Release"
 VOLNAME="KronoX-$VERSION"
 ARCHIVE_FILENAME="build/$VOLNAME.dmg"
 DOWNLOAD_URL="$CODE_URL/files/$VOLNAME.dmg"
