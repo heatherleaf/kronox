@@ -128,6 +128,10 @@
 //  - addForTask:, startRecordingTask: (in WorkPeriodController)
 //  - changeViewPeriodSpan:, showGotoDatePanel:, awakeFromNib (in KronoX)
 - (IBAction) changeViewPeriodDate: (id) sender {
+    // We remove focus from all fields in the work period panel,
+    // just in case there are pending edits:
+    [workPeriodPanel makeFirstResponder:nil];
+    
     NSDate* newDate;
     if ([sender isKindOfClass:[NSDate class]]) {
         // Set an absolute date.
@@ -451,6 +455,7 @@
     LOG(@"windowDid Resign Key: %@", [note object]);
     
     // In case edit workperiod (or task) panel did close, save its content:
+    // Maybe not necessary??
     [self saveManagedObjectContext:nil];
     
     // We have to wait until the database is saved, before we can redisplay:
@@ -459,6 +464,9 @@
                                    selector:@selector(fetch:)
                                    userInfo:nil
                                     repeats:NO];
+
+    // Perhaps the following works as good as the current solution:
+    // [[note object] makeFirstResponder:nil];
 }
 
 
