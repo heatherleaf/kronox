@@ -42,6 +42,8 @@
 @dynamic colorEnabled;
 @dynamic comment;
 @dynamic normalWorkingTimePerYear;
+@dynamic completed;
+@dynamic completedDate;
 
 #pragma mark ---- Calculated properties ----
 

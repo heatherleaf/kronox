@@ -70,6 +70,7 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		D01B820C1122B61900FF8821 /* StatusMenuIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D01B820B1122B61900FF8821 /* StatusMenuIcon.tiff */; };
 		D060D30C1116C3B000B280FD /* EscapableDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D060D30B1116C3B000B280FD /* EscapableDatePicker.m */; };
+		D0DE6A161151928C0071BEFD /* KronoX-model-v4-v5.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D0DE6A151151928C0071BEFD /* KronoX-model-v4-v5.xcmappingmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +179,8 @@
 		D01B820B1122B61900FF8821 /* StatusMenuIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = StatusMenuIcon.tiff; sourceTree = "<group>"; };
 		D060D30A1116C3B000B280FD /* EscapableDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EscapableDatePicker.h; sourceTree = "<group>"; };
 		D060D30B1116C3B000B280FD /* EscapableDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EscapableDatePicker.m; sourceTree = "<group>"; };
+		D0DE69E211518DB60071BEFD /* KronoX-model-v5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model-v5.xcdatamodel"; sourceTree = "<group>"; };
+		D0DE6A151151928C0071BEFD /* KronoX-model-v4-v5.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "KronoX-model-v4-v5.xcmappingmodel"; sourceTree = "<group>"; };
 		D0E2DD5611140F76003E1B99 /* release_new_version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = release_new_version.sh; sourceTree = "<group>"; };
 		D0F701CC11237182003F9765 /* kronos-god-v2.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "kronos-god-v2.xcf"; path = "icons/kronos-god-v2.xcf"; sourceTree = "<group>"; };
 		D0F701CD11237182003F9765 /* statusmenu-icon.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "statusmenu-icon.xcf"; path = "icons/statusmenu-icon.xcf"; sourceTree = "<group>"; };
@@ -502,6 +505,7 @@
 				8BE4ABD3106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.m in Sources */,
 				8BE4AC56106ED80800AD621C /* KronoX-model-v3-v4.xcmappingmodel in Sources */,
 				D060D30C1116C3B000B280FD /* EscapableDatePicker.m in Sources */,
+				D0DE6A161151928C0071BEFD /* KronoX-model-v4-v5.xcmappingmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,8 +673,10 @@
 				8B9AB8790FD322990093D722 /* KronoX-model-v3.xcdatamodel */,
 				8BE4AC55106ED80800AD621C /* KronoX-model-v3-v4.xcmappingmodel */,
 				8BC4D1A0106BF5FC001E64D9 /* KronoX-model-v4.xcdatamodel */,
+				D0DE6A151151928C0071BEFD /* KronoX-model-v4-v5.xcmappingmodel */,
+				D0DE69E211518DB60071BEFD /* KronoX-model-v5.xcdatamodel */,
 			);
-			currentVersion = 8BC4D1A0106BF5FC001E64D9 /* KronoX-model-v4.xcdatamodel */;
+			currentVersion = D0DE69E211518DB60071BEFD /* KronoX-model-v5.xcdatamodel */;
 			path = "KronoX-model.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

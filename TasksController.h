@@ -45,6 +45,8 @@
 - (IBAction) addTask: (id) sender;
 - (IBAction) removeTask: (id) sender;
 
+- (IBAction) makeTaskCompleted: (id) sender;
+
 // Expanding/collapsing tasks in an outline view (delegate methods)
 - (void) expandOutlineView: (NSOutlineView*) view;
 - (void) outlineViewItemDidExpandOrCollapse: (NSNotification*) notification expanded: (BOOL) expanded;

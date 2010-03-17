@@ -82,6 +82,23 @@
     [self fetch:sender];
 }
 
+// This is called when (de)selecting the "completed" checkbox
+// in the "Edit Task" panel.
+- (IBAction) makeTaskCompleted: (id) sender {
+    LOG(@"makeTaskCompleted: %@", [sender className]);
+    for (Task* task in [self selectedObjects]) {
+        if ([[task completed] boolValue]) {
+            if (![task completedDate]) {
+                LOG(@"Setting completed date to today: %@", [task name]);
+                [task setCompletedDate: [NSDate date]];
+            }
+        } else {
+            [[sender window] makeFirstResponder:nil];
+        }
+
+    }
+}
+
 #pragma mark ---- Expanding/collapsing tasks in an outline view (delegate methods) ----
 
 - (void) _expandTreeNode: (NSTreeNode*) node inOutlineView: (NSOutlineView*) view {

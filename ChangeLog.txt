@@ -3,6 +3,15 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
+Version ???
+
+* A new go on trying to fix issue 41: Comment disappears
+  (which is related to issue 28)
+* Added an optional "completed" date to the Tasks.
+  This can be edited in the "Edit Task" panel, and it is
+  shown as a column in the Statistics View.
+  (this is a suggestion for issue 40)
+
 Version 1.0b, 2010-02-11
 
 * New icons for the status menu:

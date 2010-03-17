@@ -39,6 +39,8 @@
 @property (retain) NSNumber* colorEnabled;
 @property (retain) NSString* comment;
 @property (retain) NSNumber* normalWorkingTimePerYear;
+@property (retain) NSNumber* completed;
+@property (retain) NSDate* completedDate;
 
 // Calculated properties:
 @property (readonly) NSString* longName;
