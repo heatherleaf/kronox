@@ -30,30 +30,45 @@
 // Properties in the data model:
 @property (retain) NSNumber* order;
 @property (retain) NSString* name;
-@property (retain) NSNumber* enabled;
-@property (retain) NSNumber* expanded;
+@property (retain) NSNumber* enabled; // boolean value
+@property (retain) NSNumber* expanded; // boolean value 
 @property (retain) NSSet* children;
 @property (retain) Task* parent;
 @property (retain) NSSet* workperiods;
 @property (retain) NSColor* colorValue;
-@property (retain) NSNumber* colorEnabled;
+@property (retain) NSNumber* colorEnabled; // boolean value
 @property (retain) NSString* comment;
 @property (retain) NSNumber* normalWorkingTimePerYear;
-@property (retain) NSNumber* completed;
+@property (retain) NSNumber* completed; // boolean value
 @property (retain) NSDate* completedDate;
 
 // Calculated properties:
+
+// "parent - parent - ... - name":
 @property (readonly) NSString* longName;
+// "Start \"(longName)\"":
 @property (readonly) NSString* startRecordingName;
+// either 'colorValue' or the color of the parent:
 @property (readonly) NSColor* color;
+// the total duration of this task's currently shown workperiods:
 @property (readonly) NSTimeInterval duration;
+// this task's duration / total duration of all shown workperiods:
 @property (readonly) NSNumber* durationPercent;
+// the duration of this task and its subtasks:
 @property (readonly) NSTimeInterval totalDuration;
+// this task's duration (incl subtasks) / total duration:
 @property (readonly) NSNumber* totalDurationPercent;
+// normal working time/year incl subtasks:
 @property (readonly) NSTimeInterval totalNormalWorkingTimePerYear;
+// normal duration incl subtasks:
 @property (readonly) NSTimeInterval normalDuration;
+// normal duration / normal working time/year:
 @property (readonly) NSNumber* normalDurationPercent;
+// total duration / normal duration
+// >1: has worked too much, <1: has worked too little:
 @property (readonly) NSNumber* relativeDurationPercent;
+// only show the completedDate if the date is checked as 'completed':
+@property (readonly) NSDate* completedDateIfCompleted;
 
 // Other methods
 - (void) awakeFromInsert;

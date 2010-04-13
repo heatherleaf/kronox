@@ -95,8 +95,8 @@
         } else {
             [[sender window] makeFirstResponder:nil];
         }
-
     }
+    [self fetch:sender];
 }
 
 #pragma mark ---- Expanding/collapsing tasks in an outline view (delegate methods) ----

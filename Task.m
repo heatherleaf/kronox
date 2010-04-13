@@ -142,6 +142,13 @@
     return nil;
 }
 
+@dynamic completedDateIfCompleted;
+- (NSDate*) completedDateIfCompleted {
+    if ([[self completed] boolValue]) 
+        return [self completedDate];
+    return nil;
+}
+
 
 #pragma mark ---- Other methods ----
 

@@ -29,15 +29,24 @@
 
 @property (retain) NSDate* start;
 @property (retain) NSNumber* duration;
-@property (retain) NSString* comment;
 @property (retain) Task* task;
+@property (retain) NSString* comment;
+// boolean checkbox:
+@property (retain) NSNumber* ok; 
 
 // Calculated properties
-@property (retain) NSDate* end;
-@property (retain) NSDate* date;
 
+// start + duration:
+@property (retain) NSDate* end;
+// date portion of 'start':
+@property (retain) NSDate* date;
+// the color of the start/end time in the WP list;
+// this will be colored if the time period is overlapping:
 @property (readonly) NSColor* overlappingStartColor;
 @property (readonly) NSColor* overlappingEndColor;
+// a string version of the 'ok' bool,
+// used in the WP list:
+@property (readonly) NSString* okString;
 
 @end
 

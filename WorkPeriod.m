@@ -30,6 +30,7 @@
 @dynamic duration;
 @dynamic comment;
 @dynamic task;
+@dynamic ok;
 
 #define SECONDS_PER_DAY (24*60*60)
 
@@ -74,6 +75,12 @@
     if (![PREFS boolForKey:@"showOverlappingTimes"])
         return nil;
     return [[NSApp delegate] performSelector:@selector(getColorIfOverlappingTime:) withObject:[self end]];
+}
+
+@dynamic okString;
+- (NSString*) okString {
+    // possible variants: ✓ ✔ 
+    return [[self ok] boolValue] ? @"✔" : @""; 
 }
 
 @end
