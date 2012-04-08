@@ -51,7 +51,7 @@ def build_dmg(app_path, dest_path):
     os.mkdir(dmgpath)
     print_and_do('cp -R "%s" "%s"' % (app_path, dmgpath))
     print_and_do('ln -s /Applications "%s"' % op.join(dmgpath, 'Applications'))
-    dmgname = '%s_osx_%s.dmg' % (plist['CFBundleName'].lower().replace(' ', '_'), plist['CFBundleVersion'].replace('.', '_'))
+    dmgname = '%s_%s.dmg' % (plist['CFBundleName'].lower().replace(' ', '_'), plist['CFBundleVersion'].replace('.', '_'))
     print('Building %s' % dmgname)
     # UDBZ = bzip compression. UDZO (zip compression) was used before, but it compresses much less.
     print_and_do('hdiutil create "%s" -format UDBZ -nocrossdev -srcdir "%s"' % (op.join(dest_path, dmgname), dmgpath))
