@@ -6,8 +6,6 @@
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleGetInfoString</key>
-	<string>KronoX 1.0 beta 2, Copyright © 2008-2010 Peter Ljunglöf</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>KronoX Help</string>
 	<key>CFBundleHelpBookName</key>
@@ -24,10 +22,15 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>KrnX</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0 beta</string>
 	<key>CFBundleVersion</key>
 	<string>1.0b2</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>© 2008-2010 Peter Ljunglöf
+    © 2012 Harcoded Software Inc.</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.5.7</string>
+	<string>10.6</string>
 	<key>NSMainNibFile</key>
 	<string>KronoX</string>
 	<key>NSPrincipalClass</key>
