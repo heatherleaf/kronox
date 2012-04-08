@@ -3,6 +3,11 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
+Version 1.0.0, 2012-04-08
+
+* Fix layout corruption bug under OS X 10.7. (#44)
+* Fix bug where work period comment edits would sometimes be lost. (#41)
+
 Version 1.0b2, 2010-04-13
 
 * A new go on trying to fix issue 41: Comment disappears
