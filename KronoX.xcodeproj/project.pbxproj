@@ -510,6 +510,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = /;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -519,6 +522,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KronoX-prefix.pch";
 				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(PROJECT_DIR)";
 				PRODUCT_NAME = KronoX;
 				WRAPPER_EXTENSION = app;
 			};
@@ -527,6 +531,9 @@
 		26FC0A860875C7B200E6366F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = /;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -535,6 +542,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KronoX-prefix.pch";
 				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(PROJECT_DIR)";
 				PRODUCT_NAME = KronoX;
 				WRAPPER_EXTENSION = app;
 			};
