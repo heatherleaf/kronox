@@ -277,7 +277,7 @@
     NSDate* start = [[NSApp delegate] performSelector:@selector(viewPeriodDate)];
     start = [start filterThroughComponents:[NSDate dateUnits]];
     start = [start addComponents:[[NSDate date] components:[NSDate timeUnits]]];
-    start = [start addTimeInterval:-defaultDuration];
+    start = [start dateByAddingTimeInterval:-defaultDuration];
     // set the date filter, just in case the start time is on another date than the current date filter (= the end time)
     [[NSApp delegate] performSelector:@selector(changeViewPeriodDate:) withObject:start];
     // create and add the new WP
