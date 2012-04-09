@@ -37,7 +37,7 @@
 @dynamic end;
 - (NSDate*) end {
     if ([self duration] == nil) return nil;
-    return [[self start] addTimeInterval:[[self duration] doubleValue]];
+    return [[self start] dateByAddingTimeInterval:[[self duration] doubleValue]];
 }
 - (void) setEnd: (NSDate*) date {
     if ([self start] == nil) return;
