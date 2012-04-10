@@ -217,12 +217,6 @@
 
 - (void) fetch: (id) sender {
     LOG(@"fetch: %@", [sender className]);
-    // Sometimes, we call fetch: while the editWorkperiodPanel is in the middle of an edit. In these,
-    // cases, if we don't do anything, we'll lose that edit. So, what we do is that we focus on the
-    // panel itself to force an edit commit.
-    if ([editWorkperiodPanel isKeyWindow]) {
-        [editWorkperiodPanel makeFirstResponder:nil];
-    }
     [super fetch:sender];
     [self synchronizeStatusTitle];
     
