@@ -51,8 +51,9 @@
 - (NSString*) longName {
     NSString* pname = [self name];
     Task* prnt = self;
-    while (prnt = [prnt parent]) 
+    while ( ( prnt = [prnt parent] ) ) {
         pname = [NSString stringWithFormat:@"%@ - %@", [prnt name], pname];
+    }
     return pname;
 }
 
