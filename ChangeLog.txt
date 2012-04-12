@@ -3,6 +3,10 @@ ChangeLog for the KronoX time tracker
   http://code.google.com/p/kronox/
 -------------------------------------
 
+Version 1.0.1, 2012-04-12
+
+* Fix bug introduced in v1.0.0 making widgets in the work panel constantly lose their focus. (#41)
+
 Version 1.0.0, 2012-04-08
 
 * Fix layout corruption bug under OS X 10.7. (#44)
