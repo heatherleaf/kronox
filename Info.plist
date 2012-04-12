@@ -36,7 +36,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
-	<string>http://kronox.googlecode.com/svn/trunk/Sparkle_appcast.xml</string>
+	<string>http://www.hardcoded.net/updates/kronox.appcast</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 </dict>
