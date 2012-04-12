@@ -23,6 +23,11 @@
 
 #import "ExportImportController.h"
 
+static NSString* formatDateForExport(NSDate *date)
+{
+    return [date descriptionWithCalendarFormat:nil timeZone:nil locale:nil];
+}
+
 @implementation ExportImportController
 
 @synthesize exportFromDate, exportToDate, exportDelimitor, exportEncoding, exportCalendar, iCalCalendars;
@@ -69,11 +74,12 @@
         if (didCancel)
             break;
         [textData appendFormat:@"%@%@%@%@%@%@%@%@%@\n", 
-         [[work start] description],    delim,
-         [[work end] description],      delim,
-         [[work duration] stringValue], delim,
-         [[work task] longName],        delim,
-         [[work comment] stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]];
+            formatDateForExport([work start]), delim,
+            formatDateForExport([work end]), delim,
+            [[work duration] stringValue], delim,
+            [[work task] longName], delim,
+            [[work comment] stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]
+        ];
         // perhaps use [comment stringByAddingPercentEscapesUsingEncoding:encoding]
         // but it doesn't escape "," ";" ":", which nevertheless gives us problems with ","-separation
     }

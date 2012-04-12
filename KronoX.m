@@ -677,8 +677,9 @@
     if (persistentStoreCoordinator == nil) {
         NSFileManager* fileManager = [NSFileManager defaultManager];
         NSString* applicationSupportFolder = [self applicationSupportFolder];
-        if (![fileManager fileExistsAtPath:applicationSupportFolder isDirectory:NULL]) 
-            [fileManager createDirectoryAtPath:applicationSupportFolder attributes:nil];
+        if (![fileManager fileExistsAtPath:applicationSupportFolder isDirectory:NULL]) {
+            [fileManager createDirectoryAtPath:applicationSupportFolder withIntermediateDirectories:YES attributes:nil error:nil];
+        }
         NSURL* url = [NSURL fileURLWithPath:[applicationSupportFolder stringByAppendingPathComponent:DATABASEFILE]];
         persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
         NSDictionary *optionsDictionary = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] 
