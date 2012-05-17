@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B02443F0D9E2D95000F7C9F /* PanelExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02443E0D9E2D95000F7C9F /* PanelExtensions.m */; };
-		8B0586BF0EC044D600D9C0FB /* CheckMark.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8B0586BE0EC044D600D9C0FB /* CheckMark.gif */; };
+		8B0586BF0EC044D600D9C0FB /* icons/CheckMark.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8B0586BE0EC044D600D9C0FB /* icons/CheckMark.gif */; };
 		8B0702030EBE705E006BF98A /* ExportImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0701FE0EBE705E006BF98A /* ExportImportController.m */; };
 		8B0702040EBE705E006BF98A /* ModalSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0702000EBE705E006BF98A /* ModalSheet.m */; };
 		8B0702050EBE705E006BF98A /* SplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0702020EBE705E006BF98A /* SplitViewDelegate.m */; };
@@ -16,10 +16,10 @@
 		8B0F325D0F21BA83002FD8A6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0F325C0F21BA83002FD8A6 /* Sparkle.framework */; };
 		8B0F327D0F21BB25002FD8A6 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8B0F325C0F21BA83002FD8A6 /* Sparkle.framework */; };
 		8B1F181B0D97D86800427EFA /* DateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F181A0D97D86800427EFA /* DateExtensions.m */; };
-		8B360B640EA00AA1005CA047 /* DisclosureDown.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B610EA00AA1005CA047 /* DisclosureDown.tiff */; };
-		8B360B650EA00AA1005CA047 /* DisclosureRight.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B620EA00AA1005CA047 /* DisclosureRight.tiff */; };
-		8B360B660EA00AA1005CA047 /* DisclosureTransparent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B630EA00AA1005CA047 /* DisclosureTransparent.tiff */; };
-		8B360B680EA00AB2005CA047 /* KronoX-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B670EA00AB2005CA047 /* KronoX-icon.icns */; };
+		8B360B640EA00AA1005CA047 /* icons/DisclosureDown.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B610EA00AA1005CA047 /* icons/DisclosureDown.tiff */; };
+		8B360B650EA00AA1005CA047 /* icons/DisclosureRight.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B620EA00AA1005CA047 /* icons/DisclosureRight.tiff */; };
+		8B360B660EA00AA1005CA047 /* icons/DisclosureTransparent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B630EA00AA1005CA047 /* icons/DisclosureTransparent.tiff */; };
+		8B360B680EA00AB2005CA047 /* icons/KronoX-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8B360B670EA00AB2005CA047 /* icons/KronoX-icon.icns */; };
 		8B66A2F80D91CFD300ABDD4E /* KronoX.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */; };
 		8B67DB150D96362F00A87B47 /* DateToButtonTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B67DB140D96362F00A87B47 /* DateToButtonTitle.m */; };
 		8B689E4F0DC8A2E9000C966F /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B689E4E0DC8A2E9000C966F /* CalendarStore.framework */; };
@@ -42,7 +42,7 @@
 		8BE0FD680D70C115003B3842 /* TasksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD670D70C115003B3842 /* TasksController.m */; };
 		8BE0FD6B0D70C176003B3842 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD6A0D70C176003B3842 /* Task.m */; };
 		8BE0FD6E0D70C299003B3842 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0FD6D0D70C299003B3842 /* WorkPeriod.m */; };
-		8BE1B2A10EA29A1B00686209 /* Pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE1B2A00EA29A1B00686209 /* Pencil.png */; };
+		8BE1B2A10EA29A1B00686209 /* icons/Pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE1B2A00EA29A1B00686209 /* icons/Pencil.png */; };
 		8BE4AB7D106EC55400AD621C /* TimeIntervalToDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE4AB7C106EC55400AD621C /* TimeIntervalToDuration.m */; };
 		8BE4AB80106EC55F00AD621C /* TimeIntervalToMinutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE4AB7F106EC55F00AD621C /* TimeIntervalToMinutes.m */; };
 		8BE4ABD3106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE4ABD2106ECC6300AD621C /* TimeIntervalToNormalWorkingTime.m */; };
@@ -52,7 +52,7 @@
 		8BFD8C9C0DA4E8D500F389F4 /* TimeIntervalToStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		D01B820C1122B61900FF8821 /* StatusMenuIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D01B820B1122B61900FF8821 /* StatusMenuIcon.tiff */; };
+		D01B820C1122B61900FF8821 /* icons/StatusMenuIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D01B820B1122B61900FF8821 /* icons/StatusMenuIcon.tiff */; };
 		D060D30C1116C3B000B280FD /* EscapableDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D060D30B1116C3B000B280FD /* EscapableDatePicker.m */; };
 		D0D1AC6E1166810D00115411 /* KronoX-model-v5-v6.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D0D1AC6D1166810D00115411 /* KronoX-model-v5-v6.xcmappingmodel */; };
 		D0D1ACAD1166891700115411 /* KronoX-model-v4-v6.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D0D1ACAC1166891700115411 /* KronoX-model-v4-v6.xcmappingmodel */; };
@@ -83,7 +83,7 @@
 		77C8280B06725ACE000B614F /* KronoX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KronoX.h; sourceTree = "<group>"; };
 		8B02443D0D9E2D95000F7C9F /* PanelExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelExtensions.h; sourceTree = "<group>"; };
 		8B02443E0D9E2D95000F7C9F /* PanelExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelExtensions.m; sourceTree = "<group>"; };
-		8B0586BE0EC044D600D9C0FB /* CheckMark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icons/CheckMark.gif; sourceTree = "<group>"; };
+		8B0586BE0EC044D600D9C0FB /* icons/CheckMark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icons/CheckMark.gif; sourceTree = "<group>"; };
 		8B0701FD0EBE705E006BF98A /* ExportImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportImportController.h; sourceTree = "<group>"; };
 		8B0701FE0EBE705E006BF98A /* ExportImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportImportController.m; sourceTree = "<group>"; };
 		8B0701FF0EBE705E006BF98A /* ModalSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalSheet.h; sourceTree = "<group>"; };
@@ -95,10 +95,10 @@
 		8B0F325C0F21BA83002FD8A6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		8B1F18190D97D86800427EFA /* DateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateExtensions.h; sourceTree = "<group>"; };
 		8B1F181A0D97D86800427EFA /* DateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateExtensions.m; sourceTree = "<group>"; };
-		8B360B610EA00AA1005CA047 /* DisclosureDown.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = icons/DisclosureDown.tiff; sourceTree = "<group>"; };
-		8B360B620EA00AA1005CA047 /* DisclosureRight.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = icons/DisclosureRight.tiff; sourceTree = "<group>"; };
-		8B360B630EA00AA1005CA047 /* DisclosureTransparent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = icons/DisclosureTransparent.tiff; sourceTree = "<group>"; };
-		8B360B670EA00AB2005CA047 /* KronoX-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "icons/KronoX-icon.icns"; sourceTree = "<group>"; };
+		8B360B610EA00AA1005CA047 /* icons/DisclosureDown.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = icons/DisclosureDown.tiff; sourceTree = "<group>"; };
+		8B360B620EA00AA1005CA047 /* icons/DisclosureRight.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = icons/DisclosureRight.tiff; sourceTree = "<group>"; };
+		8B360B630EA00AA1005CA047 /* icons/DisclosureTransparent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = icons/DisclosureTransparent.tiff; sourceTree = "<group>"; };
+		8B360B670EA00AB2005CA047 /* icons/KronoX-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "icons/KronoX-icon.icns"; sourceTree = "<group>"; };
 		8B3DC252107FE6570011F37A /* KronoX-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "KronoX-icon.png"; path = "English.lproj/KronoX Help/KronoX-icon.png"; sourceTree = "<group>"; };
 		8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KronoX.xib; sourceTree = "<group>"; };
 		8B67DB130D96362F00A87B47 /* DateToButtonTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateToButtonTitle.h; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		8BE0FD6A0D70C176003B3842 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		8BE0FD6C0D70C299003B3842 /* WorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriod.h; sourceTree = "<group>"; };
 		8BE0FD6D0D70C299003B3842 /* WorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriod.m; sourceTree = "<group>"; };
-		8BE1B2A00EA29A1B00686209 /* Pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons/Pencil.png; sourceTree = "<group>"; };
+		8BE1B2A00EA29A1B00686209 /* icons/Pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icons/Pencil.png; sourceTree = "<group>"; };
 		8BE4AB7B106EC55400AD621C /* TimeIntervalToDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToDuration.h; sourceTree = "<group>"; };
 		8BE4AB7C106EC55400AD621C /* TimeIntervalToDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToDuration.m; sourceTree = "<group>"; };
 		8BE4AB7E106EC55F00AD621C /* TimeIntervalToMinutes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIntervalToMinutes.h; sourceTree = "<group>"; };
@@ -150,7 +150,8 @@
 		8BFD8C9B0DA4E8D500F389F4 /* TimeIntervalToStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalToStatistics.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* KronoX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KronoX.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D01B820B1122B61900FF8821 /* StatusMenuIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = icons/StatusMenuIcon.tiff; sourceTree = "<group>"; };
+		CE8D06761565530400D3ACED /* KronoX-model-v7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model-v7.xcdatamodel"; sourceTree = "<group>"; };
+		D01B820B1122B61900FF8821 /* icons/StatusMenuIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = icons/StatusMenuIcon.tiff; sourceTree = "<group>"; };
 		D060D30A1116C3B000B280FD /* EscapableDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EscapableDatePicker.h; sourceTree = "<group>"; };
 		D060D30B1116C3B000B280FD /* EscapableDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EscapableDatePicker.m; sourceTree = "<group>"; };
 		D0D1AC6B116680A700115411 /* KronoX-model-v6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model-v6.xcdatamodel"; sourceTree = "<group>"; };
@@ -280,13 +281,13 @@
 		8B5629E30EA00E240079AA8D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				8B360B670EA00AB2005CA047 /* KronoX-icon.icns */,
-				8B360B610EA00AA1005CA047 /* DisclosureDown.tiff */,
-				8B360B620EA00AA1005CA047 /* DisclosureRight.tiff */,
-				8B360B630EA00AA1005CA047 /* DisclosureTransparent.tiff */,
-				8BE1B2A00EA29A1B00686209 /* Pencil.png */,
-				8B0586BE0EC044D600D9C0FB /* CheckMark.gif */,
-				D01B820B1122B61900FF8821 /* StatusMenuIcon.tiff */,
+				8B360B670EA00AB2005CA047 /* icons/KronoX-icon.icns */,
+				8B360B610EA00AA1005CA047 /* icons/DisclosureDown.tiff */,
+				8B360B620EA00AA1005CA047 /* icons/DisclosureRight.tiff */,
+				8B360B630EA00AA1005CA047 /* icons/DisclosureTransparent.tiff */,
+				8BE1B2A00EA29A1B00686209 /* icons/Pencil.png */,
+				8B0586BE0EC044D600D9C0FB /* icons/CheckMark.gif */,
+				D01B820B1122B61900FF8821 /* icons/StatusMenuIcon.tiff */,
 				D0F701CC11237182003F9765 /* kronos-god-v2.xcf */,
 				D0F701CD11237182003F9765 /* statusmenu-icon.xcf */,
 			);
@@ -419,19 +420,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B66A2F80D91CFD300ABDD4E /* KronoX.xib in Resources */,
-				8B360B640EA00AA1005CA047 /* DisclosureDown.tiff in Resources */,
-				8B360B650EA00AA1005CA047 /* DisclosureRight.tiff in Resources */,
-				8B360B660EA00AA1005CA047 /* DisclosureTransparent.tiff in Resources */,
-				8B360B680EA00AB2005CA047 /* KronoX-icon.icns in Resources */,
-				8BE1B2A10EA29A1B00686209 /* Pencil.png in Resources */,
-				8B0586BF0EC044D600D9C0FB /* CheckMark.gif in Resources */,
+				8B360B640EA00AA1005CA047 /* icons/DisclosureDown.tiff in Resources */,
+				8B360B650EA00AA1005CA047 /* icons/DisclosureRight.tiff in Resources */,
+				8B360B660EA00AA1005CA047 /* icons/DisclosureTransparent.tiff in Resources */,
+				8B360B680EA00AB2005CA047 /* icons/KronoX-icon.icns in Resources */,
+				8BE1B2A10EA29A1B00686209 /* icons/Pencil.png in Resources */,
+				8B0586BF0EC044D600D9C0FB /* icons/CheckMark.gif in Resources */,
 				8BC8BE5A0EEC525C00F52232 /* Credits.rtf in Resources */,
 				8BC8BED90EEC620800F52232 /* COPYING.txt in Resources */,
 				8BAF02F20F1E08E100720336 /* ChangeLog.txt in Resources */,
 				8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */,
 				8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */,
 				8BDC5005107C8713001F74C9 /* KronoX Help in Resources */,
-				D01B820C1122B61900FF8821 /* StatusMenuIcon.tiff in Resources */,
+				D01B820C1122B61900FF8821 /* icons/StatusMenuIcon.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +587,7 @@
 		8BB561690F1F8D6400953794 /* KronoX-model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				CE8D06761565530400D3ACED /* KronoX-model-v7.xcdatamodel */,
 				770B37EC0679A11B001EADE2 /* KronoX-model.xcdatamodel */,
 				8BB5616D0F1F8E2900953794 /* KronoX-model-v1-v2.xcmappingmodel */,
 				8BB5616B0F1F8D6400953794 /* KronoX-model-v2.xcdatamodel */,
@@ -599,7 +601,7 @@
 				D0D1AC6D1166810D00115411 /* KronoX-model-v5-v6.xcmappingmodel */,
 				D0D1AC6B116680A700115411 /* KronoX-model-v6.xcdatamodel */,
 			);
-			currentVersion = D0D1AC6B116680A700115411 /* KronoX-model-v6.xcdatamodel */;
+			currentVersion = CE8D06761565530400D3ACED /* KronoX-model-v7.xcdatamodel */;
 			path = "KronoX-model.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

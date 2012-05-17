@@ -41,6 +41,7 @@
 @property (retain) NSNumber* normalWorkingTimePerYear;
 @property (retain) NSNumber* completed; // boolean value
 @property (retain) NSDate* completedDate;
+@property (retain) NSDecimalNumber* hourlyRate;
 
 // Calculated properties:
 
@@ -69,6 +70,8 @@
 @property (readonly) NSNumber* relativeDurationPercent;
 // only show the completedDate if the date is checked as 'completed':
 @property (readonly) NSDate* completedDateIfCompleted;
+// If hourlyRate is 0, look in the parent task for an inherited hourly rate we might use.
+@property (readonly) NSDecimalNumber* inheritedHourlyRate;
 
 // Other methods
 - (void) awakeFromInsert;

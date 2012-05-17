@@ -33,6 +33,7 @@
 @dynamic ok;
 
 #define SECONDS_PER_DAY (24*60*60)
+#define SECONDS_PER_HOUR (60*60)
 
 @dynamic end;
 - (NSDate*) end {
@@ -81,6 +82,14 @@
 - (NSString*) okString {
     // possible variants: ✓ ✔ 
     return [[self ok] boolValue] ? @"✔" : @""; 
+}
+
+@dynamic dollarValue;
+- (NSDecimalNumber *)dollarValue {
+    double hourlyDuration = [[self duration] doubleValue] / SECONDS_PER_HOUR;
+    NSDecimalNumber *hourlyDurationDecimal = [NSDecimalNumber decimalNumberWithDecimal:
+        [[NSNumber numberWithDouble:hourlyDuration] decimalValue]];
+    return [[[self task] inheritedHourlyRate] decimalNumberByMultiplyingBy:hourlyDurationDecimal];
 }
 
 @end

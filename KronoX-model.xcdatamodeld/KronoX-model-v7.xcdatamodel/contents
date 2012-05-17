@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="untitled.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Task" representedClassName="Task" syncable="YES">
+        <attribute name="colorEnabled" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="colorValue" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="completedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="expanded" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="hourlyRate" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString="Undefined Task" syncable="YES"/>
+        <attribute name="normalWorkingTimePerYear" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="9999" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="parent" inverseEntity="Task" indexed="YES" syncable="YES"/>
+        <relationship name="parent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="children" inverseEntity="Task" indexed="YES" syncable="YES"/>
+        <relationship name="workperiods" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WorkPeriod" inverseName="task" inverseEntity="WorkPeriod" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="WorkPeriod" representedClassName="WorkPeriod" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="ok" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="task" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="workperiods" inverseEntity="Task" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="WorkPeriod" positionX="405" positionY="138" width="128" height="120"/>
+        <element name="Task" positionX="117" positionY="93" width="162" height="240"/>
+    </elements>
+</model>

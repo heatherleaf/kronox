@@ -47,6 +47,8 @@
 // a string version of the 'ok' bool,
 // used in the WP list:
 @property (readonly) NSString* okString;
+// duration * hourlyRate
+@property (readonly) NSDecimalNumber* dollarValue;
 
 @end
 
