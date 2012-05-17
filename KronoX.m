@@ -682,8 +682,11 @@
         }
         NSURL* url = [NSURL fileURLWithPath:[applicationSupportFolder stringByAppendingPathComponent:DATABASEFILE]];
         persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-        NSDictionary *optionsDictionary = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] 
-                                                                      forKey:NSMigratePersistentStoresAutomaticallyOption];
+        NSDictionary *optionsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+            // With the option below, we don't need data mapping for simple data model changes
+            [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption,
+            nil];
         NSError* error;
         NSPersistentStore* store = [persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                                             configuration:nil

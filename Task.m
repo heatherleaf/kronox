@@ -44,6 +44,7 @@
 @dynamic normalWorkingTimePerYear;
 @dynamic completed;
 @dynamic completedDate;
+@dynamic hourlyRate;
 
 #pragma mark ---- Calculated properties ----
 
@@ -150,6 +151,14 @@
     return nil;
 }
 
+@dynamic inheritedHourlyRate;
+- (NSDecimalNumber *)inheritedHourlyRate {
+    NSDecimalNumber *result = [self hourlyRate];
+    if (([self parent] != nil) && ((result == nil) || (![result integerValue]))) {
+        result = [[self parent] hourlyRate];
+    }
+    return result;
+}
 
 #pragma mark ---- Other methods ----
 
