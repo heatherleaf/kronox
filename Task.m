@@ -46,6 +46,18 @@
 @dynamic completedDate;
 @dynamic hourlyRate;
 
+#pragma mark ---- Helpers ----
+
+- (NSSet *)filteredWorkperiods {
+    NSPredicate* pred = [[NSApp delegate] performSelector:@selector(viewPeriodPredicate)];
+    if (pred) {
+        return [[self workperiods] filteredSetUsingPredicate:pred];
+    }
+    else {
+        return [NSSet set];
+    }
+}
+
 #pragma mark ---- Calculated properties ----
 
 @dynamic longName;
@@ -76,11 +88,10 @@
 
 @dynamic duration; 
 - (NSTimeInterval) duration {
-    NSPredicate* pred = [[NSApp delegate] performSelector:@selector(viewPeriodPredicate)];
-    if (!pred) return 0;
     NSTimeInterval dur = 0;
-    for (WorkPeriod* work in [[self workperiods] filteredSetUsingPredicate:pred]) 
+    for (WorkPeriod* work in [self filteredWorkperiods]) {
         dur += [[work duration] doubleValue];
+    }
     return dur;
 }
 
@@ -159,6 +170,16 @@
     }
     return result;
 }
+
+@dynamic dollarValue;
+- (NSDecimalNumber *)dollarValue {
+    NSDecimalNumber *result = [NSDecimalNumber zero];
+    for (WorkPeriod* work in [self filteredWorkperiods]) {
+        result = [result decimalNumberByAdding:[work dollarValue]];
+    }
+    return result;
+}
+
 
 #pragma mark ---- Other methods ----
 

@@ -72,6 +72,8 @@
 @property (readonly) NSDate* completedDateIfCompleted;
 // If hourlyRate is 0, look in the parent task for an inherited hourly rate we might use.
 @property (readonly) NSDecimalNumber* inheritedHourlyRate;
+// the total dollar value of this task's currently shown workperiods
+@property (readonly) NSDecimalNumber* dollarValue;
 
 // Other methods
 - (void) awakeFromInsert;
