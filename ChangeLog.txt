@@ -1,4 +1,11 @@
 
+=== 1.1.0 (2012-05-18)
+
+* Added a hourly rate attribute to tasks and compute a dollar value for each work period. (#45)
+* Export local time rather than UTC time when exporting to CSV.
+* Fixed occasional UI glitch causing field focus to be lost. (#41)
+* Added fairware reminders.
+
 === 1.0.1 (2012-04-12)
 
 * Fix bug introduced in v1.0.0 making widgets in the work panel constantly lose their focus. (#41)
