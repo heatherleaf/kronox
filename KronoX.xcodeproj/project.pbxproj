@@ -25,7 +25,6 @@
 		8B8D2F360DA2B2D4009A4AB8 /* FontSizeToIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D2F350DA2B2D4009A4AB8 /* FontSizeToIndex.m */; };
 		8B9AB9280FD3363F0093D722 /* KronoX-model-v2-v3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AB9270FD3363F0093D722 /* KronoX-model-v2-v3.xcmappingmodel */; };
 		8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CA4190F229D350005A79F /* dsa_pub.pem */; };
-		8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */; };
 		8BAE6AC20DA1468400423BA9 /* WorkPeriodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */; };
 		8BAF02F20F1E08E100720336 /* ChangeLog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BAF02F10F1E08E100720336 /* ChangeLog.txt */; };
 		8BB5616A0F1F8D6400953794 /* KronoX-model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BB561690F1F8D6400953794 /* KronoX-model.xcdatamodeld */; };
@@ -103,7 +102,6 @@
 		8B9AB8790FD322990093D722 /* KronoX-model-v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model-v3.xcdatamodel"; sourceTree = "<group>"; };
 		8B9AB9270FD3363F0093D722 /* KronoX-model-v2-v3.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "KronoX-model-v2-v3.xcmappingmodel"; sourceTree = "<group>"; };
 		8B9CA4190F229D350005A79F /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Sparkle_appcast.xml; sourceTree = "<group>"; };
 		8BAE6AC00DA1468400423BA9 /* WorkPeriodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriodController.h; sourceTree = "<group>"; };
 		8BAE6AC10DA1468400423BA9 /* WorkPeriodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriodController.m; sourceTree = "<group>"; };
 		8BAF02F10F1E08E100720336 /* ChangeLog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog.txt; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 		D0D1ACAC1166891700115411 /* KronoX-model-v4-v6.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "KronoX-model-v4-v6.xcmappingmodel"; sourceTree = "<group>"; };
 		D0DE69E211518DB60071BEFD /* KronoX-model-v5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model-v5.xcdatamodel"; sourceTree = "<group>"; };
 		D0DE6A151151928C0071BEFD /* KronoX-model-v4-v5.xcmappingmodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcmappingmodel; path = "KronoX-model-v4-v5.xcmappingmodel"; sourceTree = "<group>"; };
-		D0E2DD5611140F76003E1B99 /* release_new_version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = release_new_version.sh; sourceTree = "<group>"; };
 		D0F701CC11237182003F9765 /* kronos-god-v2.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "kronos-god-v2.xcf"; path = "icons/kronos-god-v2.xcf"; sourceTree = "<group>"; };
 		D0F701CD11237182003F9765 /* statusmenu-icon.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "statusmenu-icon.xcf"; path = "icons/statusmenu-icon.xcf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,8 +234,6 @@
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				8BC8BED80EEC620800F52232 /* COPYING.txt */,
 				8B9CA4190F229D350005A79F /* dsa_pub.pem */,
-				8B9CA4560F22AEFE0005A79F /* Sparkle_appcast.xml */,
-				D0E2DD5611140F76003E1B99 /* release_new_version.sh */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -402,7 +397,6 @@
 				8BC8BED90EEC620800F52232 /* COPYING.txt in Resources */,
 				8BAF02F20F1E08E100720336 /* ChangeLog.txt in Resources */,
 				8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */,
-				8B9CA4570F22AEFE0005A79F /* Sparkle_appcast.xml in Resources */,
 				8BDC5005107C8713001F74C9 /* KronoX Help in Resources */,
 				D01B820C1122B61900FF8821 /* icons/StatusMenuIcon.tiff in Resources */,
 			);
