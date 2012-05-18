@@ -73,11 +73,16 @@ static NSString* formatDateForExport(NSDate *date)
         didCancel = !(counter++ % incrementInterval) && [NSApp runModalSession:exportSession] != NSRunContinuesResponse;
         if (didCancel)
             break;
-        [textData appendFormat:@"%@%@%@%@%@%@%@%@%@\n", 
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        NSString *dollarValueStr = [formatter stringFromNumber:[work dollarValue]];
+        [formatter release];
+        [textData appendFormat:@"%@%@%@%@%@%@%@%@%@%@%@\n", 
             formatDateForExport([work start]), delim,
             formatDateForExport([work end]), delim,
             [[work duration] stringValue], delim,
             [[work task] longName], delim,
+            dollarValueStr, delim,
             [[work comment] stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]
         ];
         // perhaps use [comment stringByAddingPercentEscapesUsingEncoding:encoding]
