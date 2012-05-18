@@ -570,13 +570,6 @@
                                    userInfo:nil
                                     repeats:YES];
     
-    // Save the database, every 30 seconds:
-    [NSTimer scheduledTimerWithTimeInterval:30
-                                     target:self
-                                   selector:@selector(saveManagedObjectContext:)
-                                   userInfo:nil
-                                    repeats:YES];
-    
     // And final initializations that we only can do after all data have been fetched:
     [tasksController fetch:nil];
     [NSTimer scheduledTimerWithTimeInterval:0
