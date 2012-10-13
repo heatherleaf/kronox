@@ -175,7 +175,10 @@
 - (NSDecimalNumber *)dollarValue {
     NSDecimalNumber *result = [NSDecimalNumber zero];
     for (WorkPeriod* work in [self filteredWorkperiods]) {
-        result = [result decimalNumberByAdding:[work dollarValue]];
+        NSDecimalNumber *workDollars = [work dollarValue];
+        if (workDollars != nil) {
+            result = [result decimalNumberByAdding:workDollars];
+        }
     }
     return result;
 }
