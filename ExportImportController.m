@@ -35,14 +35,15 @@ static NSString* formatDateForExport(NSDate *date)
 - (IBAction) exportToFile: (id) sender {
     NSSavePanel* sp = [NSSavePanel savePanel];
     [sp setTitle:@"Export to Text File"];
-    [sp setRequiredFileType:@"txt"];
+    [sp setAllowedFileTypes:[NSArray arrayWithObjects:@"txt", nil]];
+    [sp setNameFieldStringValue:@"KronoX-data"];
     [sp setAllowsOtherFileTypes:YES];
     [sp setCanSelectHiddenExtension:YES];
     [sp setAccessoryView:exportTextView];
     [self setExportDelimitor:@", "];
     [self setExportEncoding:NSUTF8StringEncoding];
     
-    int result = [sp runModalForDirectory:nil file:@"KronoX-data"];
+    int result = [sp runModal];
     if (result != NSOKButton) return;
     
     [progressPanel setTitle:@"Exporting to text"];
@@ -93,13 +94,13 @@ static NSString* formatDateForExport(NSDate *date)
         LOG(@"Did cancel");
     } else {
         NSError* error;
-        if (![textData writeToFile:[sp filename] atomically:YES encoding:encoding error:&error]) {
+        if (![textData writeToURL:[sp URL] atomically:YES encoding:encoding error:&error]) {
             [NSApp presentError:error];
         } else {
             NSRunAlertPanel(@"Finished exporting", 
                             @"%d work periods exported to file\n%@",
                             @"OK", nil, nil,
-                            [periods count], [sp filename]);
+                            [periods count], [[sp URL] path]);
         }
         LOG(@"Finished exporting");
     }

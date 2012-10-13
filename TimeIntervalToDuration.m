@@ -39,8 +39,8 @@
     NSInteger minutes = ([time integerValue] + 30) / 60;
     switch ([PREFS integerForKey: @"durationAppearance"]) {
         // 0 = 37:30, 1 = 37h30m, 2 = 37.5, 3 = 37.5h
-        case 0: return [NSString stringWithFormat:@"%d:%02d", minutes/60, minutes%60];
-        case 1: return [NSString stringWithFormat:@"%dh%02dm", minutes/60, minutes%60];
+        case 0: return [NSString stringWithFormat:@"%ld:%02ld", (long)minutes/60, (long)minutes%60];
+        case 1: return [NSString stringWithFormat:@"%ldh%02ldm", (long)minutes/60, (long)minutes%60];
         case 2: return [NSString stringWithFormat:@"%.1f", (float)minutes/60];
         case 3: return [NSString stringWithFormat:@"%.1fh", (float)minutes/60];
     }
