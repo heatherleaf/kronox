@@ -1,4 +1,8 @@
 
+=== 1.1.1 (2012-10-15)
+
+* Fixed a crash in the Statistics view.
+
 === 1.1.0 (2012-05-18)
 
 * Added a hourly rate attribute to tasks and compute a dollar value for each work period. (#45)
