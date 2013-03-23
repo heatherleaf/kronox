@@ -585,10 +585,6 @@
     [tasksController expandOutlineView:recordingView];
     [tasksController expandOutlineView:statisticsView];
     
-    // Fairware init
-    fairwareController = [[HSFairware alloc] initWithAppId:7 name:APPLICATION_NAME];
-    [fairwareController initialRegistrationSetup];
-    
     // If there are no tasks, show a splash screen:
     if ([[[tasksController arrangedObjects] childNodes] count] == 0) {
         // Show splash screen

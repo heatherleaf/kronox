@@ -47,11 +47,6 @@
 		8BF2DB1E0DA1634800A3CBBF /* UndoExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2DB1D0DA1634800A3CBBF /* UndoExtensions.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		CEEFE4BC1566A2B600AB3661 /* HSFairware.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEFE4B71566A2B600AB3661 /* HSFairware.m */; };
-		CEEFE4BD1566A2B600AB3661 /* HSFairwareReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEFE4B91566A2B600AB3661 /* HSFairwareReminder.m */; };
-		CEEFE4BE1566A2B600AB3661 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEFE4BB1566A2B600AB3661 /* Utils.m */; };
-		CEEFE4C21566A51E00AB3661 /* FairwareReminder.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEFE4C01566A51E00AB3661 /* FairwareReminder.xib */; };
-		CEEFE4C51566A93C00AB3661 /* Dialogs.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEFE4C41566A93C00AB3661 /* Dialogs.m */; };
 		D01B820C1122B61900FF8821 /* icons/StatusMenuIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D01B820B1122B61900FF8821 /* icons/StatusMenuIcon.tiff */; };
 		D060D30C1116C3B000B280FD /* EscapableDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D060D30B1116C3B000B280FD /* EscapableDatePicker.m */; };
 		D0D1AC6E1166810D00115411 /* KronoX-model-v5-v6.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D0D1AC6D1166810D00115411 /* KronoX-model-v5-v6.xcmappingmodel */; };
@@ -142,15 +137,6 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist; fileEncoding = 4; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* KronoX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KronoX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8D06761565530400D3ACED /* KronoX-model-v7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KronoX-model-v7.xcdatamodel"; sourceTree = "<group>"; };
-		CEEFE4B61566A2B600AB3661 /* HSFairware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSFairware.h; path = cocoalib/HSFairware.h; sourceTree = "<group>"; };
-		CEEFE4B71566A2B600AB3661 /* HSFairware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSFairware.m; path = cocoalib/HSFairware.m; sourceTree = "<group>"; };
-		CEEFE4B81566A2B600AB3661 /* HSFairwareReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSFairwareReminder.h; path = cocoalib/HSFairwareReminder.h; sourceTree = "<group>"; };
-		CEEFE4B91566A2B600AB3661 /* HSFairwareReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSFairwareReminder.m; path = cocoalib/HSFairwareReminder.m; sourceTree = "<group>"; };
-		CEEFE4BA1566A2B600AB3661 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = cocoalib/Utils.h; sourceTree = "<group>"; };
-		CEEFE4BB1566A2B600AB3661 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = cocoalib/Utils.m; sourceTree = "<group>"; };
-		CEEFE4C11566A51E00AB3661 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = cocoalib/en.lproj/FairwareReminder.xib; sourceTree = "<group>"; };
-		CEEFE4C31566A93C00AB3661 /* Dialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dialogs.h; path = cocoalib/Dialogs.h; sourceTree = "<group>"; };
-		CEEFE4C41566A93C00AB3661 /* Dialogs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dialogs.m; path = cocoalib/Dialogs.m; sourceTree = "<group>"; };
 		D01B820B1122B61900FF8821 /* icons/StatusMenuIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = icons/StatusMenuIcon.tiff; sourceTree = "<group>"; };
 		D060D30A1116C3B000B280FD /* EscapableDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EscapableDatePicker.h; sourceTree = "<group>"; };
 		D060D30B1116C3B000B280FD /* EscapableDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EscapableDatePicker.m; sourceTree = "<group>"; };
@@ -223,7 +209,6 @@
 				8BAF02F10F1E08E100720336 /* ChangeLog.txt */,
 				77C8280B06725ACE000B614F /* KronoX.h */,
 				8BBC1C330DC1317E00685052 /* KronoX.m */,
-				CE8011FC1566972500FC55DC /* cocoalib */,
 				080E96DDFE201D6D7F000001 /* NSControllers */,
 				8BC89B500E9EA4E100367A46 /* Delegates */,
 				8B88056F0E9C9048003F4846 /* (Sub)Classes */,
@@ -241,7 +226,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEEFE4C01566A51E00AB3661 /* FairwareReminder.xib */,
 				8B66A2EC0D91CF8900ABDD4E /* KronoX.xib */,
 				8BDC5001107C8713001F74C9 /* KronoX Help */,
 				8BC8BE590EEC525B00F52232 /* Credits.rtf */,
@@ -348,21 +332,6 @@
 			name = "Cocoa Extensions";
 			sourceTree = "<group>";
 		};
-		CE8011FC1566972500FC55DC /* cocoalib */ = {
-			isa = PBXGroup;
-			children = (
-				CEEFE4C31566A93C00AB3661 /* Dialogs.h */,
-				CEEFE4C41566A93C00AB3661 /* Dialogs.m */,
-				CEEFE4B61566A2B600AB3661 /* HSFairware.h */,
-				CEEFE4B71566A2B600AB3661 /* HSFairware.m */,
-				CEEFE4B81566A2B600AB3661 /* HSFairwareReminder.h */,
-				CEEFE4B91566A2B600AB3661 /* HSFairwareReminder.m */,
-				CEEFE4BA1566A2B600AB3661 /* Utils.h */,
-				CEEFE4BB1566A2B600AB3661 /* Utils.m */,
-			);
-			name = cocoalib;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -431,7 +400,6 @@
 				8B9CA41A0F229D350005A79F /* dsa_pub.pem in Resources */,
 				8BDC5005107C8713001F74C9 /* KronoX Help in Resources */,
 				D01B820C1122B61900FF8821 /* icons/StatusMenuIcon.tiff in Resources */,
-				CEEFE4C21566A51E00AB3661 /* FairwareReminder.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,10 +438,6 @@
 				D0DE6A161151928C0071BEFD /* KronoX-model-v4-v5.xcmappingmodel in Sources */,
 				D0D1AC6E1166810D00115411 /* KronoX-model-v5-v6.xcmappingmodel in Sources */,
 				D0D1ACAD1166891700115411 /* KronoX-model-v4-v6.xcmappingmodel in Sources */,
-				CEEFE4BC1566A2B600AB3661 /* HSFairware.m in Sources */,
-				CEEFE4BD1566A2B600AB3661 /* HSFairwareReminder.m in Sources */,
-				CEEFE4BE1566A2B600AB3661 /* Utils.m in Sources */,
-				CEEFE4C51566A93C00AB3661 /* Dialogs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,14 +451,6 @@
 				8BDC5002107C8713001F74C9 /* English */,
 			);
 			name = "KronoX Help";
-			sourceTree = "<group>";
-		};
-		CEEFE4C01566A51E00AB3661 /* FairwareReminder.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEEFE4C11566A51E00AB3661 /* en */,
-			);
-			name = FairwareReminder.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

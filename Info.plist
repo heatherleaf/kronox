@@ -23,9 +23,9 @@
 	<key>CFBundleSignature</key>
 	<string>KrnX</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.1.1</string>
+    <string>1.1.2</string>
 	<key>CFBundleVersion</key>
-	<string>1.1.1</string>
+	<string>1.1.2</string>
     <key>NSHumanReadableCopyright</key>
     <string>© 2008-2010 Peter Ljunglöf
     © 2012 Harcoded Software Inc.</string>
