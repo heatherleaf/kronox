@@ -28,7 +28,6 @@
 #import "Task.h"
 #import "ModalSheet.h"
 #import "TimeIntervalToNormalWorkingTime.h"
-#import "HSFairware.h"
 
 @interface KronoX : NSObject 
 {
@@ -48,8 +47,6 @@
     
     NSInteger searchAttribute;
     NSInteger comparisonOperator;
-    
-    HSFairware *fairwareController;
     
     // Outlets in Interface Builder:
     IBOutlet WorkPeriodController* workPeriodController;

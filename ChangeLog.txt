@@ -1,3 +1,6 @@
+=== 1.1.2 (2013-03-23)
+
+* Removed the fairware dialog ([More Info](http://www.hardcoded.net/articles/phasing-out-fairware)).
 
 === 1.1.1 (2012-10-15)
 
